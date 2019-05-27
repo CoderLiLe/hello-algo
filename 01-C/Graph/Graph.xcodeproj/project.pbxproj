@@ -12,6 +12,12 @@
 		246EB9F322942929005E9526 /* adjacency_matrix_graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 246EB9F222942929005E9526 /* adjacency_matrix_graph.c */; };
 		246EB9F622942943005E9526 /* adjacency_list_graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 246EB9F522942943005E9526 /* adjacency_list_graph.c */; };
 		246EB9FA22942AE2005E9526 /* queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 246EB9F922942AE2005E9526 /* queue.c */; };
+		24FE349E229BB2D1000826BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE349D229BB2D1000826BF /* main.c */; };
+		24FE34A4229BB369000826BF /* prim.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34A3229BB369000826BF /* prim.c */; };
+		24FE34AA229BC9DB000826BF /* Kruskal.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34A9229BC9DB000826BF /* Kruskal.c */; };
+		24FE34AD229BCA13000826BF /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34AC229BCA13000826BF /* Graph.c */; };
+		24FE34B5229BD932000826BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34B4229BD932000826BF /* main.c */; };
+		24FE34BE229BDA70000826BF /* graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34BD229BDA70000826BF /* graph.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,24 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		246EB9E822942896005E9526 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		24FE3499229BB2D1000826BF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		24FE34B0229BD932000826BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -47,6 +71,18 @@
 		246EB9F722942A3B005E9526 /* graph_const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph_const.h; sourceTree = "<group>"; };
 		246EB9F822942AE2005E9526 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
 		246EB9F922942AE2005E9526 /* queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
+		24FE349B229BB2D1000826BF /* 02-最小生成树 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "02-最小生成树"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24FE349D229BB2D1000826BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		24FE34A2229BB369000826BF /* prim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prim.h; sourceTree = "<group>"; };
+		24FE34A3229BB369000826BF /* prim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prim.c; sourceTree = "<group>"; };
+		24FE34A8229BC9DB000826BF /* Kruskal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kruskal.h; sourceTree = "<group>"; };
+		24FE34A9229BC9DB000826BF /* Kruskal.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Kruskal.c; sourceTree = "<group>"; };
+		24FE34AB229BCA13000826BF /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		24FE34AC229BCA13000826BF /* Graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Graph.c; sourceTree = "<group>"; };
+		24FE34B2229BD932000826BF /* 03-最短路径 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "03-最短路径"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24FE34B4229BD932000826BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		24FE34BC229BDA70000826BF /* graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
+		24FE34BD229BDA70000826BF /* graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = graph.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +100,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24FE3498229BB2D1000826BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24FE34AF229BD932000826BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,6 +122,8 @@
 			children = (
 				246EB9DE2294288A005E9526 /* Graph */,
 				246EB9EB22942897005E9526 /* 01-基本的图算法 */,
+				24FE349C229BB2D1000826BF /* 02-最小生成树 */,
+				24FE34B3229BD932000826BF /* 03-最短路径 */,
 				246EB9DD2294288A005E9526 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +133,8 @@
 			children = (
 				246EB9DC2294288A005E9526 /* Graph */,
 				246EB9EA22942896005E9526 /* 01-基本的图算法 */,
+				24FE349B229BB2D1000826BF /* 02-最小生成树 */,
+				24FE34B2229BD932000826BF /* 03-最短路径 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				246EB9DF2294288A005E9526 /* main.c */,
+				24FE34BC229BDA70000826BF /* graph.h */,
+				24FE34BD229BDA70000826BF /* graph.c */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -106,6 +162,28 @@
 				246EB9F922942AE2005E9526 /* queue.c */,
 			);
 			path = "01-基本的图算法";
+			sourceTree = "<group>";
+		};
+		24FE349C229BB2D1000826BF /* 02-最小生成树 */ = {
+			isa = PBXGroup;
+			children = (
+				24FE349D229BB2D1000826BF /* main.c */,
+				24FE34A2229BB369000826BF /* prim.h */,
+				24FE34A3229BB369000826BF /* prim.c */,
+				24FE34A8229BC9DB000826BF /* Kruskal.h */,
+				24FE34A9229BC9DB000826BF /* Kruskal.c */,
+				24FE34AB229BCA13000826BF /* Graph.h */,
+				24FE34AC229BCA13000826BF /* Graph.c */,
+			);
+			path = "02-最小生成树";
+			sourceTree = "<group>";
+		};
+		24FE34B3229BD932000826BF /* 03-最短路径 */ = {
+			isa = PBXGroup;
+			children = (
+				24FE34B4229BD932000826BF /* main.c */,
+			);
+			path = "03-最短路径";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +223,40 @@
 			productReference = 246EB9EA22942896005E9526 /* 01-基本的图算法 */;
 			productType = "com.apple.product-type.tool";
 		};
+		24FE349A229BB2D1000826BF /* 02-最小生成树 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24FE34A1229BB2D1000826BF /* Build configuration list for PBXNativeTarget "02-最小生成树" */;
+			buildPhases = (
+				24FE3497229BB2D1000826BF /* Sources */,
+				24FE3498229BB2D1000826BF /* Frameworks */,
+				24FE3499229BB2D1000826BF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "02-最小生成树";
+			productName = "02-最小生成树";
+			productReference = 24FE349B229BB2D1000826BF /* 02-最小生成树 */;
+			productType = "com.apple.product-type.tool";
+		};
+		24FE34B1229BD932000826BF /* 03-最短路径 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24FE34B6229BD932000826BF /* Build configuration list for PBXNativeTarget "03-最短路径" */;
+			buildPhases = (
+				24FE34AE229BD932000826BF /* Sources */,
+				24FE34AF229BD932000826BF /* Frameworks */,
+				24FE34B0229BD932000826BF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "03-最短路径";
+			productName = "03-最短路径";
+			productReference = 24FE34B2229BD932000826BF /* 03-最短路径 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +270,12 @@
 						CreatedOnToolsVersion = 10.2.1;
 					};
 					246EB9E922942896005E9526 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					24FE349A229BB2D1000826BF = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					24FE34B1229BD932000826BF = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -176,6 +294,8 @@
 			targets = (
 				246EB9DB2294288A005E9526 /* Graph */,
 				246EB9E922942896005E9526 /* 01-基本的图算法 */,
+				24FE349A229BB2D1000826BF /* 02-最小生成树 */,
+				24FE34B1229BD932000826BF /* 03-最短路径 */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FE34BE229BDA70000826BF /* graph.c in Sources */,
 				246EB9E02294288A005E9526 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +318,25 @@
 				246EB9FA22942AE2005E9526 /* queue.c in Sources */,
 				246EB9F322942929005E9526 /* adjacency_matrix_graph.c in Sources */,
 				246EB9ED22942897005E9526 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24FE3497229BB2D1000826BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24FE349E229BB2D1000826BF /* main.c in Sources */,
+				24FE34A4229BB369000826BF /* prim.c in Sources */,
+				24FE34AD229BCA13000826BF /* Graph.c in Sources */,
+				24FE34AA229BC9DB000826BF /* Kruskal.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24FE34AE229BD932000826BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24FE34B5229BD932000826BF /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +490,42 @@
 			};
 			name = Release;
 		};
+		24FE349F229BB2D1000826BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AG5KXH439W;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		24FE34A0229BB2D1000826BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AG5KXH439W;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		24FE34B7229BD932000826BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AG5KXH439W;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		24FE34B8229BD932000826BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AG5KXH439W;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -376,6 +552,24 @@
 			buildConfigurations = (
 				246EB9EF22942897005E9526 /* Debug */,
 				246EB9F022942897005E9526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24FE34A1229BB2D1000826BF /* Build configuration list for PBXNativeTarget "02-最小生成树" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24FE349F229BB2D1000826BF /* Debug */,
+				24FE34A0229BB2D1000826BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24FE34B6229BD932000826BF /* Build configuration list for PBXNativeTarget "03-最短路径" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24FE34B7229BD932000826BF /* Debug */,
+				24FE34B8229BD932000826BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
