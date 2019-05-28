@@ -18,6 +18,9 @@
 		24FE34AD229BCA13000826BF /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34AC229BCA13000826BF /* Graph.c */; };
 		24FE34B5229BD932000826BF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34B4229BD932000826BF /* main.c */; };
 		24FE34BE229BDA70000826BF /* graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34BD229BDA70000826BF /* graph.c */; };
+		24FE34C2229C12E7000826BF /* Dijkstra.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34C1229C12E7000826BF /* Dijkstra.c */; };
+		24FE34C5229C12F3000826BF /* Floyd.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34C4229C12F3000826BF /* Floyd.c */; };
+		24FE34C8229C177F000826BF /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 24FE34C7229C177F000826BF /* Graph.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +86,12 @@
 		24FE34B4229BD932000826BF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		24FE34BC229BDA70000826BF /* graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = graph.h; sourceTree = "<group>"; };
 		24FE34BD229BDA70000826BF /* graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = graph.c; sourceTree = "<group>"; };
+		24FE34C0229C12E7000826BF /* Dijkstra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dijkstra.h; sourceTree = "<group>"; };
+		24FE34C1229C12E7000826BF /* Dijkstra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Dijkstra.c; sourceTree = "<group>"; };
+		24FE34C3229C12F3000826BF /* Floyd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Floyd.h; sourceTree = "<group>"; };
+		24FE34C4229C12F3000826BF /* Floyd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Floyd.c; sourceTree = "<group>"; };
+		24FE34C6229C177F000826BF /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		24FE34C7229C177F000826BF /* Graph.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Graph.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +191,12 @@
 			isa = PBXGroup;
 			children = (
 				24FE34B4229BD932000826BF /* main.c */,
+				24FE34C7229C177F000826BF /* Graph.c */,
+				24FE34C6229C177F000826BF /* Graph.h */,
+				24FE34C0229C12E7000826BF /* Dijkstra.h */,
+				24FE34C1229C12E7000826BF /* Dijkstra.c */,
+				24FE34C3229C12F3000826BF /* Floyd.h */,
+				24FE34C4229C12F3000826BF /* Floyd.c */,
 			);
 			path = "03-最短路径";
 			sourceTree = "<group>";
@@ -336,7 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FE34C5229C12F3000826BF /* Floyd.c in Sources */,
 				24FE34B5229BD932000826BF /* main.c in Sources */,
+				24FE34C8229C177F000826BF /* Graph.c in Sources */,
+				24FE34C2229C12E7000826BF /* Dijkstra.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

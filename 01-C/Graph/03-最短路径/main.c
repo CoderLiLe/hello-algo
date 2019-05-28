@@ -8,8 +8,11 @@
 
 #include <stdio.h>
 
+#include "Dijkstra.h"
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+
+    shortest_path_dijkstra_test();
+    
     return 0;
 }
