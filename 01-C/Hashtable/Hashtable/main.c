@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[]) {
     
-    hashTable_linear_detectio_test();
+//    hashTable_linear_detectio_test();
     
     return 0;
 }

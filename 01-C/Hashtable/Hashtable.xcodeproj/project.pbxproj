@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D000DF122B8BCD000E777FB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D000DF022B8BCD000E777FB /* main.c */; };
 		4D000DF922B8C4AC00E777FB /* HashTable_linear_detection.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D000DF822B8C4AC00E777FB /* HashTable_linear_detection.c */; };
+		4D63BAE422B8EC8700AA5AB1 /* HashTable_separate_link_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D63BAE322B8EC8700AA5AB1 /* HashTable_separate_link_list.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		4D000DF022B8BCD000E777FB /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4D000DF722B8C4AC00E777FB /* HashTable_linear_detection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashTable_linear_detection.h; sourceTree = "<group>"; };
 		4D000DF822B8C4AC00E777FB /* HashTable_linear_detection.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HashTable_linear_detection.c; sourceTree = "<group>"; };
+		4D63BAE222B8EC8700AA5AB1 /* HashTable_separate_link_list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashTable_separate_link_list.h; sourceTree = "<group>"; };
+		4D63BAE322B8EC8700AA5AB1 /* HashTable_separate_link_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = HashTable_separate_link_list.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				4D000DF022B8BCD000E777FB /* main.c */,
 				4D000DF722B8C4AC00E777FB /* HashTable_linear_detection.h */,
 				4D000DF822B8C4AC00E777FB /* HashTable_linear_detection.c */,
+				4D63BAE222B8EC8700AA5AB1 /* HashTable_separate_link_list.h */,
+				4D63BAE322B8EC8700AA5AB1 /* HashTable_separate_link_list.c */,
 			);
 			path = Hashtable;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			files = (
 				4D000DF122B8BCD000E777FB /* main.c in Sources */,
 				4D000DF922B8C4AC00E777FB /* HashTable_linear_detection.c in Sources */,
+				4D63BAE422B8EC8700AA5AB1 /* HashTable_separate_link_list.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
