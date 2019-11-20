@@ -1,0 +1,19 @@
+# Eclipse for java project begin
+
+/.settings/
+/target/
+
+# Java class files
+*.class
+*.jar
+
+# generated files
+bin/
+gen/
+
+# Eclipse project files
+.DS_Store
+.classpath
+.project
+
+# Eclipse for java project end
