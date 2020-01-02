@@ -6,7 +6,7 @@ public class CoinChange {
 
 	public static void main(String[] args) {
 //		coinChange1();
-		coinChange2(new Integer[] {25, 5, 20, 1}, 41);
+		coinChange3(new Integer[] {25, 5, 20, 1}, 41);
 	}
 	
 	static void coinChange1() {
@@ -39,6 +39,22 @@ public class CoinChange {
 			System.out.println(faces[i]);
 			money -= faces[i];
 			coins++;
+		}
+		
+		System.out.println("一共需要" + coins + "枚硬币");
+	}
+	
+	static void coinChange3(Integer[] faces, int money) {
+		Arrays.sort(faces);
+		
+		int coins = 0, idx = faces.length - 1;
+		while (idx > 0) {
+			while (money > faces[idx]) {
+				money -= faces[idx];
+				coins++;
+				System.out.println(faces[idx]);
+			}
+			idx--;
 		}
 		
 		System.out.println("一共需要" + coins + "枚硬币");
