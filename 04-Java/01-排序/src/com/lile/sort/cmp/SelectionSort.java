@@ -10,7 +10,8 @@ public class SelectionSort<E extends Comparable<E>> extends Sort<E> {
 			int maxIndex = 0;
 			for (int begin = 1; begin <= end; begin++) {
 				// if (array[maxIndex] <= array[begin]) {
-				if (cmp(maxIndex, begin) <= 0) {
+				// if (cmp(maxIndex, begin) <= 0) {
+				if (cmp(maxIndex, begin) < 0) {
 					maxIndex = begin;
 				}
 			}

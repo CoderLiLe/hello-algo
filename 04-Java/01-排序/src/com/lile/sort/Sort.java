@@ -3,6 +3,7 @@ package com.lile.sort;
 import java.text.DecimalFormat;
 
 import com.lile.Student;
+import com.lile.sort.cmp.SelectionSort;
 import com.lile.sort.cmp.ShellSort;
 
 @SuppressWarnings("unchecked")
@@ -79,6 +80,7 @@ public abstract class Sort<E extends Comparable<E>> implements Comparable<Sort> 
 		if (this instanceof CountingSort) return false;
 		if (this instanceof RadixSort) return false;
 		if (this instanceof ShellSort) return false;
+		if (this instanceof SelectionSort) return false;
 		
 		Student[] students = new Student[20];
 		for (int i = 0; i < students.length; i++) {
