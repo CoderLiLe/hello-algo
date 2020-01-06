@@ -1,7 +1,5 @@
 package com.lile;
 
-import com.sun.security.auth.NTDomainPrincipal;
-
 public class LIS {
 
 	public static void main(String[] args) {
