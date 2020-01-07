@@ -2,15 +2,18 @@ package com.lile.graph;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+@SuppressWarnings("unchecked")
 public class ListGraph<V, E> implements Graph<V, E> {
 	private Map<V, Vertex<V, E>> vertices = new HashMap<>();
 	private Set<Edge<V, E>> edges = new HashSet<>(); 
 	
 	public void print() {
+		System.out.println("---------[顶点]---------");
 		vertices.forEach((V v, Vertex<V, E> vertex) -> {
 			System.out.println(v) ;
 			System.out.println("out---------------");
@@ -18,7 +21,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
 			System.out.println("in----------------");
 			System.out.println(vertex.inEdges);
 		});
-		
+		System.out.println("---------[边]---------");
 		edges.forEach((Edge<V, E> edge) -> {
 			System.out.println(edge) ;
 		});
@@ -74,8 +77,24 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
 	@Override
 	public void removeVertex(V v) {
-		// TODO Auto-generated method stub
+		Vertex<V, E> vertex = vertices.remove(v);
+		if (vertex == null) return;
 		
+		for (Iterator iterator = vertex.outEdges.iterator(); iterator.hasNext();) {
+			Edge<V, E> edge = (Edge<V, E>) iterator.next();
+			edge.to.inEdges.remove(edge);
+			// 将当前遍历到的元素edge从集合vertex.outEdges中删除
+			iterator.remove();
+			edges.remove(edge);
+		}
+		
+		for (Iterator iterator = vertex.inEdges.iterator(); iterator.hasNext();) {
+			Edge<V, E> edge = (Edge<V, E>) iterator.next();
+			edge.from.outEdges.remove(edge);
+			// 将当前遍历到的元素edge从集合vertex.outEdges中删除
+			iterator.remove();
+			edges.remove(edge);
+		}
 	}
 
 	@Override
