@@ -26,8 +26,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
 	
 	@Override
 	public int edgesSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return edges.size();
 	}
 
 	@Override
@@ -81,8 +80,15 @@ public class ListGraph<V, E> implements Graph<V, E> {
 
 	@Override
 	public void removeEdge(V from, V to) {
-		// TODO Auto-generated method stub
-		
+		Vertex<V, E> fromVertex = vertices.get(from);
+		if (fromVertex == null) return;
+		Vertex<V, E> toVertex = vertices.get(to);
+		if (toVertex == null) return;
+		Edge<V, E> edge = new Edge<>(fromVertex, toVertex);
+		if (fromVertex.outEdges.remove(edge)) {
+			toVertex.inEdges.remove(edge);
+			edges.remove(edge);
+		}
 	}
 	
 	private static class Vertex<V, E> {
