@@ -3,8 +3,10 @@ package com.lile.graph;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Queue;
 import java.util.Set;
 
 @SuppressWarnings("unchecked")
@@ -110,6 +112,28 @@ public class ListGraph<V, E> implements Graph<V, E> {
 		}
 	}
 	
+	@Override
+	public void bfs(V begin) {
+		Vertex<V, E> beginVertex = vertices.get(begin);
+		if (beginVertex == null) return;
+		
+		Set<Vertex<V, E>> visitedVertices = new HashSet<>();
+		Queue<Vertex<V, E>> queue = new LinkedList<>();
+		queue.offer(beginVertex);
+		visitedVertices.add(beginVertex);
+		
+		while (!queue.isEmpty()) {
+			Vertex<V, E> vertex = queue.poll();
+			System.out.println(vertex.value);
+			
+			for (Edge<V, E> edge : vertex.outEdges) {
+				if (visitedVertices.contains(edge.to)) continue;
+				queue.offer(edge.to);
+				visitedVertices.add(edge.to);
+			}
+		}
+	}
+	
 	private static class Vertex<V, E> {
 		V value;
 		Set<Edge<V, E>> inEdges = new HashSet<>();
@@ -154,5 +178,4 @@ public class ListGraph<V, E> implements Graph<V, E> {
 		}
 		
 	}
-	
 }

@@ -10,4 +10,6 @@ public interface Graph<V, E> {
 	
 	void removeVertex(V v);
 	void removeEdge(V from, V to);
+	
+	void bfs(V begin);
 }
