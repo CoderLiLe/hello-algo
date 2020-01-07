@@ -15,9 +15,11 @@ public class Main {
 		graph.addEdge("V0", "V4", 6);
 		
 //		graph.removeEdge("V0", "V4");
-		graph.removeVertex("V0");
+//		graph.removeVertex("V0");
 		
-		((ListGraph<String, Integer>)graph).print();
+//		((ListGraph<String, Integer>)graph).print();
+		
+		graph.bfs("V1");
 	}
 
 }
