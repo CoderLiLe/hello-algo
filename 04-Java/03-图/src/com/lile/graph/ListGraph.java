@@ -114,6 +114,59 @@ public class ListGraph<V, E> implements Graph<V, E> {
 	}
 	
 	@Override
+	public void bfs(V begin, VertexVisitor<V> visitor) {
+		if (visitor == null) return;
+		Vertex<V, E> beginVertex = vertices.get(begin);
+		if (beginVertex == null) return;
+		
+		Set<Vertex<V, E>> visitedVertices = new HashSet<>();
+		Queue<Vertex<V, E>> queue = new LinkedList<>();
+		queue.offer(beginVertex);
+		visitedVertices.add(beginVertex);
+		
+		while (!queue.isEmpty()) {
+			Vertex<V, E> vertex = queue.poll();
+			if (visitor.visit(vertex.value)) return;
+			
+			for (Edge<V, E> edge : vertex.outEdges) {
+				if (visitedVertices.contains(edge.to)) continue;
+				queue.offer(edge.to);
+				visitedVertices.add(edge.to);
+			}
+		}
+		
+	}
+
+	@Override
+	public void dfs(V begin, VertexVisitor<V> visitor) {
+		if (visitor == null) return;
+		Vertex<V, E> beginVertex = vertices.get(begin);
+		if (beginVertex == null) return;
+		
+		Set<Vertex<V, E>> visitedVertices = new HashSet<>();
+		Stack<Vertex<V, E>> stack = new Stack<>();
+		
+		stack.push(beginVertex);
+		visitedVertices.add(beginVertex);
+		if (visitor.visit(begin)) return;
+		
+		while (!stack.isEmpty()) {
+			Vertex<V, E> vertex = stack.pop();
+			
+			for (Edge<V, E> edge : vertex.outEdges) {
+				if (visitedVertices.contains(edge.to)) continue;
+				
+				stack.push(vertex);
+				stack.push(edge.to);
+				visitedVertices.add(edge.to);
+				if (visitor.visit(edge.to.value)) return;
+				break;
+			}
+		}
+	}
+	
+	/*
+	@Override
 	public void bfs(V begin) {
 		Vertex<V, E> beginVertex = vertices.get(begin);
 		if (beginVertex == null) return;
@@ -174,6 +227,7 @@ public class ListGraph<V, E> implements Graph<V, E> {
 			}
 		}
 	}
+	*/
 	
 	private static class Vertex<V, E> {
 		V value;

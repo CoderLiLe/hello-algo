@@ -1,6 +1,7 @@
 package com.lile;
 
 import com.lile.graph.Graph;
+import com.lile.graph.Graph.VertexVisitor;
 import com.lile.graph.ListGraph;
 
 public class Main {
@@ -24,17 +25,32 @@ public class Main {
 		
 //		((ListGraph<String, Integer>)graph).print();
 		
-		graph.bfs("V1");
+//		graph.bfs("V1");
 	}
 	
 	static void testBFS() {
 		Graph<Object, Double> graph = directedGraph(Data.BFS_02);
-		graph.bfs(7);
+//		graph.bfs(7);
+//		graph.bfs(0, new VertexVisitor<Object>() {
+//			@Override
+//			public boolean visit(Object v) {
+//				System.out.println(v);
+//				return v.equals(2);
+//			}
+//		});
+		graph.bfs(0, (Object v) -> {
+			System.out.println(v);
+			return false;
+		});
 	}
 	
 	static void testDFS() {
 		Graph<Object, Double> graph = directedGraph(Data.DFS_01);
-		graph.dfs(0);
+//		graph.dfs(0);
+		graph.dfs(0, (Object v) -> {
+			System.out.println(v);
+			return false;
+		});
 	}
 	
 	/**
