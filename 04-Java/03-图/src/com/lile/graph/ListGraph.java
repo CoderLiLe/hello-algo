@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 
 @SuppressWarnings("unchecked")
 public class ListGraph<V, E> implements Graph<V, E> {
@@ -138,7 +139,8 @@ public class ListGraph<V, E> implements Graph<V, E> {
 	public void dfs(V begin) {
 		Vertex<V, E> beginVertex = vertices.get(begin);
 		if (beginVertex == null) return;
-		dfs(beginVertex, new HashSet<>());
+//		dfs(beginVertex, new HashSet<>());
+		dfs(beginVertex);
 	}
 	
 	private void dfs(Vertex<V, E> vertex, Set<Vertex<V, E>> visitedVertices) {
@@ -148,6 +150,28 @@ public class ListGraph<V, E> implements Graph<V, E> {
 		for (Edge<V, E> edge : vertex.outEdges) {
 			if (visitedVertices.contains(edge.to)) continue;
 			dfs(edge.to, visitedVertices);
+		}
+	}
+	
+	private void dfs(Vertex<V, E> beginVertex) {
+		Set<Vertex<V, E>> visitedVertices = new HashSet<>();
+		Stack<Vertex<V, E>> stack = new Stack<>();
+		stack.push(beginVertex);
+		visitedVertices.add(beginVertex);
+		System.out.println(beginVertex.value);
+		
+		while (!stack.isEmpty()) {
+			Vertex<V, E> vertex = stack.pop();
+			
+			for (Edge<V, E> edge : vertex.outEdges) {
+				if (visitedVertices.contains(edge.to)) continue;
+				
+				stack.push(vertex);
+				stack.push(edge.to);
+				visitedVertices.add(edge.to);
+				System.out.println(edge.to.value);
+				break;
+			}
 		}
 	}
 	

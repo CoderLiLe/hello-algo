@@ -34,7 +34,7 @@ public class Main {
 	
 	static void testDFS() {
 		Graph<Object, Double> graph = directedGraph(Data.DFS_01);
-		graph.dfs(2);
+		graph.dfs(0);
 	}
 	
 	/**
