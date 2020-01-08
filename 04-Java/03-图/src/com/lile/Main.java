@@ -1,27 +1,43 @@
 package com.lile;
 
 import java.util.List;
+import java.util.Set;
 
 import com.lile.graph.Graph;
+import com.lile.graph.Graph.EdgeInfo;
 import com.lile.graph.Graph.VertexVisitor;
+import com.lile.graph.Graph.WeightManager;
 import com.lile.graph.ListGraph;
 
 public class Main {
+	
+	static WeightManager<Double> weightManager = new WeightManager<Double>() {
+		@Override
+		public int compare(Double w1, Double w2) {
+			return w1.compareTo(w2);
+		}
+
+		@Override
+		public Double add(Double w1, Double w2) {
+			return w1 + w2;
+		}
+	};
 
 	public static void main(String[] args) {
 //		testBFS();
 //		testDFS();
-		testTopo();
+//		testTopo();
+		testMst();
 	}
 	
 	static void test() {
-		Graph<String, Integer> graph = new ListGraph<>();
-		graph.addEdge("V1", "V0", 9);
-		graph.addEdge("V1", "V2", 3);
-		graph.addEdge("V2", "V0", 2);
-		graph.addEdge("V2", "V3", 5);
-		graph.addEdge("V3", "V4", 1);
-		graph.addEdge("V0", "V4", 6);
+//		Graph<String, Integer> graph = new ListGraph<>();
+//		graph.addEdge("V1", "V0", 9);
+//		graph.addEdge("V1", "V2", 3);
+//		graph.addEdge("V2", "V0", 2);
+//		graph.addEdge("V2", "V3", 5);
+//		graph.addEdge("V3", "V4", 1);
+//		graph.addEdge("V0", "V4", 6);
 		
 //		graph.removeEdge("V0", "V4");
 //		graph.removeVertex("V0");
@@ -62,11 +78,19 @@ public class Main {
 		System.out.println(list);
 	}
 	
+	static void testMst() {
+		Graph<Object, Double> graph = undirectedGraph(Data.MST_01);
+		Set<EdgeInfo<Object, Double>> infos = graph.mst(); 
+		for (EdgeInfo<Object, Double> edgeInfo : infos) {
+			System.out.println(edgeInfo);
+		}
+	}
+	
 	/**
 	 * 有向图
 	 */
 	private static Graph<Object, Double> directedGraph(Object[][] data) {
-		Graph<Object, Double> graph = new ListGraph<>();
+		Graph<Object, Double> graph = new ListGraph<>(weightManager);
 		for (Object[] edge : data) {
 			if (edge.length == 1) {
 				graph.addVertex(edge[0]);
@@ -86,7 +110,7 @@ public class Main {
 	 * @return
 	 */
 	private static Graph<Object, Double> undirectedGraph(Object[][] data) {
-		Graph<Object, Double> graph = new ListGraph<>();
+		Graph<Object, Double> graph = new ListGraph<>(weightManager);
 		for (Object[] edge : data) {
 			if (edge.length == 1) {
 				graph.addVertex(edge[0]);
