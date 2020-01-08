@@ -1,5 +1,7 @@
 package com.lile;
 
+import java.util.List;
+
 import com.lile.graph.Graph;
 import com.lile.graph.Graph.VertexVisitor;
 import com.lile.graph.ListGraph;
@@ -8,7 +10,8 @@ public class Main {
 
 	public static void main(String[] args) {
 //		testBFS();
-		testDFS();
+//		testDFS();
+		testTopo();
 	}
 	
 	static void test() {
@@ -51,6 +54,12 @@ public class Main {
 			System.out.println(v);
 			return false;
 		});
+	}
+	
+	static void testTopo() {
+		Graph<Object, Double> graph = directedGraph(Data.TOPO);
+		List<Object> list = graph.topologicalSort();
+		System.out.println(list);
 	}
 	
 	/**

@@ -1,14 +1,18 @@
 package com.lile.graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+
+import sun.security.x509.IssuingDistributionPointExtension;
 
 @SuppressWarnings("unchecked")
 public class ListGraph<V, E> implements Graph<V, E> {
@@ -229,8 +233,43 @@ public class ListGraph<V, E> implements Graph<V, E> {
 	}
 	*/
 	
+	@Override
+	public List<V> topologicalSort() {
+		List<V> list = new ArrayList<>();
+		Queue<Vertex<V, E>> queue = new LinkedList<>();
+		Map<Vertex<V, E>, Integer> ins = new HashMap<>();
+		
+		// 初始化（将度为 0 的节点放入队列）
+		vertices.forEach((V v, Vertex<V, E> vertex) -> {
+			int in = vertex.inEdges.size();
+			if (in == 0) {
+				queue.offer(vertex);
+			} else {
+				ins.put(vertex, in);
+			}
+		});
+		
+		while (!queue.isEmpty()) {
+			Vertex<V, E> vertex = queue.poll();
+			// 放入返回结果中
+			list.add(vertex.value);
+			
+			for (Edge<V, E> edge : vertex.outEdges) {
+				int toIn = ins.get(edge.to) - 1;
+				if (toIn == 0) {
+					queue.offer(edge.to);
+				} else {
+					ins.put(edge.to, toIn);
+				}
+			}
+			
+		}
+		return list;
+	}
+	
 	private static class Vertex<V, E> {
 		V value;
+		int inDegree;
 		Set<Edge<V, E>> inEdges = new HashSet<>();
 		Set<Edge<V, E>> outEdges = new HashSet<>();
 		public Vertex(V value) {
