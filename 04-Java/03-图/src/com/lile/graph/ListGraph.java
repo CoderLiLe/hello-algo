@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.Stack;
 
 import com.lile.MinHeap;
+import com.lile.UnionFind;
 
 @SuppressWarnings("unchecked")
 public class ListGraph<V, E> extends Graph<V, E> {
@@ -279,7 +280,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
 	
 	@Override
 	public Set<EdgeInfo<V, E>> mst() {
-		return prim();
+//		return prim();
+		return kruskal();
 	}
 	
 	public Set<EdgeInfo<V, E>> prim() {
@@ -307,8 +309,27 @@ public class ListGraph<V, E> extends Graph<V, E> {
 	}
 	
 	public Set<EdgeInfo<V, E>> kruskal() {
-		// TODO Auto-generated method stub
-		return null;
+		int edgeSize = vertices.size();
+		if (edgeSize <= 1) return null;
+		
+		Set<EdgeInfo<V, E>> edgeInfos = new HashSet<>();
+		
+		// O(E)
+		MinHeap<Edge<V, E>> heap = new MinHeap<>(edges, edgeComparator);
+		UnionFind<Vertex<V, E>> uf = new UnionFind<>();
+		// O(V)
+		vertices.forEach((V v, Vertex<V, E> vertex) -> {
+			uf.makeSet(vertex);
+		});
+		// O(ElogE)
+		while (!heap.isEmpty() && edgeInfos.size() < edgeSize) { // E
+			Edge<V, E> edge = heap.remove(); // O(logE)
+			if (uf.isSame(edge.from, edge.to)) continue;
+			
+			edgeInfos.add(edge.info());
+			uf.union(edge.from, edge.to);
+		}
+		return edgeInfos;
 	}
 	
 	private static class Vertex<V, E> {
