@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
@@ -330,6 +331,81 @@ public class ListGraph<V, E> extends Graph<V, E> {
 			uf.union(edge.from, edge.to);
 		}
 		return edgeInfos;
+	}
+	
+	public Map<V, PathInfo<V, E>> shortestPath(V begin) {
+		return bellmanFord(begin);
+	}
+	
+	private Map<V, PathInfo<V, E>> bellmanFord(V begin) {
+		Vertex<V, E> beginVertex = vertices.get(begin);
+		if (beginVertex == null) return null;
+		
+		Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+		selectedPaths.put(begin, new PathInfo<>(weightManager.zero()));
+		
+		int count = vertices.size() - 1;
+		for (int i = 0; i < count; i++) {
+			for (Edge<V, E> edge : edges) {
+				PathInfo<V, E> fromPath = selectedPaths.get(edge.from.value);
+				if (fromPath == null) continue;
+				relax(edge, fromPath, selectedPaths);
+			}
+		}
+		
+		for (Edge<V, E> edge : edges) {
+			PathInfo<V, E> fromPath = selectedPaths.get(edge.from.value);
+			if (fromPath == null) continue;
+			if (relax(edge, fromPath, selectedPaths)) {
+				System.out.println("有负权环");
+				return null;
+			}
+		}
+		
+		selectedPaths.remove(begin);
+		return selectedPaths;
+	}
+	
+	/**
+	 * 松弛操作
+	 * @param edge 需要进行松弛的边
+	 * @param fromPath edge 的 from 的最短路径
+	 * @param paths 存放着其他点（对于 dijkstra来说，就是没有离开桌面的点）的最短路径信息
+	 */
+	private boolean relax(Edge<V, E> edge, PathInfo<V, E> fromPath, Map<V, PathInfo<V, E>> paths) {
+		// 新的可选最短路径：beginVertex 到 edge.from 的最短路径 + edge.weight
+		E newWeight = weightManager.add(fromPath.weight, edge.weight);
+		// 以前的最短路径：beginVertex 到 edge.to 的最短路径
+		PathInfo<V, E> oldPath = paths.get(edge.to.value);
+		if (oldPath != null && weightManager.compare(newWeight, oldPath.weight) >= 0) return false;
+		
+		if (oldPath == null) {
+			oldPath = new PathInfo<>();
+			paths.put(edge.to.value, oldPath);
+		} else {
+			oldPath.edgeInfos.clear();
+		}
+		
+		oldPath.weight = newWeight;
+		oldPath.edgeInfos.addAll(fromPath.edgeInfos);
+		oldPath.edgeInfos.add(edge.info());
+		
+		return false;
+	}
+	
+	/**
+	 * 从 paths 中挑一个最小的路径出来
+	 */
+	private Entry<Vertex<V, E>, PathInfo<V, E>> getMinPath(Map<Vertex<V, E>, PathInfo<V, E>> paths) {
+		Iterator<Entry<Vertex<V, E>, PathInfo<V, E>>> it = paths.entrySet().iterator();
+		Entry<Vertex<V, E>, PathInfo<V, E>> minEntry = it.next();
+		while (it.hasNext()) {
+			Entry<Vertex<V, E>, PathInfo<V, E>> entry = it.next();
+			if (weightManager.compare(entry.getValue().weight, minEntry.getValue().weight) < 0) {
+				minEntry = entry;
+			}
+		}
+		return minEntry;
 	}
 	
 	private static class Vertex<V, E> {

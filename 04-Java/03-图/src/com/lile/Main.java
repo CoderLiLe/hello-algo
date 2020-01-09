@@ -1,11 +1,12 @@
 package com.lile;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import com.lile.graph.Graph;
 import com.lile.graph.Graph.EdgeInfo;
-import com.lile.graph.Graph.VertexVisitor;
+import com.lile.graph.Graph.PathInfo;
 import com.lile.graph.Graph.WeightManager;
 import com.lile.graph.ListGraph;
 
@@ -21,13 +22,19 @@ public class Main {
 		public Double add(Double w1, Double w2) {
 			return w1 + w2;
 		}
+
+		@Override
+		public Double zero() {
+			return 0.0;
+		}
 	};
 
 	public static void main(String[] args) {
 //		testBFS();
 //		testDFS();
 //		testTopo();
-		testMst();
+//		testMst();
+		testSp();
 	}
 	
 	static void test() {
@@ -84,6 +91,14 @@ public class Main {
 		for (EdgeInfo<Object, Double> edgeInfo : infos) {
 			System.out.println(edgeInfo);
 		}
+	}
+	
+	static void testSp() {
+		Graph<Object, Double> graph = directedGraph(Data.SP);
+		Map<Object, PathInfo<Object, Double>> sp = graph.shortestPath("A");
+		sp.forEach((Object v, PathInfo<Object, Double> path) -> {
+			System.out.println(v + " - " + path);
+		});
 	}
 	
 	/**
