@@ -334,7 +334,8 @@ public class ListGraph<V, E> extends Graph<V, E> {
 	}
 	
 	public Map<V, PathInfo<V, E>> shortestPath(V begin) {
-		return bellmanFord(begin);
+//		return bellmanFord(begin);
+		return dijkstra(begin);
 	}
 	
 	private Map<V, PathInfo<V, E>> bellmanFord(V begin) {
@@ -382,6 +383,53 @@ public class ListGraph<V, E> extends Graph<V, E> {
 		if (oldPath == null) {
 			oldPath = new PathInfo<>();
 			paths.put(edge.to.value, oldPath);
+		} else {
+			oldPath.edgeInfos.clear();
+		}
+		
+		oldPath.weight = newWeight;
+		oldPath.edgeInfos.addAll(fromPath.edgeInfos);
+		oldPath.edgeInfos.add(edge.info());
+		
+		return false;
+	}
+	
+	private Map<V, PathInfo<V, E>> dijkstra(V begin) {
+		Vertex<V, E> beginVertex = vertices.get(begin);
+		if (beginVertex == null) return null;
+		
+		Map<V, PathInfo<V, E>> selectedPaths = new HashMap<>();
+		Map<Vertex<V, E>, PathInfo<V, E>> paths = new HashMap<>();
+		paths.put(beginVertex, new PathInfo<>(weightManager.zero()));
+		
+		while (!paths.isEmpty()) {
+			Entry<Vertex<V, E>, PathInfo<V, E>> minEntry = getMinPath(paths);
+			// minVertex 离开桌面
+			Vertex<V, E> minVertex = minEntry.getKey();
+			PathInfo<V, E> minPath = minEntry.getValue();
+			selectedPaths.put(minVertex.value, minPath);
+			paths.remove(minVertex);
+			// 对他的 minVertex 的 outEdges 边进行松弛操作
+			for (Edge<V, E> edge : minVertex.outEdges) {
+				// 如果 edge.to 已经离开桌面，就没有必要进行松弛
+				if (selectedPaths.containsKey(edge.to.value)) continue;
+				relaxForDijkstra(edge, minPath, paths);
+			}
+		}
+		selectedPaths.remove(begin);
+		return selectedPaths;
+	}
+	
+	private boolean relaxForDijkstra(Edge<V, E> edge, PathInfo<V, E> fromPath, Map<Vertex<V, E>, PathInfo<V, E>> paths) {
+		// 新的可选最短路径：beginVertex 到 edge.from 的最短路径 + edge.weight
+		E newWeight = weightManager.add(fromPath.weight, edge.weight);
+		// 以前的最短路径：beginVertex 到 edge.to 的最短路径
+		PathInfo<V, E> oldPath = paths.get(edge.to);
+		if (oldPath != null && weightManager.compare(newWeight, oldPath.weight) >= 0) return false;
+		
+		if (oldPath == null) {
+			oldPath = new PathInfo<>();
+			paths.put(edge.to, oldPath);
 		} else {
 			oldPath.edgeInfos.clear();
 		}
