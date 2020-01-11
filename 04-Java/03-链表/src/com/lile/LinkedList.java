@@ -1,4 +1,4 @@
-package com.ilile;
+package com.lile;
 
 public class LinkedList<E> extends AbstractList<E> {
 	private Node<E> first;

@@ -1,4 +1,4 @@
-package com.ilile;
+package com.lile;
 
 public class Asserts {
 	public static void test(boolean value) {

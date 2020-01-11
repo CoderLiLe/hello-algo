@@ -1,11 +1,16 @@
-package com.ilile;
+package com.lile;
 
+import com.lile.circle.CircleLinkedList;
+import com.lile.circle.SingleCircleLinkedList;
 
 public class Main {
 
 	public static void main(String[] args) {
 //		testList(new ArrayList<Integer>());
-		testList(new LinkedList<Integer>());
+//		testList(new LinkedList<Integer>());
+//		testList(new SingleLinkedList<Integer>());
+//		testList(new SingleCircleLinkedList<Integer>());
+		josephus();
 	}
 	
 	static void testList(List<Integer> list) {
@@ -30,6 +35,22 @@ public class Main {
 		Asserts.test(list.get(list.size() - 1) == 4);
 		
 		System.out.println(list);
+	}
+	
+	static void josephus() {
+		CircleLinkedList<Integer> list = new CircleLinkedList<>();
+		for (int i = 1; i <= 8; i++) {
+			list.add(i);
+		}
+		
+		// 指向头结点（指向1）
+		list.reset();
+		
+		while (!list.isEmpty()) {
+			list.next();
+			list.next();
+			System.out.println(list.remove());
+		}
 	}
 
 }

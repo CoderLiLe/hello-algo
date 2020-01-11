@@ -1,4 +1,4 @@
-package com.ilile;
+package com.lile;
 
 public interface List<E> {
 	static final int ELEMENT_NOT_FOUND = -1;
@@ -43,7 +43,7 @@ public interface List<E> {
 	/**
 	 * 在 index 位置插入一个元素
 	 */
-	void add(int index, E elemnt);
+	void add(int index, E element);
 	
 	/**
 	 * 删除 index 位置的元素
