@@ -108,7 +108,7 @@ public class LinkedList<E> extends AbstractList<E> {
 		}
 		
 		size--;
-		return null;
+		return node.element;
 	}
 
 	@Override
