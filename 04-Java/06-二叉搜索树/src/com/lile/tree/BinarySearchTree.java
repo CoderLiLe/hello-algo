@@ -1,6 +1,8 @@
 package com.lile.tree;
 
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @SuppressWarnings("unchecked")
 public class BinarySearchTree<E> implements BinaryTreeInfo {
@@ -47,15 +49,76 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
 	 * 前序遍历
 	 */
 	public void preorderTraversal() {
+		System.out.println("-------前序遍历--------");
 		preorderTraversal(root);
+		System.out.println();
 	}
 	
 	private void preorderTraversal(Node<E> node) {
 		if (node == null) return;
 		
-		System.out.println(node.element);
+		System.out.print(node.element + ", ");
 		preorderTraversal(node.left);
 		preorderTraversal(node.right);
+	}
+	
+	/**
+	 * 中序遍历
+	 */
+	public void inorderTraversal() {
+		System.out.println("-------中序遍历--------");
+		inorderTraversal(root);
+		System.out.println();
+	}
+	
+	private void inorderTraversal(Node<E> node) {
+		if (node == null) return;
+		
+		inorderTraversal(node.left);
+		System.out.print(node.element + ", ");
+		inorderTraversal(node.right);
+	}
+	
+	/**
+	 * 后序遍历
+	 */
+	public void postorderTraversal() {
+		System.out.println("-------后序遍历--------");
+		postorderTraversal(root);
+		System.out.println();
+	}
+	
+	private void postorderTraversal(Node<E> node) {
+		if (node == null) return;
+		
+		postorderTraversal(node.left);
+		postorderTraversal(node.right);
+		System.out.print(node.element + ", ");
+	}
+	
+	/**
+	 * 层序遍历
+	 */
+	public void levelOrderTraversal() {
+		System.out.println("--------层序遍历-------");
+		if (root == null) return;
+		
+		Queue<Node<E>> queue = new LinkedList<>();
+		queue.offer(root);
+		
+		while (!queue.isEmpty()) {
+			Node<E> node = queue.poll();
+			System.out.print(node.element + ", ");
+			
+			if (node.left != null) {
+				queue.offer(node.left);
+			}
+			
+			if (node.right != null) {
+				queue.offer(node.right);
+			}
+		}
+		System.out.println();
 	}
 	
 	private int compare(E e1, E e2) {

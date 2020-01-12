@@ -14,7 +14,10 @@ public class Main {
 		for (int i = 0; i < data.length; i++) {
 			bst.add(data[i]);
 		}
-		bst.preorderTraversal();
+		bst.preorderTraversal(); // 7, 4, 2, 1, 3, 5, 9, 8, 11, 12
+		bst.inorderTraversal(); // 1, 2, 3, 4, 5, 7, 8, 9, 11, 12
+		bst.postorderTraversal();
+		bst.levelOrderTraversal();
 	}
 
 }
