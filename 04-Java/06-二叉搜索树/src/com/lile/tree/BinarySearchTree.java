@@ -96,6 +96,15 @@ public class BinarySearchTree<E> implements BinaryTreeInfo {
 		}
 	}
 	
+	public boolean contains(E element) {
+		return node(element) != null;
+	}
+	
+	public void clear() {
+		root = null;
+		size = 0;
+	}
+	
 	/**
 	 * 前序遍历
 	 */
