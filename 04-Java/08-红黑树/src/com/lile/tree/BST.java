@@ -96,7 +96,7 @@ public class BST<E> extends BinaryTree<E> {
 			}
 		}
 		
-		afterRemove(node);
+		afterRemove(node, replacement);
 	}
 	
 	/**
@@ -109,7 +109,7 @@ public class BST<E> extends BinaryTree<E> {
 	 * 删除 node 后的调整
 	 * @param node 待删除节点
 	 */
-	protected void afterRemove(Node<E> node) { }
+	protected void afterRemove(Node<E> node, Node<E> replacement) { }
 	
 	private Node<E> node(E element) {
 		Node<E> node = root;
