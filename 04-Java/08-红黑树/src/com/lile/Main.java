@@ -89,12 +89,12 @@ public class Main {
 //			System.out.println("---------------------------------------");
 		}
 		
-		for (int i = 0; i < data.length; i++) {
-			rb.remove(data[i]);
-			System.out.println("【" + data[i] + "】");
-			BTPrinter.println(rb);
-			System.out.println("---------------------------------------");
-		}
+//		for (int i = 0; i < data.length; i++) {
+//			rb.remove(data[i]);
+//			System.out.println("【" + data[i] + "】");
+//			BTPrinter.println(rb);
+//			System.out.println("---------------------------------------");
+//		}
 		BTPrinter.println(rb);
 	}
 
