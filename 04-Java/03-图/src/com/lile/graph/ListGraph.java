@@ -19,7 +19,9 @@ import com.lile.UnionFind;
 
 @SuppressWarnings("unchecked")
 public class ListGraph<V, E> extends Graph<V, E> {
-	public ListGraph() { }
+	public ListGraph() {
+		this(null);
+	}
 	
 	public ListGraph(WeightManager<E> weightManager) {
 		super(weightManager);
