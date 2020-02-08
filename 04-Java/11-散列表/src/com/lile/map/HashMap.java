@@ -56,6 +56,81 @@ public class HashMap<K, V> implements Map<K, V> {
 		Node<K, V> parent = root;
 		Node<K, V> node = root;
 		int cmp = 0;
+		K k1 = key;
+		int h1 = k1 == null ? 0 : key.hashCode();
+		Node<K, V> result = null;
+		boolean searched = false; // 是否已经搜索过这个 key
+		do {
+			parent = node;
+			K k2 = node.key;
+			int h2 = node.hash;
+			if (h1 > h2) {
+				cmp = 1;
+			} else if (h1 < h2) {
+				cmp = -1;
+			} else if (Objects.equals(k1, k2)) {
+				cmp = 0;
+			} else if (k1 != null && k2 != null 
+					&& k1.getClass() == k2.getClass() 
+					&& k1 instanceof Comparable 
+					&& (cmp = ((Comparable<K>)k1).compareTo(k2)) != 0) {
+				
+			} else if (searched) {
+				cmp = 1;
+			} else { // searched == false; 还没有扫描，然后再根据内存地址大小决定左右
+				if (node.left != null && (result = node(node.left, k1)) != null 
+						&& node.right != null && (result = node(node.right, k1)) != null) {
+					// 已经存在这个key
+					node = result;
+					cmp = 0;
+				} else { // 不存在这个key
+					searched = true;
+					cmp = System.identityHashCode(k1) - System.identityHashCode(k2);
+				}
+			}
+			
+			if (cmp < 0) {
+				node = node.left;
+			} else if (cmp > 0) {
+				node = node.right;
+			} else {
+				V oldValue = node.value;
+				node.key = key;
+				node.value = value;
+				return oldValue;
+			}
+		} while (node != null);
+		
+		// 看插入到父节点的那个位置
+		Node<K, V> newNode = new Node<>(key, value, parent);
+		if (cmp < 0) {
+			parent.left = newNode;
+		} else {
+			parent.right = newNode;
+		}
+		
+		afterPut(newNode);
+		return null;
+	}
+	
+	/*
+	@Override
+	public V put(K key, V value) {
+		int index = index(key);
+		// 取出 index 位置的红黑树根节点
+		Node<K, V> root = table[index];
+		if (root == null) {
+			root = new Node<>(key, value, null);
+			table[index] = root;
+			size++;
+			afterPut(root);
+			return null; 
+		}
+		
+		// 添加新的节点到红黑树上
+		Node<K, V> parent = root;
+		Node<K, V> node = root;
+		int cmp = 0;
 		int h1 = key == null ? 0 : key.hashCode();
 		do {
 			cmp = compare(key, node.key, h1, node.hash);
@@ -83,10 +158,11 @@ public class HashMap<K, V> implements Map<K, V> {
 		afterPut(newNode);
 		return null;
 	}
+	*/
 
 	@Override
 	public V get(K key) {
-		Node<K, V> node = node1(key);
+		Node<K, V> node = node(key);
 		return node != null ? node.value : null;
 	}
 

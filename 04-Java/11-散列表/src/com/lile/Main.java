@@ -10,6 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		test3();
+		java.util.HashMap<String, Integer> map;
 	}
 	
 	static void test1() {
@@ -61,7 +62,7 @@ public class Main {
 //				return false;
 //			}
 //		});
-		System.out.println(map.get(new Key(6)));
+		System.out.println(map.get(new Key(12)));
 		map.print();
 	}
 
