@@ -7,16 +7,15 @@ import java.util.Queue;
 import com.lile.print.BTPrinter;
 import com.lile.print.BinaryTreeInfo;
 
-@SuppressWarnings({"unchecked", "rawtypes"})
-public class HashMap<K, V> implements Map<K, V> {
+@SuppressWarnings("unchecked")
+public class HashMap_v0<K, V> implements Map<K, V> {
 	private static final boolean RED = false;
 	private static final boolean BLACK = true;
 	private int size;
 	private Node<K, V>[] table;
 	private static final int DEFAULT_CAPACITY = 1 << 4;
-	private static final float DEFAULT_LOAD_FACTOR = 0.75f;
 	
-	public HashMap() {
+	public HashMap_v0() {
 		table = new Node[DEFAULT_CAPACITY];
 	}
 
@@ -42,8 +41,6 @@ public class HashMap<K, V> implements Map<K, V> {
 
 	@Override
 	public V put(K key, V value) {
-		resize();
-		
 		int index = index(key);
 		// 取出 index 位置的红黑树根节点
 		Node<K, V> root = table[index];
@@ -61,7 +58,7 @@ public class HashMap<K, V> implements Map<K, V> {
 		Node<K, V> node = root;
 		int cmp = 0;
 		K k1 = key;
-		int h1 = hash(k1);
+		int h1 = k1 == null ? 0 : k1.hashCode();
 		Node<K, V> result = null;
 		boolean searched = false; // 是否已经搜索过这个 key
 		do {
@@ -120,6 +117,54 @@ public class HashMap<K, V> implements Map<K, V> {
 		return null;
 	}
 	
+	/*
+	@Override
+	public V put(K key, V value) {
+		int index = index(key);
+		// 取出 index 位置的红黑树根节点
+		Node<K, V> root = table[index];
+		if (root == null) {
+			root = new Node<>(key, value, null);
+			table[index] = root;
+			size++;
+			afterPut(root);
+			return null; 
+		}
+		
+		// 添加新的节点到红黑树上
+		Node<K, V> parent = root;
+		Node<K, V> node = root;
+		int cmp = 0;
+		int h1 = key == null ? 0 : key.hashCode();
+		do {
+			cmp = compare(key, node.key, h1, node.hash);
+			parent = node;
+			if (cmp < 0) {
+				node = node.left;
+			} else if (cmp > 0) {
+				node = node.right;
+			} else {
+				V oldValue = node.value;
+				node.key = key;
+				node.value = value;
+				return oldValue;
+			}
+		} while (node != null);
+		
+		// 看插入到父节点的那个位置
+		Node<K, V> newNode = new Node<>(key, value, parent);
+		if (cmp < 0) {
+			parent.left = newNode;
+		} else {
+			parent.right = newNode;
+		}
+		size++;
+		
+		afterPut(newNode);
+		return null;
+	}
+	*/
+
 	@Override
 	public V get(K key) {
 		Node<K, V> node = node(key);
@@ -431,7 +476,7 @@ public class HashMap<K, V> implements Map<K, V> {
 	}
 	
 	private Node<K, V> node(Node<K, V> node, K k1) {
-		int h1 = hash(k1);
+		int h1 = k1 == null ? 0 : k1.hashCode();
 		// 存储查找结果
 		Node<K, V> result = null;
 		int cmp = 0;
@@ -455,96 +500,28 @@ public class HashMap<K, V> implements Map<K, V> {
 			} else { // 只能往左边找
 				node = node.left;
 			}
+//			} else if (node.left != null && (result = node(node.left, k1)) != null) { 
+//				return result;
+//			} else {
+//				return null;
+//			}
 		}
 		return null;
 	}
 	
-	private int hash(K key) {
-		if (key == null) return 0;
-		int hash = key.hashCode();
-		return hash ^ (hash >>> 16);
-	}
-	
-	private void resize() {
-		if (size / table.length <= DEFAULT_LOAD_FACTOR) return;
-		
-		Node<K, V>[] oldTable = table;
-		table = new Node[oldTable.length << 1];
-		
-		Queue<Node<K, V>> queue = new LinkedList<>();
-		for (int i = 0; i < oldTable.length; i++) {
-			if (oldTable[i] == null) continue;
-			
-			queue.offer(oldTable[i]);
-			while (!queue.isEmpty()) {
-				Node<K, V> node = queue.poll();
-				
-				if (node.left != null) {
-					queue.offer(node.left);
-				}
-				
-				if (node.right != null) {
-					queue.offer(node.right);
-				}
-				
-				moveNode(node);
-			}
-		}
-	}
-	
-	private void moveNode(Node<K, V> newNode) {
-		newNode.parent = null;
-		newNode.left = null;
-		newNode.right = null;
-		newNode.color = RED;
-		
-		int index = index(newNode);
-		// 取出 index 位置的红黑树根节点
-		Node<K, V> root = table[index];
-		if (root == null) {
-			root = newNode;
-			table[index] = root;
-			afterPut(root);
-			return;
-		}
-		
-		// 添加新的节点到红黑树上
-		Node<K, V> parent = root;
-		Node<K, V> node = root;
-		int cmp = 0;
-		K k1 = newNode.key;
-		int h1 = newNode.hash;
-		do {
-			parent = node;
-			K k2 = node.key;
-			int h2 = node.hash;
-			if (h1 > h2) {
-				cmp = 1;
-			} else if (h1 < h2) {
-				cmp = -1;
-			} else if (k1 != null && k2 != null 
-					&& k1.getClass() == k2.getClass() 
-					&& k1 instanceof Comparable 
-					&& (cmp = ((Comparable<K>)k1).compareTo(k2)) != 0) {
-				
-			} else {
-				cmp = System.identityHashCode(k1) - System.identityHashCode(k2);
- 			}
-			
+	private Node<K, V> node1(K key) {
+		Node<K, V> node = table[index(key)];
+		int h1 = key == null ? 0 : key.hashCode();
+		while (node != null) {
+			int cmp = compare(key, node.key, h1, node.hash);
+			if (cmp == 0) return node;
 			if (cmp < 0) {
 				node = node.left;
-			} else if (cmp > 0) {
+			} else {
 				node = node.right;
 			}
-		} while (node != null);
-		
-		newNode.parent = parent;
-		if (cmp < 0) {
-			 parent.left = newNode; 
-		} else {
-			parent.right = newNode;
 		}
-		afterPut(newNode);
+		return null;
 	}
 	
 	private Node<K, V> sucessor(Node<K, V> node) {
@@ -563,6 +540,25 @@ public class HashMap<K, V> implements Map<K, V> {
 		}
 		
 		return node.parent;
+	}
+	
+	private int compare(K k1, K k2, int h1, int h2) {
+		// 比较哈希值
+		int result = h1 - h2;
+		if (result != 0) return result;
+		
+		// 比较 equals
+		if (Objects.equals(k1, k2)) return 0;
+		
+		// 哈希值相等，但是不 equals
+		if (k1 != null &&  k2 != null 
+				&& k1.getClass() != k2.getClass() 
+				&& k1 instanceof Comparable) {
+			// 同一种类型，并且具备可比较性
+			return ((Comparable) k1).compareTo(k2);
+		}
+		
+		return System.identityHashCode(k1) - System.identityHashCode(k2);
 	}
 	
 	private Node<K, V> color(Node<K, V> node, boolean color) {

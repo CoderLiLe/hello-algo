@@ -2,7 +2,7 @@ package com.lile;
 
 import com.lile.file.FileInfo;
 import com.lile.file.Files;
-import com.lile.map.HashMap;
+import com.lile.map.HashMap_v0;
 import com.lile.map.Map;
 import com.lile.map.Map.Visitor;
 import com.lile.map.TreeMap;
@@ -17,10 +17,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		test1();
-		test2(new HashMap<>());
-		test3(new HashMap<>());
-		test4(new HashMap<>());
-		test5(new HashMap<>());
+		test2(new HashMap_v0<>());
+		test3(new HashMap_v0<>());
+		test4(new HashMap_v0<>());
+		test5(new HashMap_v0<>());
 	}
 	
 	static void test1Map(Map<String, Integer> map, String[] words) {
@@ -58,10 +58,10 @@ public class Main {
 		System.out.println("-------------------------------------");
 
 //		test1Map(new TreeMap<>(), words);
-		test1Map(new HashMap<>(), words);
+		test1Map(new HashMap_v0<>(), words);
 	}
 	
-	static void test2(HashMap<Object, Integer> map) {
+	static void test2(HashMap_v0<Object, Integer> map) {
 		for (int i = 1; i <= 20; i++) {
 			map.put(new Key(i), i);
 		}
@@ -76,7 +76,7 @@ public class Main {
 		Asserts.test(map.get(new Key(8)) == 8);
 	}
 	
-	static void test3(HashMap<Object, Integer> map) {
+	static void test3(HashMap_v0<Object, Integer> map) {
 		map.put(null, 1); // 1
 		map.put(new Object(), 2); // 2
 		map.put("jack", 3); // 3
@@ -97,7 +97,7 @@ public class Main {
 		Asserts.test(map.containsValue(1) == false);
 	}
 	
-	static void test4(HashMap<Object, Integer> map) {
+	static void test4(HashMap_v0<Object, Integer> map) {
 		map.put("jack", 1);
 		map.put("rose", 2);
 		map.put("jim", 3);
@@ -131,7 +131,7 @@ public class Main {
 		});
 	}
 	
-	static void test5(HashMap<Object, Integer> map) {
+	static void test5(HashMap_v0<Object, Integer> map) {
 		for (int i = 1; i <= 20; i++) {
 			map.put(new SubKey1(i), i);
 		}
