@@ -4,8 +4,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 @SuppressWarnings({"unchecked", "unused"})
 public class TreeMap<K, V> implements Map<K, V> {
 	private static final boolean RED = false;
@@ -292,14 +290,14 @@ public class TreeMap<K, V> implements Map<K, V> {
 			} else { // 兄弟节点至少有一个红色子节点，向兄弟节点借元素
 				// 兄弟节点的左边是黑色，兄弟节点需要先旋转
 				if (isBlack(sibling.right)) {
-					rotateRight(sibling.right);
+					rotateRight(sibling);
 					sibling = parent.right;
 				}
 				
 				color(sibling, colorOf(parent));
 				black(sibling.right);
 				black(parent);
-				rotateRight(parent);
+				rotateLeft(parent);
 			}
 		} else { // 被删除的节点在右边，兄弟节点在左边
 			// 兄弟节点是红色
@@ -323,7 +321,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 			} else { // 兄弟节点至少有一个红色子节点，向兄弟节点借元素
 				// 兄弟节点的左边是黑色，兄弟节点需要先旋转
 				if (isBlack(sibling.left)) {
-					rotateLeft(sibling.left);
+					rotateLeft(sibling);
 					sibling = parent.left;
 				}
 				
