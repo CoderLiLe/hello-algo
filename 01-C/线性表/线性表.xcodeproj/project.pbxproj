@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B13A6FC23F2CDD70063B6A8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A6FB23F2CDD70063B6A8 /* main.c */; };
 		8B13A70423F2CEBE0063B6A8 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A70323F2CEBE0063B6A8 /* List.c */; };
+		8B13A70723F4F85F0063B6A8 /* LinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A70623F4F85F0063B6A8 /* LinkList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		8B13A6FB23F2CDD70063B6A8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8B13A70223F2CEBE0063B6A8 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		8B13A70323F2CEBE0063B6A8 /* List.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = List.c; sourceTree = "<group>"; };
+		8B13A70523F4F85F0063B6A8 /* LinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
+		8B13A70623F4F85F0063B6A8 /* LinkList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinkList.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				8B13A6FB23F2CDD70063B6A8 /* main.c */,
 				8B13A70223F2CEBE0063B6A8 /* List.h */,
 				8B13A70323F2CEBE0063B6A8 /* List.c */,
+				8B13A70523F4F85F0063B6A8 /* LinkList.h */,
+				8B13A70623F4F85F0063B6A8 /* LinkList.c */,
 			);
 			path = "线性表";
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B13A6FC23F2CDD70063B6A8 /* main.c in Sources */,
+				8B13A70723F4F85F0063B6A8 /* LinkList.c in Sources */,
 				8B13A70423F2CEBE0063B6A8 /* List.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
