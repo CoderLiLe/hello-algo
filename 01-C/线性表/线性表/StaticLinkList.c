@@ -30,7 +30,7 @@ Status initStaticLinkList(StaticLinkList space)
 /**
  若备用空间链表非空，则返回分配的节点下标，否则返回 0
  */
-int mallocSSL(StaticLinkList space)
+int mallocStaticLinkList(StaticLinkList space)
 {
     // 当前数组中第一个元素 cur 存储的值就是要返回的第一个备用空间的下标
     int i = space[0].cur;
@@ -45,7 +45,7 @@ int mallocSSL(StaticLinkList space)
 /**
  将下标为 K 的空闲节点回收到备用链表
  */
-void freeSSL(StaticLinkList space, int k)
+void freeStaticLinkList(StaticLinkList space, int k)
 {
     // 交换要删除元素和第一个元素的下标
     
@@ -82,7 +82,7 @@ Status staticLinkListInsert(StaticLinkList SLL, int i, ElemType e)
         return ERROR;
     }
     
-    j = mallocSSL(SLL); // 获取空闲分量的下标
+    j = mallocStaticLinkList(SLL); // 获取空闲分量的下标
     if (j) {
         SLL[j].data = e;
         for (l = 1; l <= i - 1; l++) { // 找到第 i 个元素之前的位置
@@ -110,7 +110,7 @@ Status staticLinkListDelete(StaticLinkList SLL, int i)
     }
     j = SLL[k].cur;
     SLL[k].cur = SLL[j].cur;
-    freeSSL(SLL, j);
+    freeStaticLinkList(SLL, j);
     return OK;
 }
 
