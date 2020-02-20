@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "List.h"
 #include "LinkList.h"
+#include "StaticLinkList.h"
 
 void testList() {
     SqList L;
@@ -159,9 +160,36 @@ void testLinkList() {
     linkListTraverse(L);
 }
 
+void testStaticLinkList()
+{
+    StaticLinkList SLL;
+    Status i;
+    i = initStaticLinkList(SLL);
+    printf("初始化 static link list 后：SLL.length = %d\n", staticLinkListLength(SLL));
+    
+    i = staticLinkListInsert(SLL, 1, 'F');
+    i = staticLinkListInsert(SLL, 1, 'E');
+    i = staticLinkListInsert(SLL, 1, 'D');
+    i = staticLinkListInsert(SLL, 1, 'B');
+    i = staticLinkListInsert(SLL, 1, 'A');
+    printf("\n在 SLL 的头依次插入 FEDBA 后，SLL.data = ");
+    staticLinkListTraverse(SLL);
+    
+    i = staticLinkListInsert(SLL, 3, 'C');
+    printf("\n在 SLL 的 B 和 D 插入 C 后，SLL.data = ");
+    staticLinkListTraverse(SLL);
+
+    i = staticLinkListDelete(SLL, 1);
+    printf("\nSLL 中删除 A 后，SLL.data = ");
+    staticLinkListTraverse(SLL);
+
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
 //    testList();
-    testLinkList();
+//    testLinkList();
+    testStaticLinkList();
     
     return 0;
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0BCD9223FE7E36009C9B49 /* StaticLinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BCD9123FE7E36009C9B49 /* StaticLinkList.c */; };
 		8B13A6FC23F2CDD70063B6A8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A6FB23F2CDD70063B6A8 /* main.c */; };
 		8B13A70423F2CEBE0063B6A8 /* List.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A70323F2CEBE0063B6A8 /* List.c */; };
 		8B13A70723F4F85F0063B6A8 /* LinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B13A70623F4F85F0063B6A8 /* LinkList.c */; };
@@ -25,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B0BCD9023FE7E36009C9B49 /* StaticLinkList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLinkList.h; sourceTree = "<group>"; };
+		8B0BCD9123FE7E36009C9B49 /* StaticLinkList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = StaticLinkList.c; sourceTree = "<group>"; };
+		8B0BCD9323FE81C7009C9B49 /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		8B13A6F823F2CDD70063B6A8 /* 线性表 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "线性表"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13A6FB23F2CDD70063B6A8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8B13A70223F2CEBE0063B6A8 /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
@@ -68,6 +72,9 @@
 				8B13A70323F2CEBE0063B6A8 /* List.c */,
 				8B13A70523F4F85F0063B6A8 /* LinkList.h */,
 				8B13A70623F4F85F0063B6A8 /* LinkList.c */,
+				8B0BCD9023FE7E36009C9B49 /* StaticLinkList.h */,
+				8B0BCD9123FE7E36009C9B49 /* StaticLinkList.c */,
+				8B0BCD9323FE81C7009C9B49 /* Const.h */,
 			);
 			path = "线性表";
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 				8B13A6FC23F2CDD70063B6A8 /* main.c in Sources */,
 				8B13A70723F4F85F0063B6A8 /* LinkList.c in Sources */,
 				8B13A70423F2CEBE0063B6A8 /* List.c in Sources */,
+				8B0BCD9223FE7E36009C9B49 /* StaticLinkList.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
