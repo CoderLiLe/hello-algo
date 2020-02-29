@@ -90,6 +90,8 @@
 		8B0EC2D62400E33800EE5985 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B0EC2D52400E33800EE5985 /* main.cpp */; };
 		8BC3CB0E2408D1B200C7C7A1 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB0C2408D1B200C7C7A1 /* List.cpp */; };
 		8BC3CB1124096A3E00C7C7A1 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB0F24096A3E00C7C7A1 /* BinaryTree.cpp */; };
+		8BC3CB14240A2CE800C7C7A1 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB13240A2CE700C7C7A1 /* BinaryTree.cpp */; };
+		8BC3CB17240A2FE900C7C7A1 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB15240A2FE900C7C7A1 /* BinaryTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -991,6 +993,10 @@
 		8BC3CB0D2408D1B200C7C7A1 /* List.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = List.hpp; sourceTree = "<group>"; };
 		8BC3CB0F24096A3E00C7C7A1 /* BinaryTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
 		8BC3CB1024096A3E00C7C7A1 /* BinaryTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTree.hpp; sourceTree = "<group>"; };
+		8BC3CB12240A2CE700C7C7A1 /* BinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinaryTree.hpp; sourceTree = "<group>"; };
+		8BC3CB13240A2CE700C7C7A1 /* BinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
+		8BC3CB15240A2FE900C7C7A1 /* BinaryTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
+		8BC3CB16240A2FE900C7C7A1 /* BinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinaryTree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2243,6 +2249,8 @@
 		8B0EC20E2400E2AB00EE5985 /* 55_01_TreeDepth */ = {
 			isa = PBXGroup;
 			children = (
+				8BC3CB13240A2CE700C7C7A1 /* BinaryTree.cpp */,
+				8BC3CB12240A2CE700C7C7A1 /* BinaryTree.hpp */,
 				8B0EC20F2400E2AB00EE5985 /* main.cpp */,
 			);
 			path = 55_01_TreeDepth;
@@ -2251,6 +2259,8 @@
 		8B0EC2192400E2B200EE5985 /* 55_02_BalancedBinaryTree */ = {
 			isa = PBXGroup;
 			children = (
+				8BC3CB15240A2FE900C7C7A1 /* BinaryTree.cpp */,
+				8BC3CB16240A2FE900C7C7A1 /* BinaryTree.hpp */,
 				8B0EC21A2400E2B200EE5985 /* main.cpp */,
 			);
 			path = 55_02_BalancedBinaryTree;
@@ -4627,6 +4637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC3CB14240A2CE800C7C7A1 /* BinaryTree.cpp in Sources */,
 				8B0EC2102400E2AB00EE5985 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4635,6 +4646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC3CB17240A2FE900C7C7A1 /* BinaryTree.cpp in Sources */,
 				8B0EC21B2400E2B200EE5985 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
