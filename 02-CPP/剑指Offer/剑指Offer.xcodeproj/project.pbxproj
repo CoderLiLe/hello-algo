@@ -93,6 +93,7 @@
 		8BC3CB14240A2CE800C7C7A1 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB13240A2CE700C7C7A1 /* BinaryTree.cpp */; };
 		8BC3CB17240A2FE900C7C7A1 /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB15240A2FE900C7C7A1 /* BinaryTree.cpp */; };
 		8BC3CB1A240AAF1800C7C7A1 /* CPPQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB18240AAF1800C7C7A1 /* CPPQueue.cpp */; };
+		8BC3CB1D240B870600C7C7A1 /* CPPStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3CB1B240B870600C7C7A1 /* CPPStack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1000,6 +1001,8 @@
 		8BC3CB16240A2FE900C7C7A1 /* BinaryTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinaryTree.hpp; sourceTree = "<group>"; };
 		8BC3CB18240AAF1800C7C7A1 /* CPPQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPPQueue.cpp; sourceTree = "<group>"; };
 		8BC3CB19240AAF1800C7C7A1 /* CPPQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPPQueue.hpp; sourceTree = "<group>"; };
+		8BC3CB1B240B870600C7C7A1 /* CPPStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPPStack.cpp; sourceTree = "<group>"; };
+		8BC3CB1C240B870600C7C7A1 /* CPPStack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPPStack.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1835,6 +1838,8 @@
 				8B0EBF842400DF8600EE5985 /* main.cpp */,
 				8BC3CB18240AAF1800C7C7A1 /* CPPQueue.cpp */,
 				8BC3CB19240AAF1800C7C7A1 /* CPPQueue.hpp */,
+				8BC3CB1B240B870600C7C7A1 /* CPPStack.cpp */,
+				8BC3CB1C240B870600C7C7A1 /* CPPStack.hpp */,
 			);
 			path = 09_QueueWithTwoStacks;
 			sourceTree = "<group>";
@@ -4226,6 +4231,7 @@
 			files = (
 				8B0EBF852400DF8600EE5985 /* main.cpp in Sources */,
 				8BC3CB1A240AAF1800C7C7A1 /* CPPQueue.cpp in Sources */,
+				8BC3CB1D240B870600C7C7A1 /* CPPStack.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
