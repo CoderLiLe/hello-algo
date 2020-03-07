@@ -6,6 +6,11 @@
 //  Copyright © 2020 lile. All rights reserved.
 //
 
+/**
+ 面试题2:实现 Singleton 模式
+ 题目：设计一个类，我们只能生成该类的一个实例。
+ */
+
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
