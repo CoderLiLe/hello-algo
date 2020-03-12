@@ -8,6 +8,7 @@
 
 #include "queue_test.h"
 #include "array_queue.h"
+#include "link_queue.h"
 
 void array_queue_test()
 {
@@ -70,4 +71,57 @@ void array_queue_test()
     } else {
         printf("队列不为空\n");
     }
+}
+
+void link_queue_test()
+{
+    T ele;
+    LinkQueue queue = lq_init();
+    if (queue) {
+        printf("队列初始化成功\n");
+    } else {
+        printf("队列初始化失败\n");
+    }
+    
+    if (lq_empty(queue)) {
+        printf("队列为空\n");
+    } else {
+        printf("队列不为空\n");
+    }
+    
+    printf("队列长度 =  %d\n", lq_length(queue));
+    
+    lq_enqueue(queue, -5);
+    lq_enqueue(queue, 5);
+    lq_enqueue(queue, 10);
+    printf("插入3个元素 (-5,5,10) 后,队列的长度为% d\n", lq_length(queue));
+    
+    if (lq_empty(queue)) {
+        printf("队列为空\n");
+    } else {
+        printf("队列不为空\n");
+    }
+    
+    printf("队列中元素依次为：");
+    lq_traverse(queue);
+    
+    if (lq_head(queue, &ele)) {
+        printf("队头元素 = %d\n", ele);
+    }
+    
+    if (lq_dequeue(queue, &ele)) {
+        printf("删除了队头元素 = %d\n", ele);
+    }
+    
+    printf("队列中元素依次为：");
+    lq_traverse(queue);
+    
+    lq_clear(queue);
+    if (lq_empty(queue)) {
+        printf("队列为空\n");
+    } else {
+        printf("队列不为空\n");
+    }
+    
+    lq_destory(queue);
 }

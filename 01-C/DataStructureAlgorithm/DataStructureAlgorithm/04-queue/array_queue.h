@@ -11,8 +11,8 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include "Common.h"
 
-typedef int T;
 typedef struct SequenceQueue *SqQueue;
 static const int kMaxSize = 20;
 

@@ -51,6 +51,7 @@
 		8BFDB328241A1D0300B61E60 /* link_queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = link_queue.c; sourceTree = "<group>"; };
 		8BFDB32A241A1D0F00B61E60 /* queue_test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue_test.h; sourceTree = "<group>"; };
 		8BFDB32B241A1D0F00B61E60 /* queue_test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = queue_test.c; sourceTree = "<group>"; };
+		8BFDB32D241A5AD700B61E60 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		8BFFB4152413A16F0008C8FE /* DataStructureAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructureAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFFB4182413A16F0008C8FE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8BFFB4362413BC680008C8FE /* Array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 				8BFFB4342413A7030008C8FE /* 22-skip_list */,
 				8BFFB4352413A71D0008C8FE /* 23-string */,
 				8BFFB4182413A16F0008C8FE /* main.c */,
+				8BFDB32D241A5AD700B61E60 /* Common.h */,
 			);
 			path = DataStructureAlgorithm;
 			sourceTree = "<group>";

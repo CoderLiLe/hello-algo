@@ -13,4 +13,6 @@
 
 void array_queue_test();
 
+void link_queue_test();
+
 #endif /* queue_test_h */
