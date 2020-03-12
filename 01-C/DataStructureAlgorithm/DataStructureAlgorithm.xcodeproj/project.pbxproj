@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BFDB3142419BABC00B61E60 /* array_test.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BFDB3132419BABC00B61E60 /* array_test.c */; };
 		8BFFB4192413A16F0008C8FE /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BFFB4182413A16F0008C8FE /* main.c */; };
+		8BFFB4382413BC680008C8FE /* Array.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BFFB4372413BC680008C8FE /* Array.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8BFDB3122419BABC00B61E60 /* array_test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array_test.h; sourceTree = "<group>"; };
+		8BFDB3132419BABC00B61E60 /* array_test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = array_test.c; sourceTree = "<group>"; };
 		8BFFB4152413A16F0008C8FE /* DataStructureAlgorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructureAlgorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BFFB4182413A16F0008C8FE /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		8BFFB4362413BC680008C8FE /* Array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
+		8BFFB4372413BC680008C8FE /* Array.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Array.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 		8BFFB41F2413A20B0008C8FE /* 01-array */ = {
 			isa = PBXGroup;
 			children = (
+				8BFFB4362413BC680008C8FE /* Array.h */,
+				8BFFB4372413BC680008C8FE /* Array.c */,
+				8BFDB3122419BABC00B61E60 /* array_test.h */,
+				8BFDB3132419BABC00B61E60 /* array_test.c */,
 			);
 			path = "01-array";
 			sourceTree = "<group>";
@@ -304,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BFFB4192413A16F0008C8FE /* main.c in Sources */,
+				8BFFB4382413BC680008C8FE /* Array.c in Sources */,
+				8BFDB3142419BABC00B61E60 /* array_test.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
