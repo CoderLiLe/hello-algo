@@ -10,6 +10,7 @@
 #define List_h
 
 #include <stdio.h>
+#include <stdbool.h>
 
 typedef struct List *List;
 struct List {
