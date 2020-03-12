@@ -12,5 +12,6 @@
 #include <stdio.h>
 
 void linked_list_stack_test();
+void array_stack_test();
 
 #endif /* stack_test_h */

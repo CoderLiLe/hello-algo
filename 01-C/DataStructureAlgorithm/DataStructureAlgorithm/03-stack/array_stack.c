@@ -1,5 +1,5 @@
 //
-//  Stack.c
+//  array_stack.c
 //  DataStructureAlgorithm
 //
 //  Created by LiLe on 2020/3/12.
@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "Stack.h"
+#include "array_stack.h"
 
 
 /*
@@ -31,16 +31,16 @@ int counter = 0;
 */
 int offset = -1;
 
-void init()
+void array_stack_init()
 {
     array = malloc(sizeof(void *) * capacity);
     assert(array); /* tests whether pointer is assigned to memory. */
 }
 
 void capacity_enlarge();
-void push(void * object)
+void array_stack_push(void *val)
 {
-    assert(object); /* tests whether pointer isn't null */
+    assert(val); /* tests whether pointer isn't null */
     if (counter >= capacity) { /* stack is full */
         capacity_enlarge();
     }
@@ -51,13 +51,13 @@ void push(void * object)
         moves pointer by the offset address
         pushs the object onto stack
      */
-    *(array + offset) = object;
+    *(array + offset) = val;
 
     /* increases the inner counter */
     counter++;
 }
 
-void * pop()
+void *array_stack_pop()
 {
     void *top = *(array + offset);
 
@@ -65,7 +65,7 @@ void * pop()
     assert(top);
 
     /* if use the pop-function, stack must not empty. */
-    assert(!is_empty());
+    assert(!array_stack_empty());
 
     /* decreases the offset address for pointing of
         the new top element */
@@ -77,20 +77,30 @@ void * pop()
     return top;
 }
 
-int size()
+int array_stack_size()
 {
     return counter;
 }
 
-int is_empty()
+int array_stack_empty()
 {
     return counter == 0;
 }
 
-void *top()
+void *array_stack_top()
 {
     /* offset address points to the top element */
     return array[offset];
+}
+
+void array_stack_print()
+{
+    int i;
+    for (i = offset; i >= 0; i--) {
+        char *top = *(array + i);
+        printf("%c ", (char *)top);
+    }
+    printf("\n");
 }
 
 #pragma mark - private method

@@ -14,6 +14,7 @@
 int main(int argc, const char * argv[]) {
 //    array_test();
 //    list_test();
-    linked_list_stack_test();
+//    linked_list_stack_test();
+    array_stack_test();
     return 0;
 }
