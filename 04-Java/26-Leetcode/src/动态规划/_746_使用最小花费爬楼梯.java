@@ -1,4 +1,4 @@
-package com.lile;
+package 动态规划;
 
 public class _746_使用最小花费爬楼梯 {
 
