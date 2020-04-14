@@ -11,6 +11,7 @@
 #include "list_test.h"
 #include "stack_test.h"
 #include "queue_test.h"
+#include "tree_test.h"
 
 int main(int argc, const char * argv[]) {
 //    array_test();
@@ -18,6 +19,7 @@ int main(int argc, const char * argv[]) {
 //    linked_list_stack_test();
 //    array_stack_test();
 //    array_queue_test();
-    link_queue_test();
+//    link_queue_test();
+    sq_binary_tree_test();
     return 0;
 }
