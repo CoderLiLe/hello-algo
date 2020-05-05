@@ -2,15 +2,34 @@ package com.lile;
 
 import com.lile.circle.CircleLinkedList;
 import com.lile.circle.SingleCircleLinkedList;
+import com.lile.single.SingleLinkedList1;
+import com.lile.single.SingleLinkedList2;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+//		testArrayListCapacity();
+		
 //		testList(new ArrayList<Integer>());
+//		testList(new SingleLinkedList1<Integer>());
+//		testList(new SingleLinkedList2<Integer>());
 //		testList(new LinkedList<Integer>());
-//		testList(new SingleLinkedList<Integer>());
 //		testList(new SingleCircleLinkedList<Integer>());
-		josephus();
+		testList(new CircleLinkedList<>());
+//		josephus();
+	}
+	
+	static void testArrayListCapacity() {
+		List<Integer> list = new ArrayList<>();
+		
+		for (int i = 0; i < 50; i++) {
+			list.add(i);
+		}
+		
+		for (int i = 0; i < 50; i++) {
+			list.remove(0);
+		}
 	}
 	
 	static void testList(List<Integer> list) {
@@ -26,7 +45,7 @@ public class Main {
 		list.remove(0);
 		list.remove(2);
 		list.remove(list.size() - 1); // {1, 6, 3, 4}
-		
+				
 		Asserts.test(list.indexOf(4) == 3);
 		Asserts.test(list.indexOf(2) == List.ELEMENT_NOT_FOUND);
 		Asserts.test(list.contain(3));
