@@ -3,8 +3,18 @@ package 链表;
 public class _234_回文链表 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ListNode head = new ListNode(1);
+		head.next = new ListNode(2);
+		head.next.next = new ListNode(3);
+		head.next.next.next = new ListNode(2);
+		head.next.next.next.next = new ListNode(1);
+		
+		System.out.println(head);
+		
+		_234_回文链表 obj = new _234_回文链表();
+		obj.isPalindrome(head);
+		
+		System.out.println(head);
 	}
 	
 	public boolean isPalindrome(ListNode head) {
@@ -16,14 +26,22 @@ public class _234_回文链表 {
 		// 翻转右半部分（中间节点的右半部分）
 		ListNode rHead = reverseList(middle.next);
 		ListNode lHead = head;
+		ListNode rOldHead = rHead;
 		
+		boolean result = true;
 		while (rHead != null) {
-			if (lHead.val != rHead.val) return false;
+			if (lHead.val != rHead.val) {
+				result = false;
+				break;
+			}
 			lHead = lHead.next;
 			rHead = rHead.next;
 		}
 		
-		return true;
+		// 恢复右半段（对右半部分再次翻转）
+		reverseList(rOldHead);
+		
+		return result;
     }
 	
 	/**
