@@ -1,6 +1,6 @@
 package 动态规划;
 
-public class _70_爬楼梯 {
+public class _070_爬楼梯 {
 
 	public static void main(String[] args) {
 		System.out.println(climbStairs4(3));

@@ -1,6 +1,6 @@
 package 动态规划;
 
-public class _64_最小路径和 {
+public class _064_最小路径和 {
 	public int minPathSum(int[][] grid) {
 		int rows = grid.length;
 		int cols = grid[0].length;
@@ -54,7 +54,7 @@ public class _64_最小路径和 {
     }
 	
 	public static void main(String[] args) {
-		_64_最小路径和 obj = new _64_最小路径和();
+		_064_最小路径和 obj = new _064_最小路径和();
 		int[][] grid = {{1,3,1}, {1,5,1}, {4,2,1}};
 		System.out.println(obj.minPathSum2(grid));
 	}
