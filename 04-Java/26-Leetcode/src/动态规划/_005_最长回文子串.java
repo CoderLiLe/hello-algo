@@ -119,8 +119,33 @@ public class _005_最长回文子串 {
 		char[] cs = preprocess(oldCs);
 		// 构建 m 数组
 		int[] m = new int[cs.length];
+		int c = 1, r = 1, lastIdx = m.length - 2;
+		int maxLen = 0, idx = 0;
+		for (int i = 2; i < lastIdx; i++) {
+			if (r > i) {
+				int li = (c << 1) - i;
+				m[i] = (i + m[li] <= r) ? m[li] : (r - i);
+			}
 
-		return new String(cs);
+			// 以 i 为中心，向左右扩展
+			while (cs[i + m[i] + 1] == cs[i - m[i] - 1]) {
+				m[i]++;
+			}
+
+			// 更新 c、r
+			if (i + m[i] > r) {
+				c = i;
+				r = i + m[i];
+			}
+
+			// 找出更大的回文子串
+			if (m[i] > maxLen) {
+				maxLen = m[i];
+				idx = i;
+			}
+		}
+		int begin = (idx - maxLen) >> 1;
+		return new String(oldCs, begin, maxLen);
 	}
 
 	private char[] preprocess(char[] oldCs) {
