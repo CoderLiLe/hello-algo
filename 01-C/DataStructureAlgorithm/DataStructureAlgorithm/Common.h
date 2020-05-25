@@ -10,5 +10,6 @@
 #define Common_h
 
 typedef int T;
+typedef char C;
 
 #endif /* Common_h */
