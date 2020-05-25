@@ -13,4 +13,6 @@
 
 void sq_binary_tree_test();
 
+void link_binary_tree_test();
+
 #endif /* tree_test_h */

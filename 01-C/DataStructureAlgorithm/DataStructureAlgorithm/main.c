@@ -20,6 +20,8 @@ int main(int argc, const char * argv[]) {
 //    array_stack_test();
 //    array_queue_test();
 //    link_queue_test();
-    sq_binary_tree_test();
+    
+//    sq_binary_tree_test();
+    link_binary_tree_test();
     return 0;
 }

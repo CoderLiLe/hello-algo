@@ -8,6 +8,7 @@
 
 #include "tree_test.h"
 #include "SqBinaryTree.h"
+#include "LinkBinaryTree.h"
 
 void sq_binary_tree_test()
 {
@@ -75,4 +76,17 @@ void sq_binary_tree_test()
     } else {
         printf("树空，无根\n");
     }
+}
+
+void link_binary_tree_test()
+{
+    BiTree tree;
+    
+    link_binary_tree_init(&tree);
+    link_binary_tree_nodes("ABDH#K###E##CFI###G#J##");
+    link_binary_tree_create(&tree);
+    
+    link_binary_tree_preorder_traverse(tree);
+    
+    printf("\n");
 }

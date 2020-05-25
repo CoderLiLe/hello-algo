@@ -21,8 +21,11 @@ typedef struct BiTNode {
 /** 构造空二叉树 tree */
 bool link_binary_tree_init(BiTree *tree);
 
+/** 二叉树中结点字符集 */
+bool link_binary_tree_nodes(char *chars);
+
 /** 按前序输入二叉树中结点的值（一个字符）#表示空树，构造二叉链表表示二叉树T */
-bool link_binary_tree_create(BiTree *tree);
+void link_binary_tree_create(BiTree *tree);
 
 /**
  初始条件：二叉树存在
@@ -52,7 +55,7 @@ bool link_binary_tree_root(BiTree tree, C *value);
  初始条件：二叉树存在，pTree 指向 Tree 中某个结点
  操作结果：返回 pTree 所指向结点的值
  */
-T link_binary_tree_value(BiTree pTree);
+C link_binary_tree_value(BiTree pTree);
 
 /**
  给 p 所指结点赋值为 value
