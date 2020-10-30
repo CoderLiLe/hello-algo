@@ -2,8 +2,10 @@ package com.lile;
 
 import java.util.Arrays;
 
+import com.lile.sort.BucketSort;
 import com.lile.sort.CountingSort;
 import com.lile.sort.RadixSort;
+import com.lile.sort.RadixSort2;
 import com.lile.sort.Sort;
 import com.lile.sort.cmp.BubbleSort1;
 import com.lile.sort.cmp.BubbleSort2;
@@ -31,7 +33,7 @@ public class Main {
 //		Asserts.test(BinarySearch.search(array, 8) == 5);
 		
 		testSort();
-		
+//		testBucketSort();
 	}
 	
 	static void testSort() {
@@ -50,7 +52,23 @@ public class Main {
 				new QuickSort(),
 				new ShellSort(),
 				new CountingSort(),
-				new RadixSort());
+				new RadixSort(),
+				new RadixSort2());
+	}
+	
+	static void testBucketSort() {
+		double[] array = {0.34, 0.47, 0.29, 0.84, 0.45, 0.38, 0.35, 0.76};
+		
+		BucketSort bucketSort = new BucketSort();
+		bucketSort.sort(array);
+		
+		for (int i = 0; i < array.length; i++) {
+			if (i < array.length - 1) {
+				System.out.print(array[i] + "_");
+			} else {
+				System.out.print(array[i]);
+			}
+		}
 	}
 	
 	static void testSorts(Integer[] array, Sort... sorts) {
