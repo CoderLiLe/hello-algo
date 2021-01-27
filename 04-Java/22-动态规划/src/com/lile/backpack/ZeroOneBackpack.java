@@ -53,6 +53,7 @@ public class ZeroOneBackpack {
         int bagWeight = 4;
         zeroOneBackpack1(weight, value, bagWeight);
         zeroOneBackpack2(weight, value, bagWeight);
+        zeroOneBackpack3(weight, value, bagWeight);
     }
 
     private static void zeroOneBackpack1(int[] weight, int[] value, int bagWeight) {
@@ -92,4 +93,44 @@ public class ZeroOneBackpack {
 
         System.out.println(dp[weight.length - 1][bagWeight]);
     }
+
+    /**
+     * 滚动数组
+     *
+     * dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
+     * 如果把 dp[i - 1] 那层拷贝到 dp[i] 上，表达式可以表示为：
+     * dp[i][j] = max(dp[i][j], dp[i][j - weight[i]] + value[i]);
+     * 则可以只用一个一维数组来表示（可以理解为一个滚动数组：上一层可以重复利用，直接拷贝到当前层）
+     *
+     * 动态规划五部曲分析：
+     * 1、确定 dp 数组以及下标的含义
+     * dp[j]：容量为 j 的背包，所背的物品价值最大为 dp[j]
+     *
+     * 2、确定递推公式
+     * dp[j] 有两个选择：一个是取自己 dp[j]，一个是取 dp[j - weight[i]] + value[i]，指定取最大的
+     * 所以递推公式为：dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+     *
+     * 3、dp 数组如何初始化
+     * （1） dp[0] = 0，因为背包容量为 0 所背的物品最大价值为0
+     * （2）其他下标初始为 0 即可
+     *
+     * 4、确定遍历顺序
+     * （1）先遍历物品
+     * （2）从大到小遍历背包：倒序遍历是为了保证物品 i 只被放入一次
+     *
+     * 注意：可不可以先遍历背包容量嵌套遍历物品呢？
+     * 不可以！！！如果遍历背包容量放在上一层，那么每个dp[j]就只会放入一个物品，即：背包里只放入了一个物品
+     *
+     * 5、举例推导 dp 数组
+     */
+    private static void zeroOneBackpack3(int[] weight, int[] value, int bagWeight) {
+        int[] dp = new int[bagWeight +1];
+        for (int i = 0; i < weight.length; i++) { // 遍历物品
+            for (int j = bagWeight; j >= weight[i]; j--) { // 从小到大遍历背包
+                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+            }
+        }
+        System.out.println(dp[bagWeight]);
+    }
+
 }
