@@ -13,10 +13,6 @@ package com.lile.backpack;
  * leetcode 上没有纯完全背包问题，都是基于完全背包的各种应用，需要转化成完全背包问题。
  */
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 例子：
  * 背包最大重量为4，物品如下：
