@@ -75,12 +75,6 @@ public class HybridBackpack {
                     }
                 }
             }
-
-            for (int j = v; j >= 0; j--) {
-                if (j >= m[i] * c[i]) {
-                    dp[j] = Math.max(dp[j], dp[j - c[i] * m[i]] + w[i] * m[i]);
-                }
-            }
         }
 
         System.out.println(dp[v]);
