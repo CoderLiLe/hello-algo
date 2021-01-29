@@ -69,7 +69,9 @@ public class ValidPalindromeIII {
      * （2）s[i] != s[j]，则 dp[i][j] = min(dp[i + 1][j] + 1, dp[i][j - 1] + 1)
      */
     public static boolean isValidPalindrome(String s, int k) {
-        int n = s.length(), INF = 0x3f3f3f3f;
+        // int n = s.length(), INF = 0x3f3f3f3f;
+        // 方便打印看结果
+        int n = s.length(), INF = 9;
         int[][] dp = new int[n][n];
         for (int i = 0; i < n; i++) {
             Arrays.fill(dp[i], INF);
@@ -92,6 +94,14 @@ public class ValidPalindromeIII {
                 }
             }
         }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+
         return dp[0][n - 1] <= k;
     }
 }
