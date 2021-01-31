@@ -1,4 +1,4 @@
-package 动态规划;
+package 动态规划.剑指offer;
 
 public class 面47_礼物的最大价值 {
 	public int maxValue(int[][] grid) {
