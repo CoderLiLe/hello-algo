@@ -1,4 +1,4 @@
-package 细节实现;
+package 细节实现.Interval;
 
 import java.util.Arrays;
 
@@ -22,6 +22,10 @@ import java.util.Arrays;
  * 1 <= intervals.length <= 104
  * intervals[i].length == 2
  * 0 <= starti <= endi <= 104
+ */
+
+/**
+ * 和【Meeting Rooms】一样，首先对区间按照起始端点进行升序排序，然后逐个判断当前区间是否与前一个区间重叠，如果不重叠的话将当前区间直接加入结果集，反之如果重叠的话，就将当前区间与前一个区间进行合并。
  */
 public class MergeIntervals {
 
@@ -48,6 +52,7 @@ public class MergeIntervals {
             if (idx == -1 || interval[0] > res[idx][1]) {
                 res[++idx] = interval;
             } else {
+                // 反之说明重叠，则将当前区间合并至结果数组的最后区间
                 res[idx][1] = Math.max(res[idx][1], interval[1]);
             }
         }

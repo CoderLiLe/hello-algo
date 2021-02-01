@@ -1,4 +1,4 @@
-package 细节实现;
+package 细节实现.Interval;
 
 /**
  * 57. 插入区间
@@ -14,16 +14,18 @@ package 细节实现;
  * This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
  */
 
+/**
+ *
+ * （1）首先将新区间左边且相离的区间加入结果集（遍历时，如果当前区间的结束位置小于新区间的开始位置，说明当前区间在新区间的左边且相离）；
+ *
+ * （2）接着判断当前区间是否与新区间重叠，重叠的话就进行合并，直到遍历到当前区间在新区间的右边且相离，将最终合并后的新区间加入结果集；
+ *
+ * （3）最后将新区间右边且相离的区间加入结果集。
+ * */
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 步骤一：找到需要合并的区间
- *
- * 步骤二：合并区间
- *
- * 步骤三：处理合并区间之后的区间
- * */
 public class InsertInterval {
 
     public static void main(String[] args) {
