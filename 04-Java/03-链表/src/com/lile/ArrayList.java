@@ -28,13 +28,13 @@ public class ArrayList<E> extends AbstractList<E> {
 	}
 
 	@Override
-	public E get(int index) {
+	public E get(int index) { // O(1)
 		rangeCheck(index);
 		return elements[index];
 	}
 
 	@Override
-	public E set(int index, E element) {
+	public E set(int index, E element) { // O(1)
 		rangeCheck(index);
 		
 		E old = elements[index];
@@ -45,8 +45,10 @@ public class ArrayList<E> extends AbstractList<E> {
 	/**
 	 * 时间复杂度
 	 * 最好：O(1)
-	 * 最坏：O(m)
+	 * 最坏：O(n)
 	 * 平均：O(n)
+	 * 
+	 * size 是数据规模
 	 */
 	@Override
 	public void add(int index, E elemnt) {
@@ -102,6 +104,10 @@ public class ArrayList<E> extends AbstractList<E> {
 		
 		// 新容量为旧容量的 1.5 倍
 		int newCapacity = oldCapacity + (oldCapacity >> 1);
+		
+		// 新容量为旧容量的 2 倍，此时可能会发生复杂度震荡现象
+		// int newCapacity = oldCapacity >> 2;
+		
 		E[] newElements = (E[]) new Object[newCapacity];
 		for (int i = 0; i < size; i++) {
 			newElements[i] = elements[i];

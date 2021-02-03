@@ -38,6 +38,8 @@ public class LinkedList<E> extends AbstractList<E> {
 	@Override
 	public void clear() {
 		size = 0;
+		
+		// GC 机制
 		first = null;
 		last = null;
 	}

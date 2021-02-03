@@ -47,6 +47,7 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
 		
 		if (index == 0) {
 			Node<E> newFirst = new Node<>(element, first);
+			// 拿到最后一个节点
 			Node<E> last = (size == 0) ? newFirst : node(size - 1);
 			last.next = newFirst;
 			first = newFirst;
@@ -106,7 +107,7 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
 		rangeCheck(index);
 		
 		Node<E> node = first;
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < index; i++) {
 			node = node.next;
 		}
 		return node;
@@ -122,7 +123,7 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
 				sb.append(", ");
 			}
 			
-			sb.append(node.element);
+			sb.append(node);
 			node = node.next;
 		}
 		sb.append("]");
