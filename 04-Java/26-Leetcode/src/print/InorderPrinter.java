@@ -1,4 +1,4 @@
-package tool.print;
+package print;
 
 /**
 

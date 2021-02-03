@@ -1,8 +1,8 @@
 package 字符串;
 
 import common.TreeNode;
-import tool.print.BTPrinter;
-import tool.print.BinaryTreeInfo;
+import print.BTPrinter;
+import print.BinaryTreeInfo;
 
 public class _572_另一个树的子树 {
 	public boolean isSubtree(TreeNode s, TreeNode t) {
