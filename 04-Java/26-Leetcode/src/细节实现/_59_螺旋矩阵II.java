@@ -1,5 +1,8 @@
 package 细节实现;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 59. 螺旋矩阵 II
  *
@@ -22,6 +25,16 @@ public class _59_螺旋矩阵II {
     public static void main(String[] args) {
         int[][] matrix = generateMatrix(3);
         for (int[] row : matrix) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("-----------");
+
+        int[][] matrix2 = generateMatrix2(3);
+        for (int[] row : matrix2) {
             for (int num : row) {
                 System.out.print(num + " ");
             }
@@ -55,6 +68,40 @@ public class _59_螺旋矩阵II {
 
         if (begin == end) {
             matrix[begin][begin] = num;
+        }
+        return matrix;
+    }
+
+    public static int[][] generateMatrix2(int n) {
+        int[][] matrix = new int[n][n];
+        if (n == 0) return matrix;
+
+        int num = 1;
+        int beginX = 0, beginY = 0, endX = n - 1, endY = n - 1;
+        while (true) {
+            // from left top to right top
+            for (int j = beginX; j <= endX; ++j) {
+                matrix[beginY][j] = num++;
+            }
+            if (++beginY > endY) break;
+
+            // from right top to right bottom
+            for (int i = beginY; i <= endY; ++i) {
+                matrix[i][endX] = num++;
+            }
+            if (beginX > --endX) break;
+
+            // from right bottom to left bottom
+            for (int j = endX; j >= beginX; --j) {
+                matrix[endY][j] = num++;
+            }
+            if (beginY > -- endY) break;
+
+            // from left bottom to left top
+            for (int i = endY; i >= beginY; --i) {
+                matrix[i][beginX] = num++;
+            }
+            if (++beginX > endX) break;
         }
         return matrix;
     }
