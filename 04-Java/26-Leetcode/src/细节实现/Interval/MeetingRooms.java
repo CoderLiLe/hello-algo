@@ -40,7 +40,7 @@ public class MeetingRooms {
     }
 
     public static boolean canAttendMeetings(int[][] intervals) {
-        // 将区间按照会议开始时间生序排序
+        // 将区间按照会议开始时间升序排序
         Arrays.sort(intervals, (v1, v2) -> v1[0] - v2[0]);
         // 遍历会议，如果下一个会议在前一个会议结束之前就开始了，返回 false
         for (int i = 1; i < intervals.length; i++) {

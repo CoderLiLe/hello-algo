@@ -1,6 +1,15 @@
 package 高频题;
 
+import tools.Asserts;
+
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class _042_接雨水 {
+    /**
+     * 动态数组
+     * T = O(n), S = O(n)
+     */
     public int trap(int[] height) {
         if (height == null || height.length == 0) return 0;
 
@@ -29,6 +38,10 @@ public class _042_接雨水 {
         return water;
     }
 
+    /**
+     * 动态数组，trap 的改进版本，只统计 rightMaxes，leftMax 在从前往后遍历时计算
+     * T = O(n), S = O(n)
+     */
     public int trap2(int[] height) {
         if (height == null || height.length == 0) return 0;
 
@@ -54,6 +67,11 @@ public class _042_接雨水 {
         return water;
     }
 
+    /**
+     * 双指针法
+     *
+     * T = O(n), S = O(1)
+     */
     public int trap3(int[] height) {
         if (height == null || height.length == 0) return 0;
 
@@ -64,5 +82,89 @@ public class _042_接雨水 {
             water += lowerMax - lower;
         }
         return water;
+    }
+
+    /**
+     * 双指针法
+     *
+     * T = O(n), S = O(1)
+     */
+    private int trap33(int[] height) {
+        int left = 0, right = height.length - 1;
+        int res = 0;
+        int leftMax = 0, rightMax = 0;
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= leftMax) {
+                    leftMax = height[left];
+                } else {
+                    res += (leftMax - height[left]);
+                }
+                ++left;
+            } else {
+                if (height[right] >= rightMax) {
+                    rightMax = height[right];
+                } else {
+                    res += (rightMax - height[right]);
+                }
+                --right;
+            }
+        }
+        return res;
+    }
+
+    /**
+     * 暴力法
+     * 对数组中的每个元素，找出下雨后水能达到的最高位置，等于两边最大高度的较小值减去当前高度的值
+     *
+     * T = O(n^2), S = O(1)
+     */
+    private int trap4(int[] height) {
+        int res = 0;
+        int size = height.length;
+        for (int i = 1; i < size - 1; i++) {
+            int maxLeft = 0, maxRight = 0;
+            for (int j = i; j >= 0; j--) {
+                maxLeft = Math.max(maxLeft, height[j]);
+            }
+            for (int j = i; j < size; j++) {
+                maxRight = Math.max(maxRight, height[j]);
+            }
+            res += Math.min(maxLeft, maxRight) - height[i];
+        }
+        return res;
+    }
+
+    /**
+     * 【栈的应用】
+     * （1）如果当前的条形块 <= 栈顶的条形块，将条形块的索引入栈，意思是当前的条形块被栈中的前一个条形块界定
+     * （2）如果发现一个条形块长于栈顶，可以确定栈顶的条形块被当前条形块和栈的前一个条形块界定，可以弹出栈顶
+     * 元素并且累加到 res
+     *
+     * T = O(n), S = O(n)
+     */
+    private int trap5(int[] height) {
+        int res = 0, cur = 0;
+        Deque<Integer> stack = new LinkedList<>();
+        while (cur < height.length) {
+            while (!stack.isEmpty() && height[cur] > height[stack.peek()]) {
+                int top = stack.pop();
+                if (stack.isEmpty()) {
+                    break;
+                }
+                int distance = cur - stack.peek() - 1;
+                int boundedHeight = Math.min(height[cur], height[stack.peek()]) - height[top];
+                res += distance * boundedHeight;
+            }
+            stack.push(cur++);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
+        _042_接雨水 catchRain = new _042_接雨水();
+        Asserts.test(catchRain.trap5(height) == 6);
+        Asserts.test(catchRain.trap33(height) == 6);
     }
 }
