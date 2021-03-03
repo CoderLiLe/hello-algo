@@ -226,7 +226,7 @@ public class TreeMap<K, V> implements Map<K, V> {
 		// 度为 1 或 0 的节点
 		Node<K, V> replacement = node.left != null ? node.left : node.right;
 		
-		if (replacement != null) { // node 是都为 1 的节点
+		if (replacement != null) { // node 是度为 1 的节点
 			replacement.parent = node.parent;
 			// 更改 parent 的 left、right 指向
 			if (node.parent == null) {
