@@ -19,4 +19,14 @@ public class _001_两数之和 {
 
         return new int[] {-1, -1};
     }
+
+    public static void main(String[] args) {
+        _001_两数之和 obj = new _001_两数之和();
+
+        int[] nums = {2, 7, 11, 15};
+        int[] res = obj.twoSum(nums, 9);
+        for (int re : res) {
+            System.out.println(re);
+        }
+    }
 }
