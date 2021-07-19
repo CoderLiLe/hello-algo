@@ -50,4 +50,18 @@ public class _011_盛最多水的容器 {
 
         return water;
     }
+
+    public int maxArea3(int[] height) {
+        if (height == null || height.length == 0) return 0;
+
+        int l = 0, r = height.length - 1, water = 0;
+        while (l < r) {
+            int minH = (height[l] <= height[r]) ? height[l] : height[r];
+            water = Math.max(water, (r - l) * minH);
+            while (l < r && height[l] <= minH) l++;
+            while (l < r && height[r] <= minH) r--;
+        }
+
+        return water;
+    }
 }
