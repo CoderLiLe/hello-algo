@@ -12,7 +12,9 @@ public class _234_回文链表 {
 		System.out.println(head);
 		
 		_234_回文链表 obj = new _234_回文链表();
-		obj.isPalindrome(head);
+
+		System.out.print("是否为回文链表：");
+		System.out.println(obj.isPalindrome(head));
 		
 		System.out.println(head);
 	}
@@ -45,7 +47,7 @@ public class _234_回文链表 {
     }
 	
 	/**
-	 * 找到中间节点（右半部分链表头节点的前一个节点）
+	 * 快慢指针找到中间节点（右半部分链表头节点的前一个节点）
 	 * 1 - 2 - 3 - 2 - 1 的中间节点为 3
 	 * 1 - 2 - 2 - 1 的中间节点为左边第一个 2
 	 * @param head
@@ -62,19 +64,20 @@ public class _234_回文链表 {
 	}
 
 	/**
-	 * 反转链表
-	 * @param head
-	 * @return
+	 * 翻转链表
+	 * @param head 原链表的头结点
+	 *
+	 * eg: 原链表 1 - 2 - 3 - 4 - null, 翻转之后是：4 - 3 - 2 - 1 - null
+	 * @return 翻转之后链表的头结点（返回4）
 	 */
 	private ListNode reverseList(ListNode head) {
-		ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode nextTemp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextTemp;
-        }
-        return prev;
+		ListNode newHead = null;
+		while (head != null) {
+			ListNode tmp = head.next;
+			head.next = newHead;
+			newHead = head;
+			head = tmp;
+		}
+		return newHead;
 	}
 }
