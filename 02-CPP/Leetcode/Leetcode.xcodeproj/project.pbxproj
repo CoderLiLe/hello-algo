@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2413FE3726A6EB6600CADB30 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE3626A6EB6600CADB30 /* main.cpp */; };
 		2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE3E26A6ECF400CADB30 /* _0146_LRU缓存机制.cpp */; };
+		2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE8626A8391F00CADB30 /* _0075_ 颜色分类.cpp */; };
+		2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		2413FE3626A6EB6600CADB30 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2413FE3E26A6ECF400CADB30 /* _0146_LRU缓存机制.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0146_LRU缓存机制.cpp"; sourceTree = "<group>"; };
 		2413FE3F26A6ECF400CADB30 /* _0146_LRU缓存机制.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0146_LRU缓存机制.hpp"; sourceTree = "<group>"; };
+		2413FE8626A8391F00CADB30 /* _0075_ 颜色分类.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0075_ 颜色分类.cpp"; sourceTree = "<group>"; };
+		2413FE8726A8391F00CADB30 /* _0075_ 颜色分类.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0075_ 颜色分类.hpp"; sourceTree = "<group>"; };
+		2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "排序数组测试.cpp"; sourceTree = "<group>"; };
+		2413FE8C26A83C1C00CADB30 /* 排序数组测试.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "排序数组测试.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +66,23 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FE8526A838C400CADB30 /* 排序_数组 */,
 				2413FE3626A6EB6600CADB30 /* main.cpp */,
 				2413FE3E26A6ECF400CADB30 /* _0146_LRU缓存机制.cpp */,
 				2413FE3F26A6ECF400CADB30 /* _0146_LRU缓存机制.hpp */,
 			);
 			path = Leetcode;
+			sourceTree = "<group>";
+		};
+		2413FE8526A838C400CADB30 /* 排序_数组 */ = {
+			isa = PBXGroup;
+			children = (
+				2413FE8626A8391F00CADB30 /* _0075_ 颜色分类.cpp */,
+				2413FE8726A8391F00CADB30 /* _0075_ 颜色分类.hpp */,
+				2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */,
+				2413FE8C26A83C1C00CADB30 /* 排序数组测试.hpp */,
+			);
+			path = "排序_数组";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
 				2413FE3726A6EB6600CADB30 /* main.cpp in Sources */,
+				2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
