@@ -34,6 +34,9 @@ public class _203_移除链表元素 {
         return newHead;
     }
 
+    /**
+     * 使用虚拟头节点简化
+     */
     static public ListNode removeElements2(ListNode head, int val) {
         if (head == null) return null;
 
