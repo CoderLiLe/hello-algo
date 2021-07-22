@@ -9,6 +9,7 @@
 #include <iostream>
 using namespace std;
 
+#pragma mark - 方法一：基于快速排序的选择方法
 inline int partition(vector<int>& nums, int l, int r, int pivot_index) {
     int pivot = nums[pivot_index];
     
@@ -24,18 +25,6 @@ inline int partition(vector<int>& nums, int l, int r, int pivot_index) {
     return store_index;
 }
 
-/**
- 快速选择
- 步骤：
- ① 随机选择一个枢纽
- ② 使用划分算法将枢纽放在合适的位置 pivot_index ，将小于枢纽的元素移动到左边，大于枢纽的元素移动到右边
- ③ pivot_index == n - k，找到了
-    pivot_index < n - k，pivot_index 右边找
-    pivot_index > n - k，pivot_index 左边找
- 
- T(n) = O(n)
- S(n) = O(1)
- */
 int quickSelect(vector<int>& nums, int l, int r, int k_smallest) {
     if (l == r) return nums[l];
     
@@ -62,4 +51,37 @@ int findKthLargest(vector<int>& nums, int k) {
     if (0 == nums.size() || nums.size() < k) return -1;
     if (1 == nums.size()) return nums[0];
     return quickSelect(nums, 0, nums.size() - 1, nums.size() - k);
+}
+
+#pragma mark - 方法二：基于堆排序的选择方法
+
+void maxHeapify(vector<int>& arr, int i, int heapSize) {
+    int l = i * 2 + 1, r = i * 2 + 2, largest = i;
+    if (l < heapSize && arr[l] > arr[largest]) {
+        largest = l;
+    }
+    if (r < heapSize && arr[r] > arr[largest]) {
+        largest = r;
+    }
+    if (largest != i) {
+        swap(arr[i], arr[largest]);
+        maxHeapify(arr, largest, heapSize);
+    }
+}
+
+void buildMaxHeap(vector<int>& arr, int heapSize) {
+    for (int i = heapSize / 2; i >= 0; --i) {
+        maxHeapify(arr, i, heapSize);
+    }
+}
+
+int findKthLargest2(vector<int>& nums, int k) {
+    int heapSize = nums.size();
+    buildMaxHeap(nums, heapSize);
+    for (int i = nums.size() - 1; i >= nums.size() - k + 1; --i) {
+        swap(nums[0], nums[i]);
+        --heapSize;
+        maxHeapify(nums, 0, heapSize);
+    }
+    return nums[0];
 }

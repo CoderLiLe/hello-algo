@@ -24,8 +24,8 @@ void test0075() {
 
 void test0215() {
     vector<int> nums = {3, 2, 1, 5, 6, 4};
-    cout << findKthLargest(nums, 2) << endl;
-//    assert(5 == findKthLargest(nums, 2));
+    assert(5 == findKthLargest(nums, 2));
+    assert(5 == findKthLargest2(nums, 2));
 }
 
 void sortArraytest() {
