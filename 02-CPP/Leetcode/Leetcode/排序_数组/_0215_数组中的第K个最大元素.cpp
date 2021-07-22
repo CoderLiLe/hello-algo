@@ -70,7 +70,7 @@ void maxHeapify(vector<int>& arr, int i, int heapSize) {
 }
 
 void buildMaxHeap(vector<int>& arr, int heapSize) {
-    for (int i = heapSize / 2; i >= 0; --i) {
+    for (int i = (heapSize >> 1) - 1; i >= 0; --i) {
         maxHeapify(arr, i, heapSize);
     }
 }
