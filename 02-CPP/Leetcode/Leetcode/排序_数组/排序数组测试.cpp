@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "_0075_ 颜色分类.hpp"
+#include "_0215_数组中的第K个最大元素.hpp"
 
 using namespace std;
 
@@ -21,6 +22,13 @@ void test0075() {
     cout << endl;
 }
 
+void test0215() {
+    vector<int> nums = {3, 2, 1, 5, 6, 4};
+    cout << findKthLargest(nums, 2) << endl;
+//    assert(5 == findKthLargest(nums, 2));
+}
+
 void sortArraytest() {
-    test0075();
+//    test0075();
+    test0215();
 }

@@ -11,6 +11,7 @@
 		2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE3E26A6ECF400CADB30 /* _0146_LRU缓存机制.cpp */; };
 		2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE8626A8391F00CADB30 /* _0075_ 颜色分类.cpp */; };
 		2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */; };
+		2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE8F26A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		2413FE8726A8391F00CADB30 /* _0075_ 颜色分类.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0075_ 颜色分类.hpp"; sourceTree = "<group>"; };
 		2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "排序数组测试.cpp"; sourceTree = "<group>"; };
 		2413FE8C26A83C1C00CADB30 /* 排序数组测试.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "排序数组测试.hpp"; sourceTree = "<group>"; };
+		2413FE8F26A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0215_数组中的第K个最大元素.cpp"; sourceTree = "<group>"; };
+		2413FE9026A844FD00CADB30 /* _0215_数组中的第K个最大元素.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0215_数组中的第K个最大元素.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				2413FE8726A8391F00CADB30 /* _0075_ 颜色分类.hpp */,
 				2413FE8B26A83C1C00CADB30 /* 排序数组测试.cpp */,
 				2413FE8C26A83C1C00CADB30 /* 排序数组测试.hpp */,
+				2413FE8F26A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp */,
+				2413FE9026A844FD00CADB30 /* _0215_数组中的第K个最大元素.hpp */,
 			);
 			path = "排序_数组";
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
 				2413FE3726A6EB6600CADB30 /* main.cpp in Sources */,
 				2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */,
+				2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
