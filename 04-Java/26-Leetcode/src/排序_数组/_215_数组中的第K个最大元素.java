@@ -1,10 +1,24 @@
 package 排序_数组;
 
+import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Random;
 
 public class _215_数组中的第K个最大元素 {
+
+    /**
+     * 暴力法
+     * 升序排序以后，目标元素的索引是 len - k
+     */
     public int findKthLargest(int[] nums, int k) {
+        int len = nums.length;
+        // JDK 默认使用快速排序，因此时间复杂度为 O(NlogN)
+        // 这里是原地排序，没有借助额外的辅助空间
+        Arrays.sort(nums);
+        return nums[len - k];
+    }
+
+    public int findKthLargest1(int[] nums, int k) {
         if (nums == null || nums.length == 0 || (nums.length < k)) return -1;
         if (nums.length == 1) return nums[0];
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
