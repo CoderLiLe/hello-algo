@@ -30,7 +30,7 @@ public class _239_滑动窗口最大值 {
 			
 			// 4、检查队头的合法性
 			if (deque.peekFirst() < w) {
-				//  对头不合法（失效，不在滑动窗口索引范围内）
+				// 对头不合法（失效，不在滑动窗口索引范围内）
 				deque.pollFirst();
 			}
 			
@@ -63,7 +63,7 @@ public class _239_滑动窗口最大值 {
 				for (int i = li + 1; i <= ri; i++) {
 					if (nums[i] > nums[maxIdx]) maxIdx = i;
 				}
-			} else if (nums[ri] > nums[maxIdx]) {
+			} else if (nums[ri] >= nums[maxIdx]) {
 				maxIdx = ri;
 			}
 			maxes[li] = nums[maxIdx];
