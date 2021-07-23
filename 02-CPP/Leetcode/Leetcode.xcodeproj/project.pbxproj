@@ -15,6 +15,10 @@
 		2413FE9626A9503900CADB30 /* _0239_滑动窗口最大值.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE9426A9503900CADB30 /* _0239_滑动窗口最大值.cpp */; };
 		2413FE9B26A9504B00CADB30 /* 栈队列测试.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE9926A9504B00CADB30 /* 栈队列测试.cpp */; };
 		2413FE9F26A995E800CADB30 /* _0739_每日温度.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FE9D26A995E800CADB30 /* _0739_每日温度.cpp */; };
+		2413FEA426AA6F6E00CADB30 /* 面0109_字符串轮转.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEA226AA6F6E00CADB30 /* 面0109_字符串轮转.cpp */; };
+		2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEA626AA716900CADB30 /* _0572_另一个树的子树.cpp */; };
+		2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEAA26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp */; };
+		2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEB926AAACC300CADB30 /* StringTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +50,14 @@
 		2413FE9A26A9504B00CADB30 /* 栈队列测试.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "栈队列测试.hpp"; sourceTree = "<group>"; };
 		2413FE9D26A995E800CADB30 /* _0739_每日温度.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0739_每日温度.cpp"; sourceTree = "<group>"; };
 		2413FE9E26A995E800CADB30 /* _0739_每日温度.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0739_每日温度.hpp"; sourceTree = "<group>"; };
+		2413FEA226AA6F6E00CADB30 /* 面0109_字符串轮转.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "面0109_字符串轮转.cpp"; sourceTree = "<group>"; };
+		2413FEA326AA6F6E00CADB30 /* 面0109_字符串轮转.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "面0109_字符串轮转.hpp"; sourceTree = "<group>"; };
+		2413FEA626AA716900CADB30 /* _0572_另一个树的子树.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0572_另一个树的子树.cpp"; sourceTree = "<group>"; };
+		2413FEA726AA716900CADB30 /* _0572_另一个树的子树.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0572_另一个树的子树.hpp"; sourceTree = "<group>"; };
+		2413FEAA26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0151_翻转字符串里的单词.cpp"; sourceTree = "<group>"; };
+		2413FEAB26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0151_翻转字符串里的单词.hpp"; sourceTree = "<group>"; };
+		2413FEB926AAACC300CADB30 /* StringTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringTest.cpp; sourceTree = "<group>"; };
+		2413FEBA26AAACC300CADB30 /* StringTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StringTest.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FEA126AA6F3700CADB30 /* 字符串 */,
 				2413FE9326A9500800CADB30 /* 栈_队列 */,
 				2413FE8526A838C400CADB30 /* 排序_数组 */,
 				2413FE3626A6EB6600CADB30 /* main.cpp */,
@@ -111,6 +124,21 @@
 				2413FE9E26A995E800CADB30 /* _0739_每日温度.hpp */,
 			);
 			path = "栈_队列";
+			sourceTree = "<group>";
+		};
+		2413FEA126AA6F3700CADB30 /* 字符串 */ = {
+			isa = PBXGroup;
+			children = (
+				2413FEA226AA6F6E00CADB30 /* 面0109_字符串轮转.cpp */,
+				2413FEA326AA6F6E00CADB30 /* 面0109_字符串轮转.hpp */,
+				2413FEA626AA716900CADB30 /* _0572_另一个树的子树.cpp */,
+				2413FEA726AA716900CADB30 /* _0572_另一个树的子树.hpp */,
+				2413FEAA26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp */,
+				2413FEAB26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.hpp */,
+				2413FEB926AAACC300CADB30 /* StringTest.cpp */,
+				2413FEBA26AAACC300CADB30 /* StringTest.hpp */,
+			);
+			path = "字符串";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +199,15 @@
 			files = (
 				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
 				2413FE3726A6EB6600CADB30 /* main.cpp in Sources */,
+				2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */,
 				2413FE9626A9503900CADB30 /* _0239_滑动窗口最大值.cpp in Sources */,
 				2413FE9F26A995E800CADB30 /* _0739_每日温度.cpp in Sources */,
 				2413FE9B26A9504B00CADB30 /* 栈队列测试.cpp in Sources */,
+				2413FEA426AA6F6E00CADB30 /* 面0109_字符串轮转.cpp in Sources */,
 				2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */,
+				2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */,
 				2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */,
+				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
