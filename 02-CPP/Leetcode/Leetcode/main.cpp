@@ -8,6 +8,7 @@
 #include <iostream>
 #include "_0146_LRU缓存机制.hpp"
 #include "排序数组测试.hpp"
+#include "栈队列测试.hpp"
 
 void test0146() {
     LRUCache *lRUCache = new LRUCache(2);
@@ -25,7 +26,8 @@ void test0146() {
 int main(int argc, const char * argv[]) {
 //    test0146();
     
-    sortArraytest();
+//    sortArraytest();
+    stackQueueTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;
