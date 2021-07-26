@@ -10,6 +10,7 @@
 #include "_0005_最长回文子串.hpp"
 #include "_0063_不同路径II.hpp"
 #include "_0072_编辑距离.hpp"
+#include "_0376_摆动序列.hpp"
 #include "_1235_规划兼职工作.hpp"
 
 using namespace std;
@@ -58,6 +59,39 @@ void test0072() {
     cout << minDistance("intention", "execution") << endl;
 }
 
+void test0376_01() {
+    vector<int> nums = {1,7,4,9,2,5};
+    cout << wiggleMaxLength(nums) << endl;
+    
+    vector<int> nums2 = {1,17,5,10,13,15,10,5,16,8};
+    cout << wiggleMaxLength(nums2) << endl;
+    
+    vector<int> nums3 = {1,2,3,4,5,6,7,8,9};
+    cout << wiggleMaxLength(nums3) << endl;
+}
+
+void test0376_02() {
+    vector<int> nums = {1,7,4,9,2,5};
+    cout << wiggleMaxLength2(nums) << endl;
+    
+    vector<int> nums2 = {1,17,5,10,13,15,10,5,16,8};
+    cout << wiggleMaxLength2(nums2) << endl;
+    
+    vector<int> nums3 = {1,2,3,4,5,6,7,8,9};
+    cout << wiggleMaxLength2(nums3) << endl;
+}
+
+void test0376_03() {
+    vector<int> nums = {1,7,4,9,2,5};
+    cout << wiggleMaxLength3(nums) << endl;
+    
+    vector<int> nums2 = {1,17,5,10,13,15,10,5,16,8};
+    cout << wiggleMaxLength3(nums2) << endl;
+    
+    vector<int> nums3 = {1,2,3,4,5,6,7,8,9};
+    cout << wiggleMaxLength3(nums3) << endl;
+}
+
 void test1235() {
     vector<int> startTime = {1, 2, 3, 3};
     vector<int> endTime = {3, 4, 5, 6};
@@ -75,5 +109,9 @@ void dpTest() {
     
 //    test0072();
     
-    test1235();
+//    test0376_01();
+    test0376_02();
+    test0376_03();
+    
+//    test1235();
 }
