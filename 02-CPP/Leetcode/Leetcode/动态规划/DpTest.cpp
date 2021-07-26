@@ -8,6 +8,7 @@
 #include "DpTest.hpp"
 #include <iostream>
 #include "_0005_最长回文子串.hpp"
+#include "_0072_编辑距离.hpp"
 
 using namespace std;
 
@@ -39,8 +40,16 @@ void test0005_04() {
     cout << longestPalindrome4("ac") << endl;
 }
 
+void test0072() {
+    cout << minDistance("horse", "ros") << endl;
+    cout << minDistance("intention", "execution") << endl;
+}
+
 void dpTest() {
 //    test0005_01();
 //    test0005_02();
-    test0005_03();
+//    test0005_03();
+//    test0005_04();
+    
+    test0072();
 }

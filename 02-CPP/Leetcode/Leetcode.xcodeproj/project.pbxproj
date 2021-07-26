@@ -21,6 +21,7 @@
 		2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEB926AAACC300CADB30 /* StringTest.cpp */; };
 		2413FEC226AE57B400CADB30 /* _0005_最长回文子串.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEC026AE57B400CADB30 /* _0005_最长回文子串.cpp */; };
 		2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FECF26AE5DD800CADB30 /* DpTest.cpp */; };
+		2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FED526AEA00500CADB30 /* _0072_编辑距离.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		2413FEC126AE57B400CADB30 /* _0005_最长回文子串.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0005_最长回文子串.hpp"; sourceTree = "<group>"; };
 		2413FECF26AE5DD800CADB30 /* DpTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DpTest.cpp; sourceTree = "<group>"; };
 		2413FED026AE5DD800CADB30 /* DpTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DpTest.hpp; sourceTree = "<group>"; };
+		2413FED526AEA00500CADB30 /* _0072_编辑距离.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0072_编辑距离.cpp"; sourceTree = "<group>"; };
+		2413FED626AEA00500CADB30 /* _0072_编辑距离.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0072_编辑距离.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				2413FEC126AE57B400CADB30 /* _0005_最长回文子串.hpp */,
 				2413FECF26AE5DD800CADB30 /* DpTest.cpp */,
 				2413FED026AE5DD800CADB30 /* DpTest.hpp */,
+				2413FED526AEA00500CADB30 /* _0072_编辑距离.cpp */,
+				2413FED626AEA00500CADB30 /* _0072_编辑距离.hpp */,
 			);
 			path = "动态规划";
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */,
 				2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */,
 				2413FEC226AE57B400CADB30 /* _0005_最长回文子串.cpp in Sources */,
+				2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 				2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */,
