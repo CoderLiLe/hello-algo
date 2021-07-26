@@ -15,12 +15,12 @@ int minDistance(string word1, string word2) {
     // 最左上角 dp[0][0] = 0
     
     // 设置第0列
-    for (int i = 1; i < word1.size(); i++) {
+    for (int i = 1; i <= word1.size(); i++) {
         dp[i][0] = i;
     }
     
     // 设置第0行
-    for (int j = 1; j < word2.size(); j++) {
+    for (int j = 1; j <= word2.size(); j++) {
         dp[0][j] = j;
     }
     
