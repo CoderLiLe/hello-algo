@@ -10,6 +10,7 @@
 #include "排序数组测试.hpp"
 #include "栈队列测试.hpp"
 #include "StringTest.hpp"
+#include "DpTest.hpp"
 
 void test0146() {
     LRUCache *lRUCache = new LRUCache(2);
@@ -29,7 +30,9 @@ int main(int argc, const char * argv[]) {
     
 //    sortArraytest();
 //    stackQueueTest();
-    stringTest();
+//    stringTest();
+    
+    dpTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;

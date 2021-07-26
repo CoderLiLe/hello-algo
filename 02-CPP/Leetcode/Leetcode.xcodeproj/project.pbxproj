@@ -19,6 +19,8 @@
 		2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEA626AA716900CADB30 /* _0572_另一个树的子树.cpp */; };
 		2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEAA26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp */; };
 		2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEB926AAACC300CADB30 /* StringTest.cpp */; };
+		2413FEC226AE57B400CADB30 /* _0005_最长回文子串.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEC026AE57B400CADB30 /* _0005_最长回文子串.cpp */; };
+		2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FECF26AE5DD800CADB30 /* DpTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +60,10 @@
 		2413FEAB26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0151_翻转字符串里的单词.hpp"; sourceTree = "<group>"; };
 		2413FEB926AAACC300CADB30 /* StringTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringTest.cpp; sourceTree = "<group>"; };
 		2413FEBA26AAACC300CADB30 /* StringTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StringTest.hpp; sourceTree = "<group>"; };
+		2413FEC026AE57B400CADB30 /* _0005_最长回文子串.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0005_最长回文子串.cpp"; sourceTree = "<group>"; };
+		2413FEC126AE57B400CADB30 /* _0005_最长回文子串.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0005_最长回文子串.hpp"; sourceTree = "<group>"; };
+		2413FECF26AE5DD800CADB30 /* DpTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DpTest.cpp; sourceTree = "<group>"; };
+		2413FED026AE5DD800CADB30 /* DpTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DpTest.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FEBF26AE579600CADB30 /* 动态规划 */,
 				2413FEA126AA6F3700CADB30 /* 字符串 */,
 				2413FE9326A9500800CADB30 /* 栈_队列 */,
 				2413FE8526A838C400CADB30 /* 排序_数组 */,
@@ -139,6 +146,17 @@
 				2413FEBA26AAACC300CADB30 /* StringTest.hpp */,
 			);
 			path = "字符串";
+			sourceTree = "<group>";
+		};
+		2413FEBF26AE579600CADB30 /* 动态规划 */ = {
+			isa = PBXGroup;
+			children = (
+				2413FEC026AE57B400CADB30 /* _0005_最长回文子串.cpp */,
+				2413FEC126AE57B400CADB30 /* _0005_最长回文子串.hpp */,
+				2413FECF26AE5DD800CADB30 /* DpTest.cpp */,
+				2413FED026AE5DD800CADB30 /* DpTest.hpp */,
+			);
+			path = "动态规划";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +225,10 @@
 				2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */,
 				2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */,
 				2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */,
+				2413FEC226AE57B400CADB30 /* _0005_最长回文子串.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
+				2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
