@@ -10,6 +10,7 @@
 #include "_0005_最长回文子串.hpp"
 #include "_0063_不同路径II.hpp"
 #include "_0072_编辑距离.hpp"
+#include "_1235_规划兼职工作.hpp"
 
 using namespace std;
 
@@ -57,13 +58,22 @@ void test0072() {
     cout << minDistance("intention", "execution") << endl;
 }
 
+void test1235() {
+    vector<int> startTime = {1, 2, 3, 3};
+    vector<int> endTime = {3, 4, 5, 6};
+    vector<int> profit = {50, 10, 40, 70};
+    cout << jobScheduling(startTime, endTime, profit) << endl;
+}
+
 void dpTest() {
 //    test0005_01();
 //    test0005_02();
 //    test0005_03();
 //    test0005_04();
     
-    test0063();
+//    test0063();
     
 //    test0072();
+    
+    test1235();
 }

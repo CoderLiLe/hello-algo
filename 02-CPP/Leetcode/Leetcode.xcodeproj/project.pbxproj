@@ -23,6 +23,7 @@
 		2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FECF26AE5DD800CADB30 /* DpTest.cpp */; };
 		2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FED526AEA00500CADB30 /* _0072_编辑距离.cpp */; };
 		2413FEDB26AEB1C500CADB30 /* _0063_不同路径II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FED926AEB1C500CADB30 /* _0063_不同路径II.cpp */; };
+		2413FEDF26AECFBE00CADB30 /* _1235_规划兼职工作.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEDD26AECFBE00CADB30 /* _1235_规划兼职工作.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,8 @@
 		2413FED626AEA00500CADB30 /* _0072_编辑距离.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0072_编辑距离.hpp"; sourceTree = "<group>"; };
 		2413FED926AEB1C500CADB30 /* _0063_不同路径II.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0063_不同路径II.cpp"; sourceTree = "<group>"; };
 		2413FEDA26AEB1C500CADB30 /* _0063_不同路径II.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0063_不同路径II.hpp"; sourceTree = "<group>"; };
+		2413FEDD26AECFBE00CADB30 /* _1235_规划兼职工作.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_1235_规划兼职工作.cpp"; sourceTree = "<group>"; };
+		2413FEDE26AECFBE00CADB30 /* _1235_规划兼职工作.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_1235_规划兼职工作.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				2413FED626AEA00500CADB30 /* _0072_编辑距离.hpp */,
 				2413FED926AEB1C500CADB30 /* _0063_不同路径II.cpp */,
 				2413FEDA26AEB1C500CADB30 /* _0063_不同路径II.hpp */,
+				2413FEDD26AECFBE00CADB30 /* _1235_规划兼职工作.cpp */,
+				2413FEDE26AECFBE00CADB30 /* _1235_规划兼职工作.hpp */,
 			);
 			path = "动态规划";
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			files = (
 				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
 				2413FE3726A6EB6600CADB30 /* main.cpp in Sources */,
+				2413FEDF26AECFBE00CADB30 /* _1235_规划兼职工作.cpp in Sources */,
 				2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */,
 				2413FE9626A9503900CADB30 /* _0239_滑动窗口最大值.cpp in Sources */,
 				2413FE9F26A995E800CADB30 /* _0739_每日温度.cpp in Sources */,
