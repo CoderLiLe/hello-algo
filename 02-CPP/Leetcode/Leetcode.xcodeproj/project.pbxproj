@@ -28,6 +28,7 @@
 		2413FEE826B00F2600CADB30 /* BinaryTreeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEE626B00F2600CADB30 /* BinaryTreeTest.cpp */; };
 		2413FEED26B00F3F00CADB30 /* _0099_恢复二叉搜索树.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEEB26B00F3E00CADB30 /* _0099_恢复二叉搜索树.cpp */; };
 		2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEF026B00F7700CADB30 /* TreeNode.cpp */; };
+		2413FF0A26B0296700CADB30 /* _0333_最大BST子树.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF0826B0296700CADB30 /* _0333_最大BST子树.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +86,8 @@
 		2413FEEC26B00F3E00CADB30 /* _0099_恢复二叉搜索树.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0099_恢复二叉搜索树.hpp"; sourceTree = "<group>"; };
 		2413FEF026B00F7700CADB30 /* TreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
 		2413FEF126B00F7700CADB30 /* TreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
+		2413FF0826B0296700CADB30 /* _0333_最大BST子树.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0333_最大BST子树.cpp"; sourceTree = "<group>"; };
+		2413FF0926B0296700CADB30 /* _0333_最大BST子树.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0333_最大BST子树.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				2413FEE726B00F2600CADB30 /* BinaryTreeTest.hpp */,
 				2413FEEB26B00F3E00CADB30 /* _0099_恢复二叉搜索树.cpp */,
 				2413FEEC26B00F3E00CADB30 /* _0099_恢复二叉搜索树.hpp */,
+				2413FF0826B0296700CADB30 /* _0333_最大BST子树.cpp */,
+				2413FF0926B0296700CADB30 /* _0333_最大BST子树.hpp */,
 			);
 			path = "二叉树";
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				2413FEDF26AECFBE00CADB30 /* _1235_规划兼职工作.cpp in Sources */,
 				2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */,
 				2413FE9626A9503900CADB30 /* _0239_滑动窗口最大值.cpp in Sources */,
+				2413FF0A26B0296700CADB30 /* _0333_最大BST子树.cpp in Sources */,
 				2413FE9F26A995E800CADB30 /* _0739_每日温度.cpp in Sources */,
 				2413FE9B26A9504B00CADB30 /* 栈队列测试.cpp in Sources */,
 				2413FEDB26AEB1C500CADB30 /* _0063_不同路径II.cpp in Sources */,
