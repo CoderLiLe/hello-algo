@@ -11,6 +11,7 @@
 #include "栈队列测试.hpp"
 #include "StringTest.hpp"
 #include "DpTest.hpp"
+#include "BinaryTreeTest.hpp"
 
 void test0146() {
     LRUCache *lRUCache = new LRUCache(2);
@@ -32,7 +33,9 @@ int main(int argc, const char * argv[]) {
 //    stackQueueTest();
 //    stringTest();
     
-    dpTest();
+//    dpTest();
+    
+    binaryTreeTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;

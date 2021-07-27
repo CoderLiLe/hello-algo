@@ -25,6 +25,9 @@
 		2413FEDB26AEB1C500CADB30 /* _0063_不同路径II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FED926AEB1C500CADB30 /* _0063_不同路径II.cpp */; };
 		2413FEDF26AECFBE00CADB30 /* _1235_规划兼职工作.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEDD26AECFBE00CADB30 /* _1235_规划兼职工作.cpp */; };
 		2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEE126AEEFEF00CADB30 /* _0376_摆动序列.cpp */; };
+		2413FEE826B00F2600CADB30 /* BinaryTreeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEE626B00F2600CADB30 /* BinaryTreeTest.cpp */; };
+		2413FEED26B00F3F00CADB30 /* _0099_恢复二叉搜索树.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEEB26B00F3E00CADB30 /* _0099_恢复二叉搜索树.cpp */; };
+		2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FEF026B00F7700CADB30 /* TreeNode.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +79,12 @@
 		2413FEDE26AECFBE00CADB30 /* _1235_规划兼职工作.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_1235_规划兼职工作.hpp"; sourceTree = "<group>"; };
 		2413FEE126AEEFEF00CADB30 /* _0376_摆动序列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0376_摆动序列.cpp"; sourceTree = "<group>"; };
 		2413FEE226AEEFEF00CADB30 /* _0376_摆动序列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0376_摆动序列.hpp"; sourceTree = "<group>"; };
+		2413FEE626B00F2600CADB30 /* BinaryTreeTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTreeTest.cpp; sourceTree = "<group>"; };
+		2413FEE726B00F2600CADB30 /* BinaryTreeTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTreeTest.hpp; sourceTree = "<group>"; };
+		2413FEEB26B00F3E00CADB30 /* _0099_恢复二叉搜索树.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0099_恢复二叉搜索树.cpp"; sourceTree = "<group>"; };
+		2413FEEC26B00F3E00CADB30 /* _0099_恢复二叉搜索树.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0099_恢复二叉搜索树.hpp"; sourceTree = "<group>"; };
+		2413FEF026B00F7700CADB30 /* TreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TreeNode.cpp; sourceTree = "<group>"; };
+		2413FEF126B00F7700CADB30 /* TreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TreeNode.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,8 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FEEF26B00F6A00CADB30 /* Common */,
+				2413FEE526B00F0200CADB30 /* 二叉树 */,
 				2413FEBF26AE579600CADB30 /* 动态规划 */,
 				2413FEA126AA6F3700CADB30 /* 字符串 */,
 				2413FE9326A9500800CADB30 /* 栈_队列 */,
@@ -179,6 +190,26 @@
 			path = "动态规划";
 			sourceTree = "<group>";
 		};
+		2413FEE526B00F0200CADB30 /* 二叉树 */ = {
+			isa = PBXGroup;
+			children = (
+				2413FEE626B00F2600CADB30 /* BinaryTreeTest.cpp */,
+				2413FEE726B00F2600CADB30 /* BinaryTreeTest.hpp */,
+				2413FEEB26B00F3E00CADB30 /* _0099_恢复二叉搜索树.cpp */,
+				2413FEEC26B00F3E00CADB30 /* _0099_恢复二叉搜索树.hpp */,
+			);
+			path = "二叉树";
+			sourceTree = "<group>";
+		};
+		2413FEEF26B00F6A00CADB30 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2413FEF026B00F7700CADB30 /* TreeNode.cpp */,
+				2413FEF126B00F7700CADB30 /* TreeNode.hpp */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
+				2413FEED26B00F3F00CADB30 /* _0099_恢复二叉搜索树.cpp in Sources */,
 				2413FE3726A6EB6600CADB30 /* main.cpp in Sources */,
 				2413FEDF26AECFBE00CADB30 /* _1235_规划兼职工作.cpp in Sources */,
 				2413FEBB26AAACC300CADB30 /* StringTest.cpp in Sources */,
@@ -249,9 +281,11 @@
 				2413FE9126A844FD00CADB30 /* _0215_数组中的第K个最大元素.cpp in Sources */,
 				2413FEC226AE57B400CADB30 /* _0005_最长回文子串.cpp in Sources */,
 				2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */,
+				2413FEE826B00F2600CADB30 /* BinaryTreeTest.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
+				2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */,
 				2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
