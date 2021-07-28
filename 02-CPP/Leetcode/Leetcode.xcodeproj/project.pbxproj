@@ -35,6 +35,7 @@
 		2413FF1C26B144AD00CADB30 /* DFSTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF1A26B144AD00CADB30 /* DFSTest.cpp */; };
 		2413FF3126B15D9700CADB30 /* _0046_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */; };
 		2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3426B15ED500CADB30 /* VectorUtil.cpp */; };
+		2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,8 @@
 		2413FF3026B15D9700CADB30 /* _0046_全排列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0046_全排列.hpp"; sourceTree = "<group>"; };
 		2413FF3426B15ED500CADB30 /* VectorUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VectorUtil.cpp; sourceTree = "<group>"; };
 		2413FF3526B15ED500CADB30 /* VectorUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorUtil.hpp; sourceTree = "<group>"; };
+		2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0047_全排列.cpp"; sourceTree = "<group>"; };
+		2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0047_全排列.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +251,8 @@
 				2413FF1B26B144AD00CADB30 /* DFSTest.hpp */,
 				2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */,
 				2413FF3026B15D9700CADB30 /* _0046_全排列.hpp */,
+				2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */,
+				2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */,
 			);
 			path = DFS;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				2413FF1C26B144AD00CADB30 /* DFSTest.cpp in Sources */,
 				2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */,
 				2413FEE826B00F2600CADB30 /* BinaryTreeTest.cpp in Sources */,
+				2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,

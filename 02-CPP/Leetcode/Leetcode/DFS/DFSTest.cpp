@@ -8,6 +8,7 @@
 #include "DFSTest.hpp"
 #include "_0017_电话号码的字母组合.hpp"
 #include "_0046_全排列.hpp"
+#include "_0047_全排列.hpp"
 
 #include "VectorUtil.hpp"
 
@@ -35,8 +36,16 @@ void test0046_02() {
     vectorPrint(pathList);
 }
 
+void test0047() {
+    vector<int> nums = {1,1,2};
+    PermuteUnique *pu = new PermuteUnique();
+    vector<vector<int>> pathList = pu->permuteUnique(nums);
+    vectorPrint(pathList);
+}
+
 void dfsTest() {
 //    test0017();
 //    test0046();
-    test0046_02();
+//    test0046_02();
+    test0047();
 }
