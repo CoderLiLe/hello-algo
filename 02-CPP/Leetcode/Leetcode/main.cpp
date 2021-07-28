@@ -33,9 +33,9 @@ int main(int argc, const char * argv[]) {
 //    stackQueueTest();
 //    stringTest();
     
-//    dpTest();
+    dpTest();
     
-    binaryTreeTest();
+//    binaryTreeTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;

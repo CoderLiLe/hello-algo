@@ -10,6 +10,7 @@
 #include "_0005_最长回文子串.hpp"
 #include "_0063_不同路径II.hpp"
 #include "_0072_编辑距离.hpp"
+#include "_0121_买卖股票的最佳时机.hpp"
 #include "_0376_摆动序列.hpp"
 #include "_1235_规划兼职工作.hpp"
 
@@ -57,6 +58,12 @@ void test0063() {
 void test0072() {
     cout << minDistance("horse", "ros") << endl;
     cout << minDistance("intention", "execution") << endl;
+}
+
+void test0121() {
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    cout << maxProfit(prices) << endl;
+    cout << maxProfit2(prices) << endl;
 }
 
 void test0376_01() {
@@ -109,9 +116,11 @@ void dpTest() {
     
 //    test0072();
     
+    test0121();
+    
 //    test0376_01();
-    test0376_02();
-    test0376_03();
+//    test0376_02();
+//    test0376_03();
     
 //    test1235();
 }
