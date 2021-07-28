@@ -35,4 +35,10 @@ public class _017_电话号码的字母组合2 {
             dfs(idx + 1, chars, string, list);
         }
     }
+
+    public static void main(String[] args) {
+        _017_电话号码的字母组合2 obj = new _017_电话号码的字母组合2();
+        List<String> result = obj.letterCombinations("23");
+        System.out.println(result.toString());
+    }
 }
