@@ -7,6 +7,9 @@
 
 #include "DFSTest.hpp"
 #include "_0017_电话号码的字母组合.hpp"
+#include "_0046_全排列.hpp"
+
+#include "VectorUtil.hpp"
 
 #include <iostream>
 
@@ -20,6 +23,13 @@ void test0017() {
     cout << endl;
 }
 
+void test0046() {
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> pathList = permute(nums);
+    vectorPrint(pathList);
+}
+
 void dfsTest() {
-    test0017();
+//    test0017();
+    test0046();
 }

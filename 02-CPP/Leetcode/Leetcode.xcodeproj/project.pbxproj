@@ -33,6 +33,8 @@
 		2413FF1226B0F51600CADB30 /* _0121_买卖股票的最佳时机.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF1026B0F51600CADB30 /* _0121_买卖股票的最佳时机.cpp */; };
 		2413FF1726B1444100CADB30 /* _0017_电话号码的字母组合.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF1526B1444100CADB30 /* _0017_电话号码的字母组合.cpp */; };
 		2413FF1C26B144AD00CADB30 /* DFSTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF1A26B144AD00CADB30 /* DFSTest.cpp */; };
+		2413FF3126B15D9700CADB30 /* _0046_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */; };
+		2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3426B15ED500CADB30 /* VectorUtil.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +102,10 @@
 		2413FF1626B1444100CADB30 /* _0017_电话号码的字母组合.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0017_电话号码的字母组合.hpp"; sourceTree = "<group>"; };
 		2413FF1A26B144AD00CADB30 /* DFSTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DFSTest.cpp; sourceTree = "<group>"; };
 		2413FF1B26B144AD00CADB30 /* DFSTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DFSTest.hpp; sourceTree = "<group>"; };
+		2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0046_全排列.cpp"; sourceTree = "<group>"; };
+		2413FF3026B15D9700CADB30 /* _0046_全排列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0046_全排列.hpp"; sourceTree = "<group>"; };
+		2413FF3426B15ED500CADB30 /* VectorUtil.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VectorUtil.cpp; sourceTree = "<group>"; };
+		2413FF3526B15ED500CADB30 /* VectorUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorUtil.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FF3326B15EB300CADB30 /* Tool */,
 				2413FF1426B143D900CADB30 /* DFS */,
 				2413FEEF26B00F6A00CADB30 /* Common */,
 				2413FEE526B00F0200CADB30 /* 二叉树 */,
@@ -239,8 +246,19 @@
 				2413FF1626B1444100CADB30 /* _0017_电话号码的字母组合.hpp */,
 				2413FF1A26B144AD00CADB30 /* DFSTest.cpp */,
 				2413FF1B26B144AD00CADB30 /* DFSTest.hpp */,
+				2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */,
+				2413FF3026B15D9700CADB30 /* _0046_全排列.hpp */,
 			);
 			path = DFS;
+			sourceTree = "<group>";
+		};
+		2413FF3326B15EB300CADB30 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				2413FF3426B15ED500CADB30 /* VectorUtil.cpp */,
+				2413FF3526B15ED500CADB30 /* VectorUtil.hpp */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +329,7 @@
 				2413FE9B26A9504B00CADB30 /* 栈队列测试.cpp in Sources */,
 				2413FEDB26AEB1C500CADB30 /* _0063_不同路径II.cpp in Sources */,
 				2413FEA426AA6F6E00CADB30 /* 面0109_字符串轮转.cpp in Sources */,
+				2413FF3126B15D9700CADB30 /* _0046_全排列.cpp in Sources */,
 				2413FF1226B0F51600CADB30 /* _0121_买卖股票的最佳时机.cpp in Sources */,
 				2413FE8826A8391F00CADB30 /* _0075_ 颜色分类.cpp in Sources */,
 				2413FEAC26AA9FDB00CADB30 /* _0151_翻转字符串里的单词.cpp in Sources */,
@@ -322,6 +341,7 @@
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
+				2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */,
 				2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */,
 				2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */,
 				2413FF1726B1444100CADB30 /* _0017_电话号码的字母组合.cpp in Sources */,
