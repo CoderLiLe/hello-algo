@@ -7,6 +7,7 @@
 
 #include "BinaryTreeTest.hpp"
 #include "_0099_恢复二叉搜索树.hpp"
+#include "_0236_二叉树的最近公共祖先.hpp"
 #include "_0333_最大BST子树.hpp"
 
 #include <iostream>
@@ -35,6 +36,21 @@ void test0099_02() {
     cout << "恢复二叉搜索树完毕" << endl;
 }
 
+void test0236() {
+    TreeNode* node7 = new TreeNode(7);
+    TreeNode* node4 = new TreeNode(4);
+    TreeNode* node6 = new TreeNode(6);
+    TreeNode* node0 = new TreeNode(0);
+    TreeNode* node8 = new TreeNode(8);
+    TreeNode* node2 = new TreeNode(2, node7, node4);
+    TreeNode* node5 = new TreeNode(5, node6, node2);
+    TreeNode* node1 = new TreeNode(1, node0, node8);
+    TreeNode* node3 = new TreeNode(3, node5, node1);
+    
+    TreeNode* ancestor = lowestCommonAncestor(node3, node5, node1);
+    cout << "最近公共祖先为：" << ancestor->val << endl;
+}
+
 void test0333() {
     TreeNode* node1 = new TreeNode(1);
     TreeNode* node7 = new TreeNode(7);
@@ -61,6 +77,8 @@ void binaryTreeTest() {
 //    test0099();
 //    test0099_02();
     
+    test0236();
+    
 //    test0333();
-    test0333_02();
+//    test0333_02();
 }
