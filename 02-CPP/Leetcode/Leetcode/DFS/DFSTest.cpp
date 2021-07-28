@@ -29,7 +29,14 @@ void test0046() {
     vectorPrint(pathList);
 }
 
+void test0046_02() {
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> pathList = permute2(nums);
+    vectorPrint(pathList);
+}
+
 void dfsTest() {
 //    test0017();
-    test0046();
+//    test0046();
+    test0046_02();
 }

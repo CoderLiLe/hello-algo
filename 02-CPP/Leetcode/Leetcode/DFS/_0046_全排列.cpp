@@ -33,3 +33,29 @@ vector<vector<int>> permute(vector<int>& nums) {
     return paths;
 }
 
+#pragma mark -
+
+void dfs(int idx, vector<int>& nums, vector<vector<int>>& list) {
+    if (idx == nums.size()) {
+        vector<int> resultList(nums.size());
+        for (int i = 0; i < nums.size(); i++) {
+            resultList[i] = nums[i];
+        }
+        list.push_back(resultList);
+        return;
+    }
+    
+    for (int i = idx; i < nums.size(); i++) {
+        swap(nums[idx], nums[i]);
+        dfs(idx + 1, nums, list);
+        swap(nums[idx], nums[i]);
+    }
+}
+
+vector<vector<int>> permute2(vector<int>& nums) {
+    vector<vector<int>> list;
+    if (0 == nums.size()) return list;
+    dfs(0, nums, list);
+    return list;
+}
+
