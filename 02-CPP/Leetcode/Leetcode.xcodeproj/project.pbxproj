@@ -36,6 +36,7 @@
 		2413FF3126B15D9700CADB30 /* _0046_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF2F26B15D9700CADB30 /* _0046_全排列.cpp */; };
 		2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3426B15ED500CADB30 /* VectorUtil.cpp */; };
 		2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */; };
+		2413FF3F26B1832100CADB30 /* _0022_括号生成.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +110,8 @@
 		2413FF3526B15ED500CADB30 /* VectorUtil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VectorUtil.hpp; sourceTree = "<group>"; };
 		2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0047_全排列.cpp"; sourceTree = "<group>"; };
 		2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0047_全排列.hpp"; sourceTree = "<group>"; };
+		2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0022_括号生成.cpp"; sourceTree = "<group>"; };
+		2413FF3E26B1832100CADB30 /* _0022_括号生成.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0022_括号生成.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				2413FF3026B15D9700CADB30 /* _0046_全排列.hpp */,
 				2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */,
 				2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */,
+				2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */,
+				2413FF3E26B1832100CADB30 /* _0022_括号生成.hpp */,
 			);
 			path = DFS;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 				2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */,
 				2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */,
+				2413FF3F26B1832100CADB30 /* _0022_括号生成.cpp in Sources */,
 				2413FED126AE5DD800CADB30 /* DpTest.cpp in Sources */,
 				2413FF1726B1444100CADB30 /* _0017_电话号码的字母组合.cpp in Sources */,
 			);

@@ -7,6 +7,7 @@
 
 #include "DFSTest.hpp"
 #include "_0017_电话号码的字母组合.hpp"
+#include "_0022_括号生成.hpp"
 #include "_0046_全排列.hpp"
 #include "_0047_全排列.hpp"
 
@@ -22,6 +23,11 @@ void test0017() {
         cout << result[i] << " ";
     }
     cout << endl;
+}
+
+void test0022() {
+    vector<string> res = generateParenthesis(3);
+    vectorPrint(res);
 }
 
 void test0046() {
@@ -45,7 +51,8 @@ void test0047() {
 
 void dfsTest() {
 //    test0017();
+    test0022();
 //    test0046();
 //    test0046_02();
-    test0047();
+//    test0047();
 }

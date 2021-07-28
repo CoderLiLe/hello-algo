@@ -25,3 +25,22 @@ void vectorPrint(vector<vector<int>>& nums) {
         vectorPrint(nums[i]);
     }
 }
+
+#pragma mark - string
+
+void vectorPrint(vector<string>& nums) {
+    size_t size = nums.size();
+    for (size_t i = 0; i < size; i++) {
+        if (i < size - 1) {
+            cout << nums[i] << ", ";
+        } else {
+            cout << nums[i] << endl;
+        }
+    }
+}
+
+void vectorPrint(vector<vector<string>>& nums) {
+    for (size_t i = 0; i < nums.size(); i++) {
+        vectorPrint(nums[i]);
+    }
+}

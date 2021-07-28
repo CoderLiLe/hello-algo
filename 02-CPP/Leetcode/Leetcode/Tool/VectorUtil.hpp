@@ -18,4 +18,8 @@ void vectorPrint(vector<int>& nums);
 
 void vectorPrint(vector<vector<int>>& nums);
 
+void vectorPrint(vector<string>& nums);
+
+void vectorPrint(vector<vector<string>>& nums);
+
 #endif /* VectorUtil_hpp */
