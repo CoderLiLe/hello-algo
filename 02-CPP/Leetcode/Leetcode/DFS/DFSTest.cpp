@@ -11,6 +11,7 @@
 #include "_0046_全排列.hpp"
 #include "_0047_全排列.hpp"
 #include "_0051_N皇后.hpp"
+#include "_0052_N皇后II.hpp"
 
 #include "VectorUtil.hpp"
 
@@ -55,11 +56,16 @@ void test0051() {
     vectorPrint(result);
 }
 
+void test0052() {
+    cout << totalNQueens(4) << endl;
+}
+
 void dfsTest() {
 //    test0017();
 //    test0022();
 //    test0046();
 //    test0046_02();
 //    test0047();
-    test0051();
+//    test0051();
+    test0052();
 }

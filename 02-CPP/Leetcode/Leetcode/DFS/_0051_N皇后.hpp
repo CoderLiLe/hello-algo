@@ -16,4 +16,6 @@ using namespace std;
 
 vector<vector<string>> solveNQueens(int n);
 
+bool queueuIsValidPlace(int row, int col, const vector<string>& board, int n);
+
 #endif /* _0051_N___hpp */

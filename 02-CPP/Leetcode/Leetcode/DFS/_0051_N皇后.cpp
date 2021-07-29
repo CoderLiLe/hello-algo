@@ -7,7 +7,7 @@
 
 #include "_0051_N皇后.hpp"
 
-bool isValid(int row, int col, const vector<string>& board, int n) {
+bool queueuIsValidPlace(int row, int col, const vector<string>& board, int n) {
     // 检查列
     for (int i = 0; i < row; i++) {
         if (board[i][col] == 'Q') {
@@ -39,7 +39,7 @@ void dfs(int row, int n, vector<vector<string>>& result, vector<string>& board) 
     }
     
     for (int col = 0; col < n; col++) {
-        if (isValid(row, col, board, n)) {
+        if (queueuIsValidPlace(row, col, board, n)) {
             board[row][col] = 'Q';
             dfs(row + 1, n, result, board);
             board[row][col] = '.';
