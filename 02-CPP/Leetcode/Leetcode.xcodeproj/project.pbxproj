@@ -39,6 +39,7 @@
 		2413FF3F26B1832100CADB30 /* _0022_括号生成.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */; };
 		2413FF4326B2420900CADB30 /* _0051_N皇后.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4126B2420900CADB30 /* _0051_N皇后.cpp */; };
 		2413FF4726B247FE00CADB30 /* _0052_N皇后II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4526B247FE00CADB30 /* _0052_N皇后II.cpp */; };
+		2413FF4B26B269E200CADB30 /* _130_被围绕的区域.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4926B269E200CADB30 /* _130_被围绕的区域.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +119,8 @@
 		2413FF4226B2420900CADB30 /* _0051_N皇后.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0051_N皇后.hpp"; sourceTree = "<group>"; };
 		2413FF4526B247FE00CADB30 /* _0052_N皇后II.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0052_N皇后II.cpp"; sourceTree = "<group>"; };
 		2413FF4626B247FE00CADB30 /* _0052_N皇后II.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0052_N皇后II.hpp"; sourceTree = "<group>"; };
+		2413FF4926B269E200CADB30 /* _130_被围绕的区域.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_130_被围绕的区域.cpp"; sourceTree = "<group>"; };
+		2413FF4A26B269E200CADB30 /* _130_被围绕的区域.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_130_被围绕的区域.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				2413FF4226B2420900CADB30 /* _0051_N皇后.hpp */,
 				2413FF4526B247FE00CADB30 /* _0052_N皇后II.cpp */,
 				2413FF4626B247FE00CADB30 /* _0052_N皇后II.hpp */,
+				2413FF4926B269E200CADB30 /* _130_被围绕的区域.cpp */,
+				2413FF4A26B269E200CADB30 /* _130_被围绕的区域.hpp */,
 			);
 			path = DFS;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				2413FF0A26B0296700CADB30 /* _0333_最大BST子树.cpp in Sources */,
 				2413FE9F26A995E800CADB30 /* _0739_每日温度.cpp in Sources */,
 				2413FE9B26A9504B00CADB30 /* 栈队列测试.cpp in Sources */,
+				2413FF4B26B269E200CADB30 /* _130_被围绕的区域.cpp in Sources */,
 				2413FEDB26AEB1C500CADB30 /* _0063_不同路径II.cpp in Sources */,
 				2413FEA426AA6F6E00CADB30 /* 面0109_字符串轮转.cpp in Sources */,
 				2413FF3126B15D9700CADB30 /* _0046_全排列.cpp in Sources */,

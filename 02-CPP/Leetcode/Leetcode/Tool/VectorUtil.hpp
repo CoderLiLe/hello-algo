@@ -22,4 +22,8 @@ void vectorPrint(vector<string>& nums);
 
 void vectorPrint(vector<vector<string>>& nums);
 
+void vectorPrint(vector<char>& chars);
+
+void vectorPrint(vector<vector<char>>& chars);
+
 #endif /* VectorUtil_hpp */

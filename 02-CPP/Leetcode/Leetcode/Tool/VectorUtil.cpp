@@ -44,3 +44,22 @@ void vectorPrint(vector<vector<string>>& nums) {
         vectorPrint(nums[i]);
     }
 }
+
+#pragma mark - char
+
+void vectorPrint(vector<char>& chars) {
+    size_t size = chars.size();
+    for (size_t i = 0; i < size; i++) {
+        if (i < size - 1) {
+            cout << chars[i] << ", ";
+        } else {
+            cout << chars[i] << endl;
+        }
+    }
+}
+
+void vectorPrint(vector<vector<char>>& chars) {
+    for (size_t i = 0; i < chars.size(); i++) {
+        vectorPrint(chars[i]);
+    }
+}
