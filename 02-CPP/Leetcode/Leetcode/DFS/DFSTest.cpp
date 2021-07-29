@@ -10,6 +10,7 @@
 #include "_0022_括号生成.hpp"
 #include "_0046_全排列.hpp"
 #include "_0047_全排列.hpp"
+#include "_0051_N皇后.hpp"
 
 #include "VectorUtil.hpp"
 
@@ -49,10 +50,16 @@ void test0047() {
     vectorPrint(pathList);
 }
 
+void test0051() {
+    vector<vector<string>> result = solveNQueens(4);
+    vectorPrint(result);
+}
+
 void dfsTest() {
 //    test0017();
-    test0022();
+//    test0022();
 //    test0046();
 //    test0046_02();
 //    test0047();
+    test0051();
 }

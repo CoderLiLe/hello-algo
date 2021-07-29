@@ -37,6 +37,7 @@
 		2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3426B15ED500CADB30 /* VectorUtil.cpp */; };
 		2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3926B17F4500CADB30 /* _0047_全排列.cpp */; };
 		2413FF3F26B1832100CADB30 /* _0022_括号生成.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */; };
+		2413FF4326B2420900CADB30 /* _0051_N皇后.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4126B2420900CADB30 /* _0051_N皇后.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +113,8 @@
 		2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0047_全排列.hpp"; sourceTree = "<group>"; };
 		2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0022_括号生成.cpp"; sourceTree = "<group>"; };
 		2413FF3E26B1832100CADB30 /* _0022_括号生成.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0022_括号生成.hpp"; sourceTree = "<group>"; };
+		2413FF4126B2420900CADB30 /* _0051_N皇后.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0051_N皇后.cpp"; sourceTree = "<group>"; };
+		2413FF4226B2420900CADB30 /* _0051_N皇后.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0051_N皇后.hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,8 @@
 				2413FF3A26B17F4500CADB30 /* _0047_全排列.hpp */,
 				2413FF3D26B1832100CADB30 /* _0022_括号生成.cpp */,
 				2413FF3E26B1832100CADB30 /* _0022_括号生成.hpp */,
+				2413FF4126B2420900CADB30 /* _0051_N皇后.cpp */,
+				2413FF4226B2420900CADB30 /* _0051_N皇后.hpp */,
 			);
 			path = DFS;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				2413FED726AEA00500CADB30 /* _0072_编辑距离.cpp in Sources */,
 				2413FEE826B00F2600CADB30 /* BinaryTreeTest.cpp in Sources */,
 				2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */,
+				2413FF4326B2420900CADB30 /* _0051_N皇后.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
