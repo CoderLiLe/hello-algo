@@ -11,6 +11,9 @@
 #include "_0075_ 颜色分类.hpp"
 #include "_0215_数组中的第K个最大元素.hpp"
 #include "_0033_搜索旋转排序数组.hpp"
+#include "_0034_在排序数组中查找元素的第一个和最后一个位置.hpp"
+
+#include "VectorUtil.hpp"
 
 using namespace std;
 
@@ -32,6 +35,19 @@ void test0033_02() {
     cout << searchTarget2(nums2, 0) << endl;
 }
 
+void test0034() {
+    vector<int> nums = {5,7,7,8,8,10};
+    vector<int> res = searchRange(nums, 8);
+    vectorPrint(res);
+    
+    vector<int> res2 = searchRange(nums, 6);
+    vectorPrint(res2);
+    
+    vector<int> nums3 = {};
+    vector<int> res3 = searchRange(nums3, 0);
+    vectorPrint(res3);
+}
+
 void test0075() {
     vector<int> nums = {2,0,2,1,1,0};
     sortColors(nums);
@@ -49,7 +65,8 @@ void test0215() {
 
 void sortArraytest() {
 //    test0033();
-    test0033_02();
+//    test0033_02();
+    test0034();
 //    test0075();
 //    test0215();
 }
