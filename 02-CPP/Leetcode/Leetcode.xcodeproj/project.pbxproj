@@ -40,6 +40,8 @@
 		2413FF4326B2420900CADB30 /* _0051_N皇后.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4126B2420900CADB30 /* _0051_N皇后.cpp */; };
 		2413FF4726B247FE00CADB30 /* _0052_N皇后II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4526B247FE00CADB30 /* _0052_N皇后II.cpp */; };
 		2413FF4B26B269E200CADB30 /* _130_被围绕的区域.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4926B269E200CADB30 /* _130_被围绕的区域.cpp */; };
+		2413FF5026B4E51100CADB30 /* _0029_两数相除.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF4E26B4E51100CADB30 /* _0029_两数相除.cpp */; };
+		2413FF5526B4E96A00CADB30 /* MathTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF5326B4E96A00CADB30 /* MathTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +123,10 @@
 		2413FF4626B247FE00CADB30 /* _0052_N皇后II.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0052_N皇后II.hpp"; sourceTree = "<group>"; };
 		2413FF4926B269E200CADB30 /* _130_被围绕的区域.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_130_被围绕的区域.cpp"; sourceTree = "<group>"; };
 		2413FF4A26B269E200CADB30 /* _130_被围绕的区域.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_130_被围绕的区域.hpp"; sourceTree = "<group>"; };
+		2413FF4E26B4E51100CADB30 /* _0029_两数相除.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0029_两数相除.cpp"; sourceTree = "<group>"; };
+		2413FF4F26B4E51100CADB30 /* _0029_两数相除.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0029_两数相除.hpp"; sourceTree = "<group>"; };
+		2413FF5326B4E96A00CADB30 /* MathTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MathTest.cpp; sourceTree = "<group>"; };
+		2413FF5426B4E96A00CADB30 /* MathTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MathTest.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 		2413FE3526A6EB6600CADB30 /* Leetcode */ = {
 			isa = PBXGroup;
 			children = (
+				2413FF4D26B4E4E400CADB30 /* 数学 */,
 				2413FF3326B15EB300CADB30 /* Tool */,
 				2413FF1426B143D900CADB30 /* DFS */,
 				2413FEEF26B00F6A00CADB30 /* Common */,
@@ -286,6 +293,17 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		2413FF4D26B4E4E400CADB30 /* 数学 */ = {
+			isa = PBXGroup;
+			children = (
+				2413FF4E26B4E51100CADB30 /* _0029_两数相除.cpp */,
+				2413FF4F26B4E51100CADB30 /* _0029_两数相除.hpp */,
+				2413FF5326B4E96A00CADB30 /* MathTest.cpp */,
+				2413FF5426B4E96A00CADB30 /* MathTest.hpp */,
+			);
+			path = "数学";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2413FF5026B4E51100CADB30 /* _0029_两数相除.cpp in Sources */,
 				2413FE8D26A83C1C00CADB30 /* 排序数组测试.cpp in Sources */,
 				2413FEED26B00F3F00CADB30 /* _0099_恢复二叉搜索树.cpp in Sources */,
 				2413FF0E26B0EE6900CADB30 /* _0236_二叉树的最近公共祖先.cpp in Sources */,
@@ -369,6 +388,7 @@
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
+				2413FF5526B4E96A00CADB30 /* MathTest.cpp in Sources */,
 				2413FF4726B247FE00CADB30 /* _0052_N皇后II.cpp in Sources */,
 				2413FF3626B15ED500CADB30 /* VectorUtil.cpp in Sources */,
 				2413FEF226B00F7700CADB30 /* TreeNode.cpp in Sources */,

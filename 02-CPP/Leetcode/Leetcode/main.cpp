@@ -13,6 +13,7 @@
 #include "DpTest.hpp"
 #include "BinaryTreeTest.hpp"
 #include "DFSTest.hpp"
+#include "MathTest.hpp"
 
 void test0146() {
     LRUCache *lRUCache = new LRUCache(2);
@@ -38,7 +39,9 @@ int main(int argc, const char * argv[]) {
     
 //    binaryTreeTest();
     
-    dfsTest();
+//    dfsTest();
+    
+    mathTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;
