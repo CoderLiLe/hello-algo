@@ -31,7 +31,7 @@ void test0146() {
 int main(int argc, const char * argv[]) {
 //    test0146();
     
-//    sortArraytest();
+    sortArraytest();
 //    stackQueueTest();
 //    stringTest();
     
@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
     
 //    dfsTest();
     
-    mathTest();
+//    mathTest();
     
     cout << "执行完毕！！！" << endl;
     return 0;
