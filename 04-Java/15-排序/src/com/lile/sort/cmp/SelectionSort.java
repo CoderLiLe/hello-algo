@@ -4,6 +4,10 @@ import com.lile.sort.Sort;
 
 public class SelectionSort<E extends Comparable<E>> extends Sort<E> {
 
+	// T = O(n ^ 2)
+	// S = O(1)
+	// 不稳定排序
+	// 交换次数远远少于冒泡排序，平均性能优于冒泡排序
 	@Override
 	protected void sort() {
 		for (int end = array.length - 1; end > 0; end--) {
