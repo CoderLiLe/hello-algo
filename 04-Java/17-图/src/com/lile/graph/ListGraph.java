@@ -1,21 +1,10 @@
 package com.lile.graph;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.Queue;
-import java.util.Set;
-import java.util.Stack;
-
 import com.lile.MinHeap;
 import com.lile.UnionFind;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 @SuppressWarnings("unchecked")
 public class ListGraph<V, E> extends Graph<V, E> {
@@ -393,7 +382,7 @@ public class ListGraph<V, E> extends Graph<V, E> {
 		oldPath.edgeInfos.addAll(fromPath.edgeInfos);
 		oldPath.edgeInfos.add(edge.info());
 		
-		return false;
+		return true;
 	}
 	
 	private Map<V, PathInfo<V, E>> dijkstra(V begin) {
