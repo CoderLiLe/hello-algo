@@ -4,7 +4,11 @@ import com.lile.sort.Sort;
 
 public class HeapSort<E extends Comparable<E>> extends Sort<E> {
 	private int heapSize;
-	
+
+	// T = O(nlogn)
+	// S = O(1)
+	// 不稳定排序
+	// 堆排序可以认为是对选择排序的一种优化
 	@Override
 	protected void sort() {
 		// 原地建堆

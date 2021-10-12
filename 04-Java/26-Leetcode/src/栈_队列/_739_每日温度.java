@@ -25,7 +25,7 @@ public class _739_每日温度 {
 	 * i 用来扫描所有的元素，从右往左扫描（i逐渐递减），一开始 i 指向倒数第 2 个元素
 	 * 对于每一个 i，一开始令 j = i + 1
 	 * 1> 如果 T[i] < T[j]，那么 values[i] = j - i，然后 i--
-	 * 2> 如果 values[j] == 0，那么 values[i] == 0，然后 i--
+	 * 2> 如果 values[j] == 0，那么 values[i] = 0，然后 i--
 	 * 3> 否则，设置 j = j + values[j]，回到步骤 1
 	 */
 	public int[] dailyTemperatures2(int[] T) {

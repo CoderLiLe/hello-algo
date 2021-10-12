@@ -5,6 +5,8 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class BucketSort {
+	// T = O(n) + m * O((n / m) * (log(n / m))) = O(n + n * (log(n / m))) = O(n + n * logn - n * logm) = O(n + k)
+	// S = O(n + m)，m为桶的数量
 	public void sort(double[] array) {
 		long begin = System.currentTimeMillis();
 		

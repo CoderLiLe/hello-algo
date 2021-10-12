@@ -1,10 +1,10 @@
 package com.lile.sort.cmp;
 
+import com.lile.sort.Sort;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import com.lile.sort.Sort;
 
 public class ShellSort<E extends Comparable<E>> extends Sort<E> {
 	@Override
@@ -22,7 +22,7 @@ public class ShellSort<E extends Comparable<E>> extends Sort<E> {
 	 */
 	private void sort(int step) {
 		// col: 第几列
-		
+		// 希尔排序被认为是插入排序的改进版
 		for (int col = 0; col < step; col++) { // 对第 col 列进行排序
 			// 对 [0, array.length) 范围的元素进行插入排序
 			// col, col + step, col + 2 * step, col + 3 * step

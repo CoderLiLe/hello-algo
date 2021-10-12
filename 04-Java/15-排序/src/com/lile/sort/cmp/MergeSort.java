@@ -5,6 +5,8 @@ import com.lile.sort.Sort;
 public class MergeSort<E extends Comparable<E>> extends Sort<E> {
 	private E[] leftArray;
 
+	// T = O(nlogn)
+	// S = O(n/2 + logn) = O(n)
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void sort() {

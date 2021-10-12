@@ -39,6 +39,10 @@ public class LRUCache {
         node.prev.next = node.next;
     }
 
+    /**
+     * 在虚拟头节点后边插入一个节点
+     * @param node
+     */
     private void addAfterFirst(Node node) {
         // node 与 first.next
         node.next = first.next;
@@ -56,6 +60,9 @@ public class LRUCache {
             removeNode(node);
         } else { // 添加一对新的 key - value
             if (map.size() == capacity) {
+                // 淘汰最近最少使用的 key-value
+                // map.remove(last.prev.key);
+                // removeNode(last.prev);
                 removeNode(map.remove(last.prev.key));
             }
             map.put(key, node = new Node(key, value));

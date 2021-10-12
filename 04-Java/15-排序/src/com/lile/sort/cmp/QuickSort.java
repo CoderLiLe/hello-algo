@@ -4,6 +4,8 @@ import com.lile.sort.Sort;
 
 public class QuickSort<E extends Comparable<E>> extends Sort<E> {
 
+	// 平均、最好：T = O(nlogn)，最坏：T = O(n^2)
+	// 由于递归调用，S = O(logn)
 	@Override
 	protected void sort() {
 		sort(0, array.length);

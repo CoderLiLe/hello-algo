@@ -2,6 +2,8 @@ package com.lile.sort;
 
 public class CountingSort extends Sort<Integer> {
 
+	// T = 3 * O(n) + O(k) = O(n + k)
+	// S = O(n + k)
 	@Override
 	protected void sort() {
 		// 找出最值
@@ -17,25 +19,25 @@ public class CountingSort extends Sort<Integer> {
 		}
 		
 		// 开辟内存空间，存储次数
-		int[] counts = new int[max - min + 1];
+		int[] counts = new int[max - min + 1]; // S = O(k)，k 最大最小值之差
 		// 统计每个整数出现的次数
-		for (int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length; i++) { // T = O(n)
 			counts[array[i] - min]++;
 		}
 		
 		// 累加次数
-		for (int i = 1; i < counts.length; i++) {
+		for (int i = 1; i < counts.length; i++) { // T = O(k)，k 最大最小值之差
 			counts[i] += counts[i - 1];
 		}
 		
 		// 从后往前遍历元素，将它放到有序数组中的合适位置
-		int[] newArray = new int[array.length];
-		for (int i = array.length - 1; i >= 0; i--) {
+		int[] newArray = new int[array.length]; // S = O(n)
+		for (int i = array.length - 1; i >= 0; i--) { // T = O(n)
 			newArray[--counts[array[i] - min]] = array[i];
 		}
 		
 		// 将有序数组赋值到 array
-		for (int i = 0; i < newArray.length; i++) {
+		for (int i = 0; i < newArray.length; i++) { // T = O(n)
 			array[i] = newArray[i];
 		}
 	}

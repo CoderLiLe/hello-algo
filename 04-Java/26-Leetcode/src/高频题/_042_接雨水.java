@@ -71,13 +71,20 @@ public class _042_接雨水 {
      * 双指针法
      *
      * T = O(n), S = O(1)
+     *
+     * 交替求左边、右边最大值（那边小，就求那边的最大值）
+     * 只要 rightMax[i] > leftMax[i]，积水高度就是由 leftMax[i]决定
+     * 只要 rightMax[i] < leftMax[i]，积水高度就是由 rightMax[i]决定
      */
     public int trap3(int[] height) {
         if (height == null || height.length == 0) return 0;
 
         int l = 0, r = height.length - 1, lowerMax = 0, water = 0;
         while (l < r) {
+            // height[l] height[r]中较小的那个
+            // int lower = height[l] <= height[r] ? height[l++] : height[r--];
             int lower = height[height[l] <= height[r] ? l++ : r--];
+            // 目前为止遇到的最大的 lower
             lowerMax = Math.max(lowerMax, lower);
             water += lowerMax - lower;
         }
