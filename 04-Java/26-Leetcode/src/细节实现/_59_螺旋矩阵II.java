@@ -40,6 +40,16 @@ public class _59_螺旋矩阵II {
             }
             System.out.println();
         }
+
+        System.out.println("-----------");
+
+        int[][] matrix3 = generateMatrix3(3);
+        for (int[] row : matrix3) {
+            for (int num : row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
     }
 
     // T = O(n^2), S = O(n^2)
@@ -104,5 +114,16 @@ public class _59_螺旋矩阵II {
             if (++beginX > endX) break;
         }
         return matrix;
+    }
+
+    public int[][] generateMatrix3(int n) {
+        int[][] res = new int[n][n];
+        for (int begin = 0, end = n - 1, num = 1; begin <= end; begin++, end--) {
+            for (int y = begin; y <= end; y++) res[begin][y] = num++;
+            for (int x = begin + 1; x <= end; x++) res[x][end] = num++;
+            for (int y = end - 1; end >= begin; y--) res[end][y] = num++;
+            for (int x = end - 1; end >= begin + 1; x--) res[x][begin] = num++;
+        }
+        return res;
     }
 }
