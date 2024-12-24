@@ -171,6 +171,8 @@ public class _042_接雨水 {
     public static void main(String[] args) {
         int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
         _042_接雨水 catchRain = new _042_接雨水();
+        Asserts.test(catchRain.trap3(height) == 6);
+        Asserts.test(catchRain.trap4(height) == 6);
         Asserts.test(catchRain.trap5(height) == 6);
         Asserts.test(catchRain.trap33(height) == 6);
     }
