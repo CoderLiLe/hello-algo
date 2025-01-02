@@ -1,9 +1,19 @@
 package 链表;
 
+import tools.Asserts;
+
 public class _203_移除链表元素 {
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        removeElements2(node1, 1);
+        // 1,2,6,3,4,5,6
+        ListNode node7 = new ListNode(6, null);
+        ListNode node6 = new ListNode(5, node7);
+        ListNode node5 = new ListNode(4, node6);
+        ListNode node4 = new ListNode(3, node5);
+        ListNode node3 = new ListNode(6, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(1, node2);
+        ListNode newHead = removeElements4(node1, 6);
+        Asserts.test(LinkedListUtil.toString(newHead).equals("[1,2,3,4,5]"));
     }
 
     static public ListNode removeElements(ListNode head, int val) {
@@ -34,10 +44,29 @@ public class _203_移除链表元素 {
         return newHead;
     }
 
+    static public ListNode removeElements2(ListNode head, int val) {
+        // 删除头节点
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+
+        // 删除非头节点
+        ListNode curr = head;
+        while (curr != null && curr.next != null) {
+            if (curr.next.val == val) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+
+        return head;
+    }
+
     /**
      * 使用虚拟头节点简化
      */
-    static public ListNode removeElements2(ListNode head, int val) {
+    static public ListNode removeElements3(ListNode head, int val) {
         if (head == null) return null;
 
         // 新链表的头节点
@@ -57,6 +86,28 @@ public class _203_移除链表元素 {
         newTail.next = null;
 
         return newHead.next;
+    }
+
+    /**
+     * 使用虚拟头节点简化
+     */
+    static public ListNode removeElements4(ListNode head, int val) {
+        if (head == null) return null;
+
+        // 虚拟头节点，统一删除写法
+        ListNode dummyNode = new ListNode(0);
+        dummyNode.next = head;
+        ListNode curr = dummyNode;
+
+        while (curr.next != null) {
+            if (curr.next.val == val) {
+                curr.next = curr.next.next;
+            } else {
+                curr = curr.next;
+            }
+        }
+
+        return dummyNode.next;
     }
 }
 
