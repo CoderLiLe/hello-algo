@@ -1,10 +1,26 @@
 package com.lile;
 
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
+
 public class CoinChange {
 
 	public static void main(String[] args) {
-//		System.out.println("一共需要" + coins4(41) + "枚硬币");
-		System.out.println("一共需要" + coins5(41, new int[] {1, 5, 20, 25}) + "枚硬币");
+		Times.test("暴力递归", () -> {
+			Asserts.test(coins1(41) == 3);
+		});
+		Times.test("记忆化搜索（自顶向下的调用）", () -> {
+			Asserts.test(coins2(41) == 3);
+		});
+		Times.test("递推（自低向上）", () -> {
+			Asserts.test(coins3(41) == 3);
+		});
+		Times.test("动态规划", () -> {
+			Asserts.test(coins4(41) == 3);
+		});
+		Times.test("动态规划（通用实现）", () -> {
+			Asserts.test(coins5(41, new int[] {1, 5, 20, 25}) == 3);
+		});
 	}
 	
 	static int coins5(int n, int[] faces) {
@@ -48,19 +64,18 @@ public class CoinChange {
 			}
 			
 			dp[i] = min + 1;
-			print(i, faces);
+			print(i, faces, dp[i]);
 		}
-//		print(n, faces);
 		return dp[n];
 	}
 	
-	static void print(int n, int[] faces) {
+	static void print(int n, int[] faces, int coinNum) {
 		System.out.print("[" +  n  + "] = ");
 		while (n > 0) {
 			System.out.print(faces[n] + " ");
 			n -= faces[n]; 
 		}
-		System.out.println();
+		System.out.println(", 最少硬币数：" + coinNum);
 	}
 	
 	/**
