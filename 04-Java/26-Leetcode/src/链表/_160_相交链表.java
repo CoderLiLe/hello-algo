@@ -1,13 +1,25 @@
 package 链表;
 
+import tools.Asserts;
+
 public class _160_相交链表 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ListNode node5 = new ListNode(5, null);
+		ListNode node4 = new ListNode(4, node5);
+		ListNode node8 = new ListNode(8, node4);
 
+		ListNode node1 = new ListNode(1, node8);
+		ListNode l1 = new ListNode(4, node1);
+
+		ListNode node11 = new ListNode(1, node8);
+		ListNode node6 = new ListNode(6, node11);
+		ListNode l2 = new ListNode(5, node6);
+		ListNode node = getIntersectionNode(l1, l2);
+		Asserts.test((node != null ? node.val : 0) == 8);
 	}
 	
-	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+	private static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
 		
 		ListNode curA = headA, curB = headB;
