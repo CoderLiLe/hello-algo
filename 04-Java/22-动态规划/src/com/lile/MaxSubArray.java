@@ -1,10 +1,17 @@
 package com.lile;
 
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
+
 public class MaxSubArray {
 
 	public static void main(String[] args) {
-		System.out.println(maxSubArray2(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
-
+		Times.test("动态规划", () -> {
+			Asserts.test(maxSubArray1(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}) == 6);
+		});
+		Times.test("动态规划（优化）", () -> {
+			Asserts.test(maxSubArray2(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}) == 6);
+		});
 	}
 	
 	static int maxSubArray2(int[] nums) {
