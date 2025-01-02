@@ -28,4 +28,13 @@ public class LinkedListUtil {
         sb.append("]");
         return sb.toString();
     }
+
+    public static ListNode buildLinkedList(int[] nums) {
+        ListNode nextNode = null;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            ListNode node = new ListNode(nums[i], nextNode);
+            nextNode = node;
+        }
+        return nextNode;
+    }
 }
