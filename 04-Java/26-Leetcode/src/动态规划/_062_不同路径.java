@@ -1,5 +1,8 @@
 package 动态规划;
 
+import tools.Asserts;
+import tools.Times;
+
 import java.util.Arrays;
 
 public class _062_不同路径 {
@@ -11,8 +14,18 @@ public class _062_不同路径 {
 	 * 说明：m 和 n 的值均不超过 100。
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(uniquePaths3(3, 2));
+		Times.test("二维数组", () -> {
+			Asserts.test(uniquePaths1(3, 7) == 28);
+			Asserts.test(uniquePaths1(3, 2) == 3);
+		});
+		Times.test("两个一维数组", () -> {
+			Asserts.test(uniquePaths2(3, 7) == 28);
+			Asserts.test(uniquePaths2(3, 2) == 3);
+		});
+		Times.test("一个一维数组", () -> {
+			Asserts.test(uniquePaths3(3, 7) == 28);
+			Asserts.test(uniquePaths3(3, 2) == 3);
+		});
 	}
 	
 	/**
