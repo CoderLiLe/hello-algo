@@ -1,13 +1,26 @@
 package com.lile;
 
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
+
 public class Knapsack {
 
 	public static void main(String[] args) {
 		int[] values = {6, 3, 5, 4, 6};
 		int[] weights = {2, 2, 6, 5, 4};
 		int capacity = 10;
-//		System.out.println(maxValue(values, weights, capacity));
-		System.out.println(maxValueExactly(values, weights, capacity));
+		Times.test("二维数组", () -> {
+			Asserts.test(maxValue1(values, weights, capacity) == 15);
+		});
+		Times.test("用一维数组优化", () -> {
+			Asserts.test(maxValue2(values, weights, capacity) == 15);
+		});
+		Times.test("用一维数组优化 + 循环条件优化", () -> {
+			Asserts.test(maxValue3(values, weights, capacity) == 15);
+		});
+		Times.test("恰好装满，用一维数组优化 + 循环条件优化", () -> {
+			Asserts.test(maxValueExactly(values, weights, capacity) == 14);
+		});
 	}
 	
 	/**
@@ -33,7 +46,7 @@ public class Knapsack {
 	/**
 	 * 用一维数组优化 + 循环条件优化
 	 */
-	static int maxValue(int[] values, int[] weights, int capacity) {
+	static int maxValue3(int[] values, int[] weights, int capacity) {
 		if (values == null || values.length == 0) return 0;
 		if (weights == null || weights.length == 0) return 0;
 		if (values.length != weights.length || capacity < 0) return 0;
