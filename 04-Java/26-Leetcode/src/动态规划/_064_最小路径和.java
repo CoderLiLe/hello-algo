@@ -1,7 +1,31 @@
 package 动态规划;
 
+import tools.Asserts;
+import tools.Times;
+
 public class _064_最小路径和 {
-	public int minPathSum(int[][] grid) {
+
+	private static int minPathSum1(int[][] grid) {
+		int rows = grid.length;
+		int cols = grid[0].length;
+
+		int[][] dp = new int[rows][cols];
+		for (int row = 0; row < rows; row++) {
+			for (int col = 0; col < cols; col++) {
+				if (row == 0 && col == 0) {
+					dp[row][col] = grid[row][col];
+				} else if (row == 0) {
+					dp[row][col] = dp[row][col - 1] + grid[row][col];
+				} else if (col == 0) {
+					dp[row][col] = dp[row - 1][col] + grid[row][col];
+				} else {
+					dp[row][col] = Math.min(dp[row-1][col], dp[row][col-1]) + grid[row][col];
+				}
+			}
+		}
+		return dp[rows-1][cols-1];
+	}
+	private static int minPathSum2(int[][] grid) {
 		int rows = grid.length;
 		int cols = grid[0].length;
 		
@@ -20,8 +44,10 @@ public class _064_最小路径和 {
 		}
 		return dp[rows-1][cols-1];
     }
-	
-	public int minPathSum2(int[][] grid) {
+
+	private static int minPathSum3(int[][] grid) {
+		if (grid == null) return  0;
+
 		int rows = grid.length;
 		int cols = grid[0].length;
 		
@@ -52,10 +78,45 @@ public class _064_最小路径和 {
 		}
 		return dp[cols-1];
     }
+
+	private static int minPathSum4(int[][] grid) {
+		if (grid == null) return 0;
+
+		int rows = grid.length;
+		int cols = grid[0].length;
+
+		int[] dp = new int[cols];
+		for (int row = 0; row < rows; row++) {
+			int left = 0;
+			for (int col = 0; col < cols; col++) {
+				if (row == 0 && col == 0) {
+					dp[col] = grid[row][col];
+				} else if (row == 0) {
+					dp[col] = left + grid[row][col];
+				} else if (col == 0) {
+					dp[col] = dp[col] + grid[row][col];
+				} else {
+					dp[col] = Math.min(left, dp[col]) + grid[row][col];
+				}
+				left = dp[col];
+			}
+		}
+		return dp[cols - 1];
+	}
 	
 	public static void main(String[] args) {
-		_064_最小路径和 obj = new _064_最小路径和();
-		int[][] grid = {{1,3,1}, {1,5,1}, {4,2,1}};
-		System.out.println(obj.minPathSum2(grid));
+		int[][] grid = {{1,3,1},{1,5,1},{4,2,1}};
+		Times.test("二维数组1", () -> {
+			Asserts.test(minPathSum1(grid) == 7);
+		});
+		Times.test("二维数组2", () -> {
+			Asserts.test(minPathSum2(grid) == 7);
+		});
+		Times.test("一维数组1", () -> {
+			Asserts.test(minPathSum3(grid) == 7);
+		});
+		Times.test("一维数组2", () -> {
+			Asserts.test(minPathSum4(grid) == 7);
+		});
 	}
 }
