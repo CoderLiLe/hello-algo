@@ -9,18 +9,18 @@ public class Times {
 	public interface Task {
 		void execute();
 	}
-	
+
 	public static void test(String title, Task task) {
 		if (task == null) return;
 		title = (title == null) ? "" : ("【" + title + "】");
 		System.out.println(title);
 		System.out.println("开始：" + fmt.format(new Date()));
-		long begin = System.currentTimeMillis(); 
+		long begin = System.nanoTime();
 		task.execute();
-		long end = System.currentTimeMillis(); 
+		long end = System.nanoTime();
 		System.out.println("结束：" + fmt.format(new Date()));
-		double delta = (end - begin) / 1000.0;
-		System.out.println("耗时：" + delta + "秒");
+		double delta = (end - begin) / 1000000.0;
+		System.out.println("耗时：" + delta + "毫秒");
 		System.out.println("---------------------------------------------");
 	}
 
