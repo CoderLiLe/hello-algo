@@ -1,7 +1,25 @@
 package 动态规划.剑指offer;
 
+import tools.Asserts;
+import tools.Times;
+
 public class 面47_礼物的最大价值 {
-	public int maxValue(int[][] grid) {
+	public static void main(String[] args) {
+		int[][] grid = {{1,3,1},{1,5,1},{4,2,1}};
+		Times.test("二维数组1", () -> {
+			Asserts.test(maxValue1(grid) == 12);
+		});
+		Times.test("二维数组2", () -> {
+			Asserts.test(maxValue2(grid) == 12);
+		});
+		Times.test("一维数组", () -> {
+			Asserts.test(maxValue3(grid) == 12);
+		});
+		Times.test("一维数组2", () -> {
+			Asserts.test(maxValue4(grid) == 12);
+		});
+	}
+	private static int maxValue1(int[][] grid) {
 		if (grid == null) return 0;
 		
 		int[][] result = new int[grid.length][grid[0].length];
@@ -21,8 +39,8 @@ public class 面47_礼物的最大价值 {
 		
 		return result[grid.length - 1][grid[0].length - 1];
     }
-	
-	public int maxValue2(int[][] grid) {
+
+	private static int maxValue2(int[][] grid) {
 		if (grid == null) return 0;
 		
 		int rows = grid.length;
@@ -46,8 +64,8 @@ public class 面47_礼物的最大价值 {
 		
 		return dp[rows - 1][cols - 1];
     }
-	
-	public int maxValue3(int[][] grid) {
+
+	private static int maxValue3(int[][] grid) {
 		if (grid == null) return 0;
 		
 		int rows = grid.length;
@@ -73,4 +91,20 @@ public class 面47_礼物的最大价值 {
 		
 		return dp[cols - 1];
     }
+
+	private static int maxValue4(int[][] grid) {
+		if (grid == null) return 0;
+
+		int rows = grid.length;
+		int cols = grid[0].length;
+		int[] dp = new int[cols];
+		for (int row = 0; row < rows; row++) {
+			int left = 0;
+			for (int col = 0; col < cols; col++) {
+				dp[col] = Math.max(left, dp[col]) + grid[row][col];
+				left = dp[col];
+			}
+		}
+		return dp[cols - 1];
+	}
 }
