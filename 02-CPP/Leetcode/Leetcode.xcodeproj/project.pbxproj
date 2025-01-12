@@ -44,6 +44,7 @@
 		2413FF5526B4E96A00CADB30 /* MathTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF5326B4E96A00CADB30 /* MathTest.cpp */; };
 		2413FF5926B4ED3800CADB30 /* _0033_搜索旋转排序数组.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF5726B4ED3800CADB30 /* _0033_搜索旋转排序数组.cpp */; };
 		2413FF5D26B5125400CADB30 /* _0034_在排序数组中查找元素的第一个和最后一个位置.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2413FF5B26B5125400CADB30 /* _0034_在排序数组中查找元素的第一个和最后一个位置.cpp */; };
+		2470559F2D26A325002F50A3 /* _300最长递增子序列.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2470559E2D26A325002F50A3 /* _300最长递增子序列.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,8 @@
 		2413FF5826B4ED3800CADB30 /* _0033_搜索旋转排序数组.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0033_搜索旋转排序数组.hpp"; sourceTree = "<group>"; };
 		2413FF5B26B5125400CADB30 /* _0034_在排序数组中查找元素的第一个和最后一个位置.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_0034_在排序数组中查找元素的第一个和最后一个位置.cpp"; sourceTree = "<group>"; };
 		2413FF5C26B5125400CADB30 /* _0034_在排序数组中查找元素的第一个和最后一个位置.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_0034_在排序数组中查找元素的第一个和最后一个位置.hpp"; sourceTree = "<group>"; };
+		2470559D2D26A325002F50A3 /* _300最长递增子序列.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "_300最长递增子序列.hpp"; sourceTree = "<group>"; };
+		2470559E2D26A325002F50A3 /* _300最长递增子序列.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "_300最长递增子序列.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +246,8 @@
 				2413FEE226AEEFEF00CADB30 /* _0376_摆动序列.hpp */,
 				2413FF1026B0F51600CADB30 /* _0121_买卖股票的最佳时机.cpp */,
 				2413FF1126B0F51600CADB30 /* _0121_买卖股票的最佳时机.hpp */,
+				2470559D2D26A325002F50A3 /* _300最长递增子序列.hpp */,
+				2470559E2D26A325002F50A3 /* _300最长递增子序列.cpp */,
 			);
 			path = "动态规划";
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				2413FF3B26B17F4500CADB30 /* _0047_全排列.cpp in Sources */,
 				2413FF4326B2420900CADB30 /* _0051_N皇后.cpp in Sources */,
 				2413FEA826AA716900CADB30 /* _0572_另一个树的子树.cpp in Sources */,
+				2470559F2D26A325002F50A3 /* _300最长递增子序列.cpp in Sources */,
 				2413FEE326AEEFEF00CADB30 /* _0376_摆动序列.cpp in Sources */,
 				2413FE4026A6ECF400CADB30 /* _0146_LRU缓存机制.cpp in Sources */,
 				2413FF5526B4E96A00CADB30 /* MathTest.cpp in Sources */,

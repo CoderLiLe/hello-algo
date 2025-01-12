@@ -13,6 +13,8 @@
 #include "_0121_买卖股票的最佳时机.hpp"
 #include "_0376_摆动序列.hpp"
 #include "_1235_规划兼职工作.hpp"
+#include "_300最长递增子序列.hpp"
+
 
 using namespace std;
 
@@ -66,6 +68,11 @@ void test0121() {
     cout << maxProfit2(prices) << endl;
 }
 
+void test300() {
+    vector<int> nums = {10, 2, 2, 5, 1, 7, 101, 18};
+    cout << lengthOfLIS(nums) << endl;
+}
+
 void test0376_01() {
     vector<int> nums = {1,7,4,9,2,5};
     cout << wiggleMaxLength(nums) << endl;
@@ -116,7 +123,8 @@ void dpTest() {
     
 //    test0072();
     
-    test0121();
+//    test0121();
+    test300();
     
 //    test0376_01();
 //    test0376_02();

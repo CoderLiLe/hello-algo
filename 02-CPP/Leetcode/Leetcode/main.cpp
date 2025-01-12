@@ -6,6 +6,8 @@
 //
 
 #include <iostream>
+#include <assert.h>
+
 #include "_0146_LRU缓存机制.hpp"
 #include "排序数组测试.hpp"
 #include "栈队列测试.hpp"
@@ -31,11 +33,11 @@ void test0146() {
 int main(int argc, const char * argv[]) {
 //    test0146();
     
-    sortArraytest();
+//    sortArraytest();
 //    stackQueueTest();
 //    stringTest();
     
-//    dpTest();
+    dpTest();
     
 //    binaryTreeTest();
     
