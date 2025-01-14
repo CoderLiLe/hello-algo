@@ -1,10 +1,14 @@
 package 链表;
 
+import tools.Asserts;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class _138_随机链表的复制 {
     public static void main(String[] args) {
+        _138_随机链表的复制 obj = new _138_随机链表的复制();
+
         // 输入：head = [[1,1],[2,1]]
         // 输出：[[1,1],[2,1]]
         Node node2 = new Node(2);
@@ -12,8 +16,12 @@ public class _138_随机链表的复制 {
         node1.next = node2;
         node1.random = node2;
         node2.random = node2;
-        Node newHead = copyRandomList(node1);
-        System.out.println(toString(newHead));
+
+        Node newHead = obj.copyRandomList(node1);
+        Asserts.test(toString(newHead).equals("[[1,2],[2,2]]"));
+
+        Node newHead2 = obj.copyRandomList2(node1);
+        Asserts.test(toString(newHead2).equals("[[1,2],[2,2]]"));
     }
 
     /**
@@ -24,7 +32,7 @@ public class _138_随机链表的复制 {
      * 时间复杂度 O(N) ： 遍历链表两次，使用 O(N) 时间。
      * 空间复杂度 O(N) ： 节点引用变量使用 O(N) 大小的额外空间
      */
-    private static Node copyRandomList(Node head) {
+    public Node copyRandomList(Node head) {
         // 1. 若头节点 head 为空节点，直接返回 null 。
         if(head == null) return null;
 
@@ -58,7 +66,7 @@ public class _138_随机链表的复制 {
      * 时间复杂度 O(N) ： 三轮遍历链表，使用 O(N) 时间。
      * 空间复杂度 O(1) ： 节点引用变量使用常数大小的额外空间
      */
-    private static Node copyRandomList2(Node head) {
+    public Node copyRandomList2(Node head) {
         if(head == null) return null;
         Node cur = head;
 
@@ -96,12 +104,18 @@ public class _138_随机链表的复制 {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         while (head != null) {
+            sb.append("[");
             sb.append(head.val);
-            if (head.next != null) {
+            if (head.random != null) {
                 sb.append(",");
+                sb.append(head.random.val);
             }
+            sb.append("]");
 
             head = head.next;
+            if (head != null) {
+                sb.append(",");
+            }
         }
         sb.append("]");
         return sb.toString();
