@@ -11,25 +11,27 @@ import tools.Asserts;
  */
 public class _025_K个一组翻转链表 {
     public static void main(String[] args) {
+        _025_K个一组翻转链表 obj = new _025_K个一组翻转链表();
+
         int[] nums = {1,2,3,4,5};
         ListNode l1 = LinkedListUtil.buildLinkedList(nums);
-        Asserts.test(LinkedListUtil.toString(reverseKGroup(l1, 2)).equals("[2,1,4,3,5]"));
+        Asserts.test(LinkedListUtil.toString(obj.reverseKGroup(l1, 2)).equals("[2,1,4,3,5]"));
     }
 
     /**
      * https://leetcode.cn/problems/reverse-nodes-in-k-group/solutions/10416/tu-jie-kge-yi-zu-fan-zhuan-lian-biao-by-user7208t/
      */
-    private static ListNode reverseKGroup(ListNode head, int k) {
+    public ListNode reverseKGroup(ListNode head, int k) {
         // 定义一个伪节点，用来返回结果
-        ListNode dummy = new ListNode(0);
+        ListNode dummyHead = new ListNode(0);
         // 将伪节点与链表的头节点相连。
-        dummy.next = head;
+        dummyHead.next = head;
 
         // 要反转链表头节点的上一个节点，将prev和end，先指向同一个位置
         // 都指向要反转链表的头节点的上一个节点
-        ListNode prev = dummy;
+        ListNode prev = dummyHead;
         // 要反转链表尾节点，
-        ListNode end = dummy;
+        ListNode end = dummyHead;
 
         // end.next ！=null 表示链表到达链表的尾节点
         while (end.next != null) {
@@ -57,10 +59,10 @@ public class _025_K个一组翻转链表 {
             end = prev;
         }
         //返回伪节点的上一个节点
-        return dummy.next;
+        return dummyHead.next;
     }
 
-    private static ListNode reverse(ListNode head) {
+    public ListNode reverse(ListNode head) {
         ListNode prev = null;
         // 定义一个要反转的节点
         ListNode cur = head;
