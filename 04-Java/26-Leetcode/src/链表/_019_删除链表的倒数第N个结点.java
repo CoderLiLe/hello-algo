@@ -12,37 +12,39 @@ import java.util.LinkedList;
 public class _019_删除链表的倒数第N个结点 {
 
     public static void main(String[] args) {
+        _019_删除链表的倒数第N个结点 obj = new _019_删除链表的倒数第N个结点();
+
         int[] nums = {1,2,3,4,5};
         int[] nums2 = {1};
 
         ListNode l1 = LinkedListUtil.buildLinkedList(nums);
         Times.test("快慢指针", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd1(l1, 2)).equals("[1,2,3,5]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd1(l1, 2)).equals("[1,2,3,5]"));
         });
 
         ListNode l2 = LinkedListUtil.buildLinkedList(nums2);
         Times.test("快慢指针", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd1(l2, 1)).equals("[]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd1(l2, 1)).equals("[]"));
         });
 
         ListNode l3 = LinkedListUtil.buildLinkedList(nums);
         Times.test("栈", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd2(l3, 2)).equals("[1,2,3,5]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd2(l3, 2)).equals("[1,2,3,5]"));
         });
 
         ListNode l4 = LinkedListUtil.buildLinkedList(nums2);
         Times.test("栈", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd2(l4, 1)).equals("[]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd2(l4, 1)).equals("[]"));
         });
 
         ListNode l5 = LinkedListUtil.buildLinkedList(nums);
         Times.test("计算链表长度", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd3(l5, 2)).equals("[1,2,3,5]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd3(l5, 2)).equals("[1,2,3,5]"));
         });
 
         ListNode l6 = LinkedListUtil.buildLinkedList(nums2);
         Times.test("计算链表长度", () -> {
-            Asserts.test(LinkedListUtil.toString(removeNthFromEnd3(l6, 1)).equals("[]"));
+            Asserts.test(LinkedListUtil.toString(obj.removeNthFromEnd3(l6, 1)).equals("[]"));
         });
     }
 
@@ -52,7 +54,7 @@ public class _019_删除链表的倒数第N个结点 {
      *
      * 空间复杂度：O(1)。
      */
-    private static ListNode removeNthFromEnd1(ListNode head, int n) {
+    public ListNode removeNthFromEnd1(ListNode head, int n) {
         ListNode dummy = new ListNode(0, head);
         ListNode slow = dummy, fast = head;
         while (n-- > 0) {
@@ -72,7 +74,7 @@ public class _019_删除链表的倒数第N个结点 {
      *
      * 空间复杂度：O(L)，其中 L 是链表的长度。主要为栈的开销。
      */
-    private static ListNode removeNthFromEnd2(ListNode head, int n) {
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
         ListNode dummy = new ListNode(0, head);
         Deque<ListNode> stack = new LinkedList<>();
         ListNode curr = dummy;
@@ -95,7 +97,7 @@ public class _019_删除链表的倒数第N个结点 {
      *
      * 空间复杂度：O(1)。
      */
-    private static ListNode removeNthFromEnd3(ListNode head, int n) {
+    public ListNode removeNthFromEnd3(ListNode head, int n) {
         ListNode dummy = new ListNode(0, head);
         int length = getLength(head);
         ListNode curr = dummy;
