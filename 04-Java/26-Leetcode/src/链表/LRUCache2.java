@@ -1,4 +1,4 @@
-package 高频题;
+package 链表;
 
 import java.util.LinkedHashMap;
 
