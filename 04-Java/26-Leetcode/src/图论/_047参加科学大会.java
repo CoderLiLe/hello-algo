@@ -45,6 +45,8 @@ import java.util.*;
  */
 public class _047参加科学大会 {
     public static void main(String[] args) {
+        _047参加科学大会 obj = new _047参加科学大会();
+
         int n = 7;
         int m = 9;
         int[][] input = {
@@ -58,6 +60,7 @@ public class _047参加科学大会 {
                 {5, 7, 4},
                 {6, 7, 9}
         };
+        obj.shortestPath(n, m, input);
     }
 
     private void shortestPath(int n, int m, int[][] input) {
