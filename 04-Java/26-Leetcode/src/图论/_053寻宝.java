@@ -48,7 +48,7 @@ public class _053寻宝 {
         // 示例输入
         int v = 7;
         int e = 11;
-        int[][] intput = {
+        int[][] input = {
                 {1, 2, 1},
                 {1, 3, 1},
                 {1, 5, 2},
@@ -62,7 +62,7 @@ public class _053寻宝 {
                 {6, 7, 1}
         };
 
-        obj.minimumSpanningTree(v, e, intput);
+        obj.minimumSpanningTree(v, e, input);
     }
 
     /**
@@ -71,10 +71,10 @@ public class _053寻宝 {
      *
      * @param v
      * @param e
-     * @param intput
+     * @param input
      * @return
      */
-    private void minimumSpanningTree(int v, int e, int[][] intput) {
+    private void minimumSpanningTree(int v, int e, int[][] input) {
         int[][] edges = new int[v + 1][v + 1];
         for (int i = 0; i < edges.length; i++) {
             Arrays.fill(edges[i], 10001);
@@ -83,7 +83,7 @@ public class _053寻宝 {
         List<EdgeInfo<Integer, Integer>> edgeInfos = new ArrayList<>();
         // 读取边的信息并填充邻接矩阵
         for (int i = 1; i <= e; i++) {
-            int[] info = intput[i - 1];
+            int[] info = input[i - 1];
             EdgeInfo<Integer, Integer> edgeInfo = new EdgeInfo<>(info[0], info[1], info[2]);
             edgeInfos.add(edgeInfo);
 
