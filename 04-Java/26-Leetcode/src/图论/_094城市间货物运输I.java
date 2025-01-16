@@ -3,10 +3,7 @@ package 图论;
 import common.EdgeInfo;
 import tools.Asserts;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * 题目描述
@@ -79,6 +76,11 @@ public class _094城市间货物运输I {
     }
 
     private void shortestPath(int n, int m, int[][] input) {
+        List<List<EdgeInfo<Integer, Integer>>> graph = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
         List<int[]> edges = new ArrayList<>();
         List<EdgeInfo<Integer, Integer>> edgeInfos = new ArrayList<>();
         // 读取边的信息并填充邻接矩阵
@@ -90,10 +92,12 @@ public class _094城市间货物运输I {
 
             edges.add(new int[]{from, to, weight});
             edgeInfos.add(new EdgeInfo<>(from, to, weight));
+            graph.get(from).add(new EdgeInfo(from, to, weight));
         }
 
         Asserts.test(Objects.equals(bellmanFord(n, edges), 1));
         Asserts.test(Objects.equals(bellmanFord_adjacencyList(n, edgeInfos), 1));
+        Asserts.test(Objects.equals(bellmanFord_adjacencyList_queue(n, graph), 1));
     }
 
     /**
@@ -174,6 +178,60 @@ public class _094城市间货物运输I {
                 // 代码就是 Bellman_ford算法的核心操作
                 if (minDist[from] != Integer.MAX_VALUE && (minDist[from] + price) < minDist[to]) {
                     minDist[to] = minDist[from] + price;
+                }
+            }
+        }
+
+        if (minDist[n] == Integer.MAX_VALUE) {
+            // 不能到达终点
+            return null;
+        } else {
+            // 到达终点最短路径
+            return minDist[n];
+        }
+    }
+
+    /**
+     * Queue improved Bellman-Ford
+     * Bellman_ford 队列优化算法 ，也叫SPFA算法（Shortest Path Faster Algorithm）
+     * 基于队列优化的算法，要比bellman_ford 算法 减少很多无用的松弛情况，特别是对于边数众多的大图 优化效果明显
+     *
+     * 时间复杂度： O(N * E) , N为节点数量，E为图中边的数量
+     * 空间复杂度： O(N) ，即 minDist 数组所开辟的空间
+     *
+     * @param n
+     * @param graph
+     * @return
+     */
+    private Integer bellmanFord_adjacencyList_queue(int n, List<List<EdgeInfo<Integer, Integer>>> graph) {
+        // Represents the minimum distance from the current node to the original node
+        int[] minDist = new int[n + 1];
+
+        // Initialize the minDist array
+        Arrays.fill(minDist, Integer.MAX_VALUE);
+        minDist[1] = 0;
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(1);
+
+        boolean[] isInQueue = new boolean[n + 1];
+
+        while (!queue.isEmpty()) {
+            int cur = queue.poll();
+            isInQueue[cur] = false;
+            for (EdgeInfo<Integer, Integer> edge : graph.get(cur)) {
+                // 边的出发点
+                int from = edge.getFrom();
+                // 边的到达点
+                int to = edge.getTo();
+                // 边的权值
+                int price = edge.getWeight();
+                if (minDist[from] + price < minDist[to]) {
+                    minDist[to] = minDist[from] + price;
+                    if (!isInQueue[to]) {
+                        queue.offer(to);
+                        isInQueue[to] = true;
+                    }
                 }
             }
         }
