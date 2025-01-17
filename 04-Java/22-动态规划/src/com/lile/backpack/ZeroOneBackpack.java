@@ -22,6 +22,8 @@ package com.lile.backpack;
  *
  */
 
+import com.lile.tools.Asserts;
+
 /**
  * 动态规划五部曲分析：
  * 1、确定 dp 数组以及下标的含义
@@ -48,15 +50,18 @@ package com.lile.backpack;
 public class ZeroOneBackpack {
 
     public static void main(String[] args) {
+        ZeroOneBackpack obj = new ZeroOneBackpack();
+
         int[] weight = {1, 3, 4};
         int[] value = {15, 20, 30};
         int bagWeight = 4;
-        zeroOneBackpack1(weight, value, bagWeight);
-        zeroOneBackpack2(weight, value, bagWeight);
-        zeroOneBackpack3(weight, value, bagWeight);
+        Asserts.test(obj.zeroOneBackpack1(weight, value, bagWeight) == 35);
+        Asserts.test(obj.zeroOneBackpack2(weight, value, bagWeight) == 35);
+        Asserts.test(obj.zeroOneBackpack3(weight, value, bagWeight) == 35);
+        Asserts.test(obj.zeroOneBackpack4(weight, value, bagWeight) == 35);
     }
 
-    private static void zeroOneBackpack1(int[] weight, int[] value, int bagWeight) {
+    private int zeroOneBackpack1(int[] weight, int[] value, int bagWeight) {
         int[][] dp = new int[weight.length + 1][bagWeight + 1];
 
         for (int j = bagWeight; j >= weight[0]; j--) {
@@ -73,10 +78,10 @@ public class ZeroOneBackpack {
             }
         }
 
-        System.out.println(dp[weight.length - 1][bagWeight]);
+        return dp[weight.length - 1][bagWeight];
     }
 
-    private static void zeroOneBackpack2(int[] weight, int[] value, int bagWeight) {
+    private int zeroOneBackpack2(int[] weight, int[] value, int bagWeight) {
         int[][] dp = new int[weight.length + 1][bagWeight + 1];
 
         for (int j = bagWeight; j >= weight[0]; j--) {
@@ -91,7 +96,25 @@ public class ZeroOneBackpack {
             }
         }
 
-        System.out.println(dp[weight.length - 1][bagWeight]);
+        return dp[weight.length - 1][bagWeight];
+    }
+
+    private int zeroOneBackpack3(int[] weight, int[] value, int bagWeight) {
+        int[][] dp = new int[weight.length + 1][bagWeight + 1];
+
+        for (int j = bagWeight; j >= weight[0]; j--) {
+            dp[0][j] = dp[0][j - weight[0]] + value[0];
+        }
+
+        for (int j = 0; j <= bagWeight; j++) { // 遍历背包容量
+            for (int i = 1; i < weight.length; i++) { // 遍历物品
+                if (j >= weight[i]) {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+                }
+            }
+        }
+
+        return dp[weight.length - 1][bagWeight];
     }
 
     /**
@@ -123,14 +146,14 @@ public class ZeroOneBackpack {
      *
      * 5、举例推导 dp 数组
      */
-    private static void zeroOneBackpack3(int[] weight, int[] value, int bagWeight) {
+    private int zeroOneBackpack4(int[] weight, int[] value, int bagWeight) {
         int[] dp = new int[bagWeight +1];
         for (int i = 0; i < weight.length; i++) { // 遍历物品
             for (int j = bagWeight; j >= weight[i]; j--) { // 从小到大遍历背包
                 dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
             }
         }
-        System.out.println(dp[bagWeight]);
+        return dp[bagWeight];
     }
 
 }
