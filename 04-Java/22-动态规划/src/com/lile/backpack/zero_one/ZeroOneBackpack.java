@@ -1,4 +1,4 @@
-package com.lile.backpack;
+package com.lile.backpack.zero_one;
 
 /**
  * 1、【01背包问题】
