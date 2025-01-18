@@ -1,4 +1,4 @@
-package com.lile;
+package com.lile.棋盘问题;
 
 public class Queens {
 

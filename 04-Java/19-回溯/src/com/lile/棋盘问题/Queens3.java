@@ -1,6 +1,4 @@
-package com.lile;
-
-import java.time.Year;
+package com.lile.棋盘问题;
 
 public class Queens3 {
 
