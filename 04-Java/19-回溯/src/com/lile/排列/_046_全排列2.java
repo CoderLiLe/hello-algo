@@ -1,4 +1,4 @@
-package DFS;
+package com.lile.排列;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ public class _046_全排列2 {
         if (nums.length == 0) return list;
         this.nums = nums;
         result = new ArrayList<>();
-        dfs(0);
+        backtrack(0);
         return list;
     }
 
-    private void dfs(int idx) {
+    private void backtrack(int idx) {
         // 不能再往下搜索
         if (idx == nums.length) {
             list.add(new ArrayList<>(result));
@@ -32,7 +32,7 @@ public class _046_全排列2 {
 
             result.add(num);
 
-            dfs(idx + 1);
+            backtrack(idx + 1);
 
             result.remove(result.size() - 1);
         }
