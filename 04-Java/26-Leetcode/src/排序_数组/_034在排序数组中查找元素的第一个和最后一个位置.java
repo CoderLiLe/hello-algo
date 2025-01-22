@@ -30,7 +30,7 @@ public class _034在排序数组中查找元素的第一个和最后一个位置
             return new int[]{leftBorder + 1, rightBorder - 1};
         }
 
-        // 情况三：target 在数组范围中，且数组中存在 target
+        // 情况二：target 在数组范围中，且数组中不存在 target
         return new int[]{-1, -1};
     }
 
