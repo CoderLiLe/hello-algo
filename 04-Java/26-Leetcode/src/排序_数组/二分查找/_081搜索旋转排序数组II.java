@@ -68,9 +68,8 @@ public class _081搜索旋转排序数组II {
                 // 找到目标值，直接返回索引
                 return true;
             }
-            if (nums[left] == nums[mid] && nums[right] == nums[mid]) {
+            if (nums[left] == nums[mid]) {
                 left++;
-                right--;
             } else if (nums[left] < nums[mid]) {
                 // 左半区间有序
                 if (nums[left] <= target && target < nums[mid]) {
@@ -101,6 +100,11 @@ public class _081搜索旋转排序数组II {
         int target = 0;
         Asserts.test(obj.search(nums, target));
         Asserts.test(obj.search2(nums, target));
+
+        nums = new int[]{1};
+        target = 0;
+        Asserts.test(!obj.search(nums, target));
+        Asserts.test(!obj.search2(nums, target));
     }
 
 }
