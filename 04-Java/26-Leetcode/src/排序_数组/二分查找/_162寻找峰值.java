@@ -17,14 +17,18 @@ public class _162寻找峰值 {
      * @return
      */
     public int findPeakElement(int[] nums) {
+        // 取两端都闭的二分搜索
         int left = 0, right = nums.length - 1;
+        // 因为题目必然有解，所以设置 left == right 为结束条件
         while (left < right) {
             int mid = left + (right - left) / 2;
             // 根据左右指针计算中间位置 m，并比较 m 与 m+1 的值，如果 m 较大，则左侧存在峰值，r = m，
             // 如果 m + 1 较大，则右侧存在峰值，l = m + 1
             if (nums[mid] > nums[mid + 1]) {
+                // mid 本身就是峰值或其左侧有一个峰值
                 right = mid;
             } else {
+                // mid 右侧有一个峰值
                 left = mid + 1;
             }
         }
