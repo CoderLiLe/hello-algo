@@ -1,4 +1,4 @@
-package 排序_数组;
+package 排序_数组.二分查找;
 
 import tools.Asserts;
 

@@ -1,4 +1,4 @@
-package 排序_数组;
+package 排序_数组.二分查找;
 
 import tools.Asserts;
 
@@ -66,6 +66,30 @@ public class _153寻找旋转排序数组中的最小值 {
         }
         // 最小值返回nums[right]
         return nums[right];
+    }
+
+    /**
+     * 数组中有重复元素的情况，即154题：
+     * https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/
+     * 只需要在nums[mid] == nums[right]时挪动右边界就行
+     *
+     * @param nums
+     * @return
+     */
+    public int findMin4(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else if (nums[mid] < nums[right]) {
+                right = mid;
+            } else {
+                right--;
+            }
+        }
+        return nums[left];
     }
 
     public static void main(String[] args) {
