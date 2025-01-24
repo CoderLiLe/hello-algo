@@ -9,24 +9,26 @@ import tools.Times;
 public class _121_买卖股票的最佳时机 {
 
     public static void main(String[] args) {
+        _121_买卖股票的最佳时机 obj = new _121_买卖股票的最佳时机();
+
         int[] prices = new int[] {7, 1, 5, 3, 6, 4};
         Times.test("暴力法【超时】", () -> {
-            Asserts.test(maxProfit1(prices) == 5);
+            Asserts.test(obj.maxProfit1(prices) == 5);
         });
         Times.test("贪心法", () -> {
-            Asserts.test(maxProfit2(prices) == 5);
+            Asserts.test(obj.maxProfit2(prices) == 5);
         });
         Times.test("动态规划：二维数组", () -> {
-            Asserts.test(maxProfit3(prices) == 5);
+            Asserts.test(obj.maxProfit3(prices) == 5);
         });
         Times.test("动态规划：使用二维滚动數組", () -> {
-            Asserts.test(maxProfit4(prices) == 5);
+            Asserts.test(obj.maxProfit4(prices) == 5);
         });
         Times.test("动态规划：使用一维滚动數組", () -> {
-            Asserts.test(maxProfit5(prices) == 5);
+            Asserts.test(obj.maxProfit5(prices) == 5);
         });
         Times.test("抽象动态规划", () -> {
-            Asserts.test(maxProfit6(prices) == 5);
+            Asserts.test(obj.maxProfit6(prices) == 5);
         });
     }
 
@@ -35,7 +37,7 @@ public class _121_买卖股票的最佳时机 {
      *  时间复杂度：O(n^2)
      *  空间复杂度：O(1)
      */
-    private static int maxProfit1(int[] prices) {
+    public int maxProfit1(int[] prices) {
         int result = 0;
         for (int i = 0; i < prices.length; i++) {
             for (int j = i + 1; j < prices.length; j++){
@@ -52,7 +54,7 @@ public class _121_买卖股票的最佳时机 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
-    private static int maxProfit2(int[] prices) {
+    public int maxProfit2(int[] prices) {
         int low = Integer.MAX_VALUE;
         int result = 0;
         for (int i = 0; i < prices.length; i++) {
@@ -65,9 +67,22 @@ public class _121_买卖股票的最佳时机 {
     }
 
     /**
-     * 动态规划：二维数组
+     * 二维dp动规五部曲：
+     * （1）dp[i][j]含义：dp[i][0] 表示第i天持有股票所得最多现金，dp[i][1] 表示第i天不持有股票所得最多现金
+     * （2）递推公式：dp[i][0] = max(dp[i - 1][0], -prices[i])
+     *              dp[i][1] = max(dp[i - 1][1], prices[i] + dp[i - 1][0]);
+     * （3）dp数组初始化：dp[0][0] -= prices[0]; dp[0][1] = 0
+     * （4）遍历顺序：从递推公式可以看出dp[i]都是由dp[i - 1]推导出来的，那么一定是从前向后遍历
+     * （5）举例推导dp数组，以示例1，输入：[7,1,5,3,6,4]为例，dp数组状态如下：
+     *                   dp[i][0]   dp[i][1]
+     *                0    -7          0
+     *                1    -1          0
+     *                2    -1          4
+     *                3    -1          4
+     *                4    -1          5
+     *                5    -1          5
      */
-    private static int maxProfit3(int[] prices) {
+    public int maxProfit3(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
         }
@@ -89,7 +104,7 @@ public class _121_买卖股票的最佳时机 {
     /**
      * 动态规划：使用二维滚动數組
      */
-    private static int maxProfit4(int[] prices) {
+    public int maxProfit4(int[] prices) {
         int len = prices.length;
         int dp[][] = new int[2][2];
 
@@ -106,7 +121,7 @@ public class _121_买卖股票的最佳时机 {
     /**
      * 动态规划：使用一维滚动數組
      */
-    private static int maxProfit5(int[] prices) {
+    public int maxProfit5(int[] prices) {
         int[] dp = new int[2];
         // 记录一次交易，一次交易有买入卖出两种状态
         // 0代表持有，1代表卖出
@@ -131,7 +146,7 @@ public class _121_买卖股票的最佳时机 {
     /**
      * 抽象动态规划
      */
-    private static int maxProfit6(int[] prices) {
+    public int maxProfit6(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
         }
