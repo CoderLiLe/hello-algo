@@ -41,6 +41,16 @@ public class _541反转字符串II {
         }
     }
 
+    private void reverse2(char[] s, int left, int right) {
+        while (left < right) {
+            s[left] ^= s[right];
+            s[right] ^= s[left];
+            s[left] ^= s[right];
+            left++;
+            right--;
+        }
+    }
+
     public static void main(String[] args) {
         _541反转字符串II obj = new _541反转字符串II();
         Asserts.test(obj.reverseStr("abcdefg", 2).equals("badcfeg"));
