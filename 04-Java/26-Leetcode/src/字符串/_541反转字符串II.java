@@ -25,6 +25,14 @@ public class _541反转字符串II {
         return new String(s);
     }
 
+    /**
+     * 344. 反转字符串
+     * https://leetcode.cn/problems/reverse-string/description/
+     *
+     * @param s
+     * @param left
+     * @param right
+     */
     private void reverse(char[] s, int left, int right) {
         while (left < right) {
             char tmp = s[left];
