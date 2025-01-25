@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 56. Merge Intervals
- * Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+ * Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
  *
  * Example 1:
  *
