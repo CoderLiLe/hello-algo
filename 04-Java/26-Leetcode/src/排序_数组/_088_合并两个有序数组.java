@@ -15,6 +15,26 @@ public class _088_合并两个有序数组 {
 		}
     }
 
+	public void merge1(int[] nums1, int m, int[] nums2, int n) {
+		// 从后向前生成结果数组，类似合并两个有序链表的逻辑
+		int idx = m + n - 1, idx1 = m - 1, idx2 = n - 1;
+		while (idx1 >= 0 && idx2 >= 0) {
+			if (nums1[idx1] > nums2[idx2]) {
+				nums1[idx] = nums1[idx1];
+				idx1--;
+			} else {
+				nums1[idx] = nums2[idx2];
+				idx2--;
+			}
+			idx--;
+		}
+		while (idx2 >= 0) {
+			nums1[idx] = nums2[idx2];
+			idx2--;
+			idx--;
+		}
+	}
+
 	public void merge2(int[] nums1, int m, int[] nums2, int n) {
 		for (int i = 0; i < n; i++) {
 			nums1[m+i] = nums2[i];
