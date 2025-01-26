@@ -1,11 +1,9 @@
-package 动态规划.houseRobbery;
+package com.lile.houseRobbery;
 
-import tools.Asserts;
-import tools.Times;
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
