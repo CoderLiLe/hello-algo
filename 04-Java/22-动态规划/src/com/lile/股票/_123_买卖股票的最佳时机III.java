@@ -27,7 +27,7 @@ public class _123_买卖股票的最佳时机III {
             Asserts.test(obj.maxProfit2(prices2) == res2);
         });
         Times.test("动态规划：三维数组", () -> {
-//            Asserts.test(obj.maxProfit3(prices) == res);
+            Asserts.test(obj.maxProfit3(prices) == res);
             Asserts.test(obj.maxProfit3(prices2) == res2);
         });
         Times.test("动态规划：使用三维滚动數組", () -> {
@@ -128,7 +128,7 @@ public class _123_买卖股票的最佳时机III {
      * （2）递推公式：
      * 第i天持有股票：  dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k - 1][1] - prices[i])
      * 第i天不持有股票：dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k][0] + prices[i]);
-     * （3）dp数组初始化：dp[0][0][0] = dp[0][1][0] = dp[0][2][0] = Integer.MIN_VALUE;  dp[0][1][1] = -prices[0];
+     * （3）dp数组初始化：dp[0][k][0] = -prices[0];
      * （4）遍历顺序：从递推公式可以看出dp[i]都是由dp[i - 1]推导出来的，那么一定是从前向后遍历
      * （5）举例推导dp数组
      * <p>
@@ -144,10 +144,11 @@ public class _123_买卖股票的最佳时机III {
         int maxK = 2;
 
         int[][][] dp = new int[len][maxK + 1][2];
-        // 第1天，第1次交易持有股票初始化
-        dp[0][1][0] = -prices[0];
-        // 第1天，第0次交易、第2次交易持有股票初始化
-        dp[0][0][0] = dp[0][2][0] = Integer.MIN_VALUE;
+        for (int k = 0; k <= maxK; k++) {
+            // 第1天，第k次交易持有股票初始化
+            dp[0][k][0] = -prices[0];
+        }
+
         for (int i = 1; i < len; i++) {
             for (int k = 1; k <= maxK; k++) {
                 // 第i天第k次交易持有股票
@@ -156,7 +157,7 @@ public class _123_买卖股票的最佳时机III {
                 dp[i][k][1] = Math.max(dp[i - 1][k][1], dp[i - 1][k][0] + prices[i]);
             }
         }
-        return Math.max(Math.max(dp[len - 1][0][1], dp[len - 1][1][1]), dp[len - 1][2][1]);
+        return dp[len - 1][maxK][1];
     }
 
     /**
@@ -166,10 +167,11 @@ public class _123_买卖股票的最佳时机III {
         int len = prices.length;
         int maxK = 2;
         int[][][] dp = new int[2][maxK + 1][2];
-        // 第1天，第1次交易持有股票初始化
-        dp[0][1][0] = -prices[0];
-        // 第1天，第0次交易、第2次交易持有股票初始化
-        dp[0][0][0] = dp[0][2][0] = Integer.MIN_VALUE;
+        for (int k = 0; k <= maxK; k++) {
+            // 第1天，第k次交易持有股票初始化
+            dp[0][k][0] = -prices[0];
+        }
+
         for (int i = 1; i < len; i++) {
             for (int k = 1; k <= maxK; k++) {
                 // 第i天第k次交易持有股票
@@ -178,7 +180,7 @@ public class _123_买卖股票的最佳时机III {
                 dp[i % 2][k][1] = Math.max(dp[(i - 1) % 2][k][1], dp[(i - 1) % 2][k][0] + prices[i]);
             }
         }
-        return Math.max(Math.max(dp[(len - 1) % 2][0][1], dp[(len - 1) % 2][1][1]), dp[(len - 1) % 2][2][1]);
+        return dp[(len - 1) % 2][maxK][1];
     }
 
     /**
@@ -189,10 +191,11 @@ public class _123_买卖股票的最佳时机III {
         int maxK = 2;
 
         int[][] dp = new int[maxK + 1][2];
-        // 第1天，第1次交易持有股票初始化
-        dp[1][0] = -prices[0];
-        // 第1天，第0次交易、第2次交易持有股票初始化
-        dp[0][0] = dp[2][0] = Integer.MIN_VALUE;
+        for (int k = 0; k <= maxK; k++) {
+            // 第1天，第k次交易持有股票初始化
+            dp[k][0] = -prices[0];
+        }
+
         for (int i = 1; i < len; i++) {
             for (int k = 1; k <= maxK; k++) {
                 // 第i天第k次交易持有股票
@@ -201,6 +204,6 @@ public class _123_买卖股票的最佳时机III {
                 dp[k][1] = Math.max(dp[k][1], dp[k][0] + prices[i]);
             }
         }
-        return Math.max(Math.max(dp[0][1], dp[1][1]), dp[2][1]);
+        return dp[maxK][1];
     }
 }
