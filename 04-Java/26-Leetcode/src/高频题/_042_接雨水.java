@@ -102,7 +102,7 @@ public class _042_接雨水 {
      * <p>
      * T = O(n), S = O(1)
      */
-    private int trap4(int[] height) {
+    public int trap4(int[] height) {
         int left = 0, right = height.length - 1;
         int res = 0;
         int leftMax = 0, rightMax = 0;
@@ -132,7 +132,7 @@ public class _042_接雨水 {
      * <p>
      * T = O(n^2), S = O(1)
      */
-    private int trap5(int[] height) {
+    public int trap5(int[] height) {
         int res = 0;
         int size = height.length;
         for (int i = 1; i < size - 1; i++) {
@@ -148,7 +148,7 @@ public class _042_接雨水 {
         return res;
     }
 
-    private int trap6(int[] height) {
+    public int trap6(int[] height) {
         int size = height.length;
 
         if (size <= 2) return 0;
@@ -198,7 +198,7 @@ public class _042_接雨水 {
      * <p>
      * T = O(n), S = O(n)
      */
-    private int trap7(int[] height) {
+    public int trap7(int[] height) {
         int res = 0, cur = 0;
         Deque<Integer> stack = new LinkedList<>();
         while (cur < height.length) {
