@@ -62,7 +62,7 @@ public class _054_螺旋矩阵 {
             for (int j = endX; j >= beginX; --j) {
                 result.add(matrix[endY][j]);
             }
-            if (beginY > -- endY) break;
+            if (beginY > --endY) break;
 
             // from left bottom to left top
             for (int i = endY; i >= beginY; --i) {
