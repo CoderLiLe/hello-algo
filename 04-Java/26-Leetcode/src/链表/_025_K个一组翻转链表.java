@@ -16,6 +16,9 @@ public class _025_K个一组翻转链表 {
         int[] nums = {1,2,3,4,5};
         ListNode l1 = LinkedListUtil.buildLinkedList(nums);
         Asserts.test(LinkedListUtil.toString(obj.reverseKGroup(l1, 2)).equals("[2,1,4,3,5]"));
+
+        ListNode l2 = LinkedListUtil.buildLinkedList(nums);
+        Asserts.test(LinkedListUtil.toString(obj.reverseKGroup2(l2, 2)).equals("[2,1,4,3,5]"));
     }
 
     /**
@@ -77,5 +80,35 @@ public class _025_K个一组翻转链表 {
             cur = next;
         }
         return prev;
+    }
+
+    public ListNode reverseKGroup2(ListNode head, int k) {
+        // 统计节点个数
+        int n = 0;
+        for (ListNode cur = head; cur != null; cur = cur.next) {
+            n++;
+        }
+
+        ListNode dummy = new ListNode(0, head);
+        ListNode p0 = dummy;
+        ListNode pre = null;
+        ListNode cur = head;
+
+        // k 个一组处理
+        for (; n >= k; n -= k) {
+            for (int i = 0; i < k; i++) { // 同 92 题
+                ListNode nxt = cur.next;
+                cur.next = pre; // 每次循环只修改一个 next，方便理解
+                pre = cur;
+                cur = nxt;
+            }
+
+            // 见视频
+            ListNode nxt = p0.next;
+            p0.next.next = cur;
+            p0.next = pre;
+            p0 = nxt;
+        }
+        return dummy.next;
     }
 }
