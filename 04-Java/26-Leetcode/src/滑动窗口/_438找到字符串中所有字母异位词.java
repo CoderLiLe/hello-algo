@@ -52,7 +52,7 @@ public class _438找到字符串中所有字母异位词 {
     /**
      * 定长滑窗：维护长为 n 的子串 s' 的每种字母的出现次数。如果 s′的每种字母的出现次数，
      * 和 p 的每种字母的出现次数都相同，那么 s'是 p 的异位词，把 s′左端点下标加入答案
-     *
+     * <p>
      * 时间复杂度：O(∣Σ∣m+n)，其中 m 是 s 的长度，n 是 p 的长度，∣Σ∣=26 是字符集合的大小。
      * 空间复杂度：O(∣Σ∣)。返回值不计入。
      *
@@ -157,5 +157,8 @@ public class _438找到字符串中所有字母异位词 {
 
         Asserts.test(Arrays.asList(0, 6).equals(obj.findAnagrams2("cbaebabacd", "abc")));
         Asserts.test(Arrays.asList(0, 1, 2).equals(obj.findAnagrams2("abab", "ab")));
+
+        Asserts.test(Arrays.asList(0, 6).equals(obj.findAnagrams3("cbaebabacd", "abc")));
+        Asserts.test(Arrays.asList(0, 1, 2).equals(obj.findAnagrams3("abab", "ab")));
     }
 }
