@@ -29,7 +29,7 @@ public class _030串联所有单词的子串 {
                 String word = s.substring(i + j * n, i + (j + 1) * n);
                 differ.put(word, differ.getOrDefault(word, 0) + 1);
             }
-            // 减去模式字符串数组中单词的频率，初始化differ地图
+            // 减去模式字符串数组中单词的频率，初始化differ
             for (String word : words) {
                 differ.put(word, differ.getOrDefault(word, 0) - 1);
                 if (differ.get(word) == 0) {
