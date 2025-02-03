@@ -13,7 +13,7 @@ public class _150逆波兰表达式 {
                 Integer num2 = Integer.valueOf(st.pop());
                 Integer num1 = Integer.valueOf(st.pop());
                 Integer res = 0;
-                switch(s) {
+                switch (s) {
                     case "+":
                         res = num1 + num2;
                         break;
@@ -39,7 +39,7 @@ public class _150逆波兰表达式 {
     public static void main(String[] args) {
         _150逆波兰表达式 obj = new _150逆波兰表达式();
 
-        String[] tokens = {"4","13","5","/","+"};
+        String[] tokens = {"4", "13", "5", "/", "+"};
         Asserts.test(obj.evalRPN(tokens) == 6);
     }
 }
