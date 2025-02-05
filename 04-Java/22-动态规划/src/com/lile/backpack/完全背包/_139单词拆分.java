@@ -1,7 +1,7 @@
-package 动态规划;
+package com.lile.backpack.完全背包;
 
-import tools.Asserts;
-import tools.Times;
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
 
 import java.util.*;
 
@@ -189,6 +189,36 @@ public class _139单词拆分 {
         return dp[sLen];
     }
 
+    /**
+     * 二维dp动规五部曲：
+     * （1）dp[i]：字符串长度为i的话，dp[i]为true，表示可以拆分为一个或多个在字典中出现的单词
+     * （2）递推公式：如果确定dp[j] 是true，且 [j, i] 这个区间的子串出现在字典里，那么dp[i]一定是true。（j < i ）。
+     * （3）dp数组初始化：从递推公式中可以看出，dp[i] 的状态依靠 dp[j]是否为true，那么dp[0]就是递推的根基，dp[0]一定要为true
+     * （4）遍历顺序：如果求组合数就是外层for循环遍历物品，内层for遍历背包。
+     *              如果求排列数就是外层for遍历背包，内层for循环遍历物品。
+     *              本题其实我们求的是排列数
+     * （5）举例推导dp数组
+     *
+     * 时间复杂度：O(n^3)，因为substr返回子串的副本是O(n)的复杂度（这里的n是substring的长度）
+     * 空间复杂度：O(n)
+     */
+    public boolean wordBreak_dp2(String s, List<String> wordDict) {
+        Set<String> wordSet = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
+        // 遍历背包
+        for (int i = 1; i <= s.length(); i++) {
+            // 遍历物品
+            for (int j = 0; j < i; j++) {
+                String word = s.substring(j, i);
+                if (wordSet.contains(word) && dp[j]) {
+                    dp[i] = true;
+                }
+            }
+        }
+        return dp[s.length()];
+    }
+
     public static void main(String[] args) {
         _139单词拆分 obj = new _139单词拆分();
 
@@ -220,6 +250,12 @@ public class _139单词拆分 {
             Asserts.test(obj.wordBreak_dp(s, wordDict));
             Asserts.test(obj.wordBreak_dp(s2, wordDict2));
             Asserts.test(!obj.wordBreak_dp(s3, wordDict3));
+        });
+
+        Times.test("动态规划解法(动归五部曲)", () -> {
+            Asserts.test(obj.wordBreak_dp2(s, wordDict));
+            Asserts.test(obj.wordBreak_dp2(s2, wordDict2));
+            Asserts.test(!obj.wordBreak_dp2(s3, wordDict3));
         });
 
     }
