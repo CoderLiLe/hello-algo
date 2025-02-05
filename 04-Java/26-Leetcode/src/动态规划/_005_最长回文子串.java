@@ -76,7 +76,12 @@ public class _005_最长回文子串 {
     }
 
     /**
-     * 动态规划法2
+     * 动规五部曲：
+     * （1）dp[l][r]：字符串[l,r]是否为回文串
+     * （2）递推公式：s[l] == s[r]，如果r - l <= 2，则dp[l][r] = true；包含两种情况：对于长度为 1 的子串，它显然是个回文串；对于长度为 2 的子串，只要它的两个字母相同，它就是一个回文串符
+     *                           dp[l][r] = dp[l + 1][r - 1]
+     * （3）初始化：dp[l][r] = false
+     * （4）遍历顺序：r从1开始，l < r
      */
     public String longestPalindrome11(String s) {
         if (s == null || s.length() < 2) {
