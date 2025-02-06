@@ -1,4 +1,4 @@
-# DataStructureAlgorithm
+# hello-algo
 数据结构与算法多种语言实现
 
 # 怎么学习数据结构与算法？
