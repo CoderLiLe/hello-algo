@@ -165,11 +165,13 @@ public class _1143LongestCommonSubsequence {
 	 * T = O(m * n), S = O(m * n)
 	 */
 	public int longestCommonSubsequence1(String text1, String text2) {
+		int len1 = text1.length();
+		int len2 = text2.length();
 		// 先对dp数组做初始化操作
-		int[][] dp = new int[text1.length() + 1][text2.length() + 1];
-		for (int i = 1 ; i <= text1.length() ; i++) {
+		int[][] dp = new int[len1 + 1][len2 + 1];
+		for (int i = 1 ; i <= len1 ; i++) {
 			char char1 = text1.charAt(i - 1);
-			for (int j = 1; j <= text2.length(); j++) {
+			for (int j = 1; j <= len2; j++) {
 				char char2 = text2.charAt(j - 1);
 				// 开始列出状态转移方程
 				if (char1 == char2) {
@@ -179,7 +181,7 @@ public class _1143LongestCommonSubsequence {
 				}
 			}
 		}
-		return dp[text1.length()][text2.length()];
+		return dp[len1][len2];
 	}
 
 	// 字符串-一维数组
