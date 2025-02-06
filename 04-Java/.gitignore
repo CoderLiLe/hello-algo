@@ -1,1 +1,5 @@
 /.metadata/
+.idea
+.DS_Store
+# VS Code Config file
+.vscode/
