@@ -1,6 +1,7 @@
 package com.lile;
 
-import tools.Asserts;
+
+import com.lile.tools.Asserts;
 
 public class _246_丑数II {
     public static void main(String[] args) {

@@ -1,7 +1,8 @@
-package 动态规划.剑指offer;
+package com.lile.剑指offer;
 
-import tools.Asserts;
-import tools.Times;
+
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
 
 public class 面47_礼物的最大价值 {
 	public static void main(String[] args) {

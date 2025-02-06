@@ -1,7 +1,7 @@
 package com.lile;
 
-import tools.Asserts;
-import tools.Times;
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
 
 /**
  * https://leetcode.cn/problems/coin-lcci/description/

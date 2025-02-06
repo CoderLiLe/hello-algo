@@ -1,6 +1,7 @@
-package 动态规划.剑指offer;
+package com.lile.剑指offer;
 
-import tools.Asserts;
+
+import com.lile.tools.Asserts;
 
 public class _62_LastNumberInCircle {
     public static void main(String[] args) {

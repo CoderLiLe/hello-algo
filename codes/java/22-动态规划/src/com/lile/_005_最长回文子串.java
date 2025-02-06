@@ -1,7 +1,7 @@
 package com.lile;
 
-import tools.Asserts;
-import tools.Times;
+import com.lile.tools.Asserts;
+import com.lile.tools.Times;
 
 public class _005_最长回文子串 {
     // 暴力法

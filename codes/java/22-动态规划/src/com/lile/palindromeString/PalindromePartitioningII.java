@@ -1,4 +1,4 @@
-package 动态规划.palindromeString;
+package com.lile.palindromeString;
 
 /**
  * 【132. Palindrome Partitioning II】
@@ -10,8 +10,8 @@ package 动态规划.palindromeString;
  * Return the minimum cuts needed for a palindrome partitioning of s.
  */
 
-import tools.Asserts;
-import tools.Times;
+
+import com.lile.tools.Times;
 
 /**
  * 动规五部曲

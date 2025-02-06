@@ -1,7 +1,5 @@
 package com.lile;
 
-import tools.Asserts;
-
 /**
  * 【010_正则表达式匹配 】
  * 困难
@@ -46,6 +44,8 @@ import tools.Asserts;
  * p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
  * 保证每次出现字符 * 时，前面都匹配到有效的字符
  */
+
+import com.lile.tools.Asserts;
 
 /**
  * 思路参考：https://leetcode-cn.com/problems/regular-expression-matching/solution/dong-tai-gui-hua-zen-yao-cong-0kai-shi-si-kao-da-b/
