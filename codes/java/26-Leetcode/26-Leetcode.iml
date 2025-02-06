@@ -7,13 +7,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="08-红黑树" />
     <orderEntry type="module" module-name="19-回溯" />
-    <orderEntry type="module" module-name="07-AVL树" />
-    <orderEntry type="module" module-name="22-动态规划" />
-    <orderEntry type="module" module-name="15-排序" />
-    <orderEntry type="module" module-name="16-并查集" />
     <orderEntry type="module" module-name="20-贪心" />
     <orderEntry type="module" module-name="11-散列表" />
+    <orderEntry type="module" module-name="16-并查集" />
+    <orderEntry type="module" module-name="15-排序" />
+    <orderEntry type="module" module-name="22-动态规划" />
+    <orderEntry type="module" module-name="08-红黑树" />
+    <orderEntry type="module" module-name="07-AVL树" />
   </component>
 </module>
