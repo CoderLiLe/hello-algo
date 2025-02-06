@@ -30,5 +30,3 @@ target
 .vscode/
 # IDEA
 .idea
-
-*.iml
