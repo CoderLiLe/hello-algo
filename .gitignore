@@ -25,3 +25,8 @@ gen/
 target
 
 # Eclipse for java project end
+
+# VS Code Config file
+.vscode/
+# IDEA
+.idea
