@@ -159,4 +159,93 @@ public class _198打家劫舍 {
         }
         return cur;
     }
+
+    /**
+     * 动归五部曲：
+     * 1、dp[i]：前i个房子可以偷窃的最大金额
+     * 2、状态转移：dp[i] = max(dp[i - 2] + nums[i - 1], dp[i - 1])
+     * 3、初始化：dp[0] = nums[0], dp[1] = nums[1]
+     * 4、遍历顺序：从前往后
+     * 5、举例验证
+     */
+    public int rob4(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int len = nums.length;
+        if (len == 1) {
+            return nums[0];
+        }
+        if (len == 2) {
+            return Math.max(nums[0], nums[1]);
+        }
+        int[] dp = new int[len + 1];
+        dp[0] = 0;
+        dp[1] = nums[0];
+        for (int i = 2; i <= len; i++) {
+            dp[i] = Math.max(dp[i - 2] + nums[i - 1], dp[i - 1]);
+        }
+        return dp[len];
+    }
+
+    /**
+     * 动归五部曲：
+     * 1、dp[i]：前i个房子可以偷窃的最大金额
+     * 2、状态转移：dp[i] = max(dp[i - 2] + nums[i - 1], dp[i - 1])
+     * 3、初始化：dp[0] = nums[0], dp[1] = nums[1]
+     * 4、遍历顺序：从前往后
+     * 5、举例验证
+     */
+    public int rob5(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int len = nums.length;
+        int[] dp = new int[len];
+
+        for (int i = 0; i < len; i++) {
+            if (i == 0) {
+                dp[0] = nums[0];
+            } else if (i == 1) {
+                dp[1] = Math.max(nums[0], nums[1]);
+            } else {
+                dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
+            }
+        }
+        return dp[len - 1];
+    }
+
+    /**
+     * 动归五部曲：优化空间复杂度
+     * 1、prepre：前2个房子可以偷窃的最大金额
+     *    pre：前1个房子可以偷窃的最大金额
+     * 2、状态转移：maxValue = Math.max(prepre + nums[i], pre);
+     * 3、初始化：prepre = nums[0], pre = nums[1]
+     * 4、遍历顺序：从前往后
+     * 5、举例验证
+     */
+    public int rob6(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int maxValue = 0;
+        int prepre = 0, pre = 0, cur;
+        for (int i = 0; i < nums.length; i++) {
+            if (i == 0) {
+                prepre = nums[0];
+                maxValue = prepre;
+            } else if (i == 1) {
+                pre = Math.max(nums[0], nums[1]);
+                maxValue = pre;
+            } else {
+                cur = Math.max(prepre + nums[i], pre);
+                maxValue = Math.max(maxValue, cur);
+                prepre = pre;
+                pre = cur;
+            }
+        }
+        return maxValue;
+    }
 }
