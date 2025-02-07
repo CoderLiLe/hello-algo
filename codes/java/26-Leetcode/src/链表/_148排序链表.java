@@ -39,7 +39,12 @@ public class _148排序链表 {
         return mergeTwoLists(left, right);
     }
 
-    // 876. 链表的中间结点（快慢指针）
+    //
+
+    /**
+     * 此处求的是中间节点的前一个节点，并且要将链表拆开
+     * 876. 链表的中间结点（快慢指针）是求的中间节点，如果有两个中间节点，则曲第二个
+     */
     private ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
