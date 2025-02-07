@@ -16,6 +16,7 @@
 # generated files
 bin/
 gen/
+out/
 
 # Eclipse project files
 .DS_Store
