@@ -412,7 +412,8 @@ public class _148排序链表 {
             if (node_j.val < pivot) {
                 // 因为 node_i 之前节点都小于基准值，所以先将 node_i 向右移动一位（此时 node_i 节点值大于等于基准节点值）
                 node_i = node_i.next;
-                // 将小于基准值的元素 node_j 与当前 node_i 换位，换位后可以保证 node_i 之前的节点都小于基准节点值
+
+                // 将小于基准值的元素 node_j 与当前 node_i(node_i 节点值大于等于基准节点值) 换位，换位后可以保证 node_i 之前的节点都小于等于基准节点值
                 int temp = node_i.val;
                 node_i.val = node_j.val;
                 node_j.val = temp;
@@ -482,24 +483,6 @@ public class _148排序链表 {
         }
 
         return dummyHead.next;
-    }
-
-    /**
-     * 将链表节点值 val 添加到对应桶 buckets[index] 中
-     *
-     * @param buckets 桶数组
-     * @param index   桶的索引
-     * @param val     节点值
-     */
-    private void insertion(ListNode[] buckets, int index, int val) {
-        if (buckets[index] == null) {
-            buckets[index] = new ListNode(val);
-            return;
-        }
-
-        ListNode node = new ListNode(val);
-        node.next = buckets[index];
-        buckets[index] = node;
     }
 
     /**
@@ -616,6 +599,24 @@ public class _148排序链表 {
         }
 
         return dummyHead.next;
+    }
+
+    /**
+     * 将链表节点值 val 添加到对应桶 buckets[index] 中
+     *
+     * @param buckets 桶数组
+     * @param index   桶的索引
+     * @param val     节点值
+     */
+    private void insertion(ListNode[] buckets, int index, int val) {
+        if (buckets[index] == null) {
+            buckets[index] = new ListNode(val);
+            return;
+        }
+
+        ListNode node = new ListNode(val);
+        node.next = buckets[index];
+        buckets[index] = node;
     }
 
     /**
