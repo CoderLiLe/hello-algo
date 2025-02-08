@@ -307,7 +307,6 @@ public class _148排序链表 {
         do {
             swapped = false;
             ListNode node_i = head;
-            ListNode prev = null;
 
             // 内层循环进行相邻节点的比较和交换
             while (node_i != null && node_i.next != null && node_i.next != tail) {
@@ -318,12 +317,11 @@ public class _148排序链表 {
                     node_i.next.val = temp;
                     swapped = true;
                 }
-                prev = node_i;
                 node_i = node_i.next;
             }
 
             // 更新尾指针为已排序部分的最后一个节点
-            tail = prev != null ? prev.next : null;
+            tail = node_i;
 
         } while (swapped);
 
