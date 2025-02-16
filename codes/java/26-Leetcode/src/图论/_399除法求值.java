@@ -3,6 +3,7 @@ package 图论;
 import common.Edge;
 import tools.Asserts;
 
+import javax.swing.*;
 import java.util.*;
 
 /**
@@ -16,6 +17,19 @@ import java.util.*;
  */
 public class _399除法求值 {
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        Map<String, List<Edge>> graph = createGraph(equations, values);
+
+        double[] res = new double[queries.size()];
+        for (int i = 0; i < queries.size(); i++) {
+            List<String> query = queries.get(i);
+            String start = query.get(0), end = query.get(1);
+            // BFS 遍历图，计算start 到end 的路径乘积
+            res[i] = bfs(graph, start, end);
+        }
+        return res;
+    }
+
+    private Map<String, List<Edge>> createGraph(List<List<String>> equations, double[] values) {
         // 把 equations 抽象成一副图，临接表存储
         Map<String, List<Edge>> graph = new HashMap<>();
         for (int i = 0; i < equations.size(); i++) {
@@ -32,15 +46,7 @@ public class _399除法求值 {
             }
             graph.get(b).add(new Edge(a, 1.0 / w));
         }
-
-        double[] res = new double[queries.size()];
-        for (int i = 0; i < queries.size(); i++) {
-            List<String> query = queries.get(i);
-            String start = query.get(0), end = query.get(1);
-            // BFS 遍历图，计算start 到end 的路径乘积
-            res[i] = bfs(graph, start, end);
-        }
-        return res;
+        return graph;
     }
 
     private double bfs(Map<String, List<Edge>> graph, String start, String end) {
@@ -81,9 +87,56 @@ public class _399除法求值 {
         return -1.0;
     }
 
+    public double[] calcEquation_dfs(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        // 把 equations 抽象成一副图，临接表存储
+        Map<String, List<Edge>> graph = createGraph(equations, values);
+
+        Set<String> visited = new HashSet<>();
+        double[] res = new double[queries.size()];
+        for (int i = 0; i < queries.size(); i++) {
+            List<String> query = queries.get(i);
+            String start = query.get(0), end = query.get(1);
+            visited.clear();
+            res[i] = -1.0;
+            if (!graph.containsKey(start) || !graph.containsKey(end)) {
+                continue;
+            }
+
+            // BFS 遍历图，计算start 到end 的路径乘积
+            res[i] = dfs(graph, start, 1.0, end, visited);
+        }
+        return res;
+    }
+
+    private double dfs(Map<String, List<Edge>> graph, String start, double mul, String end, Set<String> visited) {
+        if (start.equals(end)) {
+            return mul;
+        }
+
+        visited.add(start);
+
+        // 初始结果为-1.0，表示以当前节点无法到达目标节点qy
+        double res = -1.0;
+        for (Edge neighbor : graph.get(start)) {
+            if (visited.contains(neighbor.getNode())) {
+                continue;
+            }
+            res = dfs(graph, neighbor.getNode(), mul * neighbor.getWeight(), end, visited);
+            if (res != -1.0) {
+                break;
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         _399除法求值 obj = new _399除法求值();
 
+        test1(obj);
+        test2(obj);
+    }
+
+    private static void test1(_399除法求值 obj) {
         List<List<String>> equations = new ArrayList<>();
         equations.add(Arrays.asList("a", "b"));
         equations.add(Arrays.asList("b", "c"));
@@ -98,6 +151,26 @@ public class _399除法求值 {
         queries.add(Arrays.asList("x", "x"));
 
         double[] res = obj.calcEquation(equations, values, queries);
+        double[] expect = new double[]{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
+
+        Asserts.test(Arrays.equals(res, expect));
+    }
+
+    private static void test2(_399除法求值 obj) {
+        List<List<String>> equations = new ArrayList<>();
+        equations.add(Arrays.asList("a", "b"));
+        equations.add(Arrays.asList("b", "c"));
+
+        double[] values = new double[]{2.0, 3.0};
+
+        List<List<String>> queries = new ArrayList<>();
+        queries.add(Arrays.asList("a", "c"));
+        queries.add(Arrays.asList("b", "a"));
+        queries.add(Arrays.asList("a", "e"));
+        queries.add(Arrays.asList("a", "a"));
+        queries.add(Arrays.asList("x", "x"));
+
+        double[] res = obj.calcEquation_dfs(equations, values, queries);
         double[] expect = new double[]{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
 
         Asserts.test(Arrays.equals(res, expect));
