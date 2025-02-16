@@ -129,14 +129,82 @@ public class _399除法求值 {
         return res;
     }
 
+    /**
+     * 使用Floyd算法计算方程的值
+     *
+     * @param equations 一个包含方程的列表，每个方程是一个包含两个变量的列表
+     * @param values 方程中每个除法操作的结果值数组
+     * @param queries 一个包含查询的列表，每个查询是一个包含两个变量的列表
+     * @return 返回每个查询的结果数组，如果查询无法计算，则结果为-1.0
+     */
+    public double[] calcEquation_floyd(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        // 初始化变量计数器
+        int nvars = 0;
+        // 创建一个映射，将变量字符串映射到整数编号
+        Map<String, Integer> variables = new HashMap<>();
+
+        // 遍历方程列表，为每个变量分配一个唯一的整数编号
+        int n = equations.size();
+        for (int i = 0; i < n; i++) {
+            if (!variables.containsKey(equations.get(i).get(0))) {
+                variables.put(equations.get(i).get(0), nvars++);
+            }
+            if (!variables.containsKey(equations.get(i).get(1))) {
+                variables.put(equations.get(i).get(1), nvars++);
+            }
+        }
+
+        // 初始化图的邻接矩阵，表示变量之间的除法关系
+        double[][] graph = new double[nvars][nvars];
+        for (int i = 0; i < nvars; i++) {
+            Arrays.fill(graph[i], -1.0);
+        }
+
+        // 根据方程和值填充邻接矩阵
+        for (int i = 0; i < n; i++) {
+            int va = variables.get(equations.get(i).get(0)), vb = variables.get(equations.get(i).get(1));
+            graph[va][vb] = values[i];
+            graph[vb][va] = 1.0 / values[i];
+        }
+
+        // 使用Floyd算法更新图的邻接矩阵，计算所有变量对之间的除法结果
+        for (int k = 0; k < nvars; k++) {
+            for (int i = 0; i < nvars; i++) {
+                for (int j = 0; j < nvars; j++) {
+                    if (graph[i][k] > 0 && graph[k][j] > 0) {
+                        graph[i][j] = graph[i][k] * graph[k][j];
+                    }
+                }
+            }
+        }
+
+        // 遍历查询列表，计算每个查询的结果
+        int queriesCount = queries.size();
+        double[] ret = new double[queriesCount];
+        for (int i = 0; i < queriesCount; i++) {
+            List<String> query = queries.get(i);
+            double result = -1.0;
+            // 如果查询的两个变量都存在于映射中，并且它们之间存在除法关系，则计算结果
+            if (variables.containsKey(query.get(0)) && variables.containsKey(query.get(1))) {
+                int ia = variables.get(query.get(0)), ib = variables.get(query.get(1));
+                if (graph[ia][ib] > 0) {
+                    result = graph[ia][ib];
+                }
+            }
+            ret[i] = result;
+        }
+        return ret;
+    }
+
     public static void main(String[] args) {
         _399除法求值 obj = new _399除法求值();
 
-        test1(obj);
-        test2(obj);
+        test_bfs(obj);
+        test_dfs(obj);
+        test_floyd(obj);
     }
 
-    private static void test1(_399除法求值 obj) {
+    private static void test_bfs(_399除法求值 obj) {
         List<List<String>> equations = new ArrayList<>();
         equations.add(Arrays.asList("a", "b"));
         equations.add(Arrays.asList("b", "c"));
@@ -156,7 +224,7 @@ public class _399除法求值 {
         Asserts.test(Arrays.equals(res, expect));
     }
 
-    private static void test2(_399除法求值 obj) {
+    private static void test_dfs(_399除法求值 obj) {
         List<List<String>> equations = new ArrayList<>();
         equations.add(Arrays.asList("a", "b"));
         equations.add(Arrays.asList("b", "c"));
@@ -171,6 +239,26 @@ public class _399除法求值 {
         queries.add(Arrays.asList("x", "x"));
 
         double[] res = obj.calcEquation_dfs(equations, values, queries);
+        double[] expect = new double[]{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
+
+        Asserts.test(Arrays.equals(res, expect));
+    }
+
+    private static void test_floyd(_399除法求值 obj) {
+        List<List<String>> equations = new ArrayList<>();
+        equations.add(Arrays.asList("a", "b"));
+        equations.add(Arrays.asList("b", "c"));
+
+        double[] values = new double[]{2.0, 3.0};
+
+        List<List<String>> queries = new ArrayList<>();
+        queries.add(Arrays.asList("a", "c"));
+        queries.add(Arrays.asList("b", "a"));
+        queries.add(Arrays.asList("a", "e"));
+        queries.add(Arrays.asList("a", "a"));
+        queries.add(Arrays.asList("x", "x"));
+
+        double[] res = obj.calcEquation_floyd(equations, values, queries);
         double[] expect = new double[]{6.00000, 0.50000, -1.00000, 1.00000, -1.00000};
 
         Asserts.test(Arrays.equals(res, expect));
