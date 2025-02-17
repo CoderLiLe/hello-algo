@@ -40,9 +40,48 @@ public class _084_柱状图中最大的矩形 {
     }
 
     /**
-     * 单调栈：T = O(n), S = O(n)
+     * 双指针法
      */
     public int largestRectangleArea2(int[] heights) {
+        int len = heights.length;
+        int[] minLeftIndex = new int[len];
+        int[] minRightIndex = new int[len];
+
+        // 记录每个柱子 左边第一个小于该柱子的下标
+        minLeftIndex[0] = -1;
+        for (int i = 1; i < len; i++) {
+            int left = i - 1;
+            // 这里不是用if，而是不断向左寻找的过程
+            while (left >= 0 && heights[left] >= heights[i]) {
+                left = minLeftIndex[left];
+            }
+            minLeftIndex[i] = left;
+        }
+
+        // 记录每个柱子 右边第一个小于该柱子的下标
+        minRightIndex[len - 1] = len;
+        for (int i = len - 2; i >= 0; i--) {
+            int right = i + 1;
+            // 这里不是用if，而是不断向右寻找的过程
+            while (right < len && heights[right] >= heights[i]) {
+                right = minRightIndex[right];
+            }
+            minRightIndex[i] = right;
+        }
+
+        // 求和
+        int result = 0;
+        for (int i = 0; i < len; i++) {
+            int sum = heights[i] * (minRightIndex[i] - minLeftIndex[i] - 1);
+            result = Math.max(result, sum);
+        }
+        return result;
+    }
+
+    /**
+     * 单调栈：T = O(n), S = O(n)
+     */
+    public int largestRectangleArea3(int[] heights) {
         // 数组扩容，在头部和尾部各加入一个元素
         int[] newHeights = new int[heights.length + 2];
         newHeights[0] = 0;
@@ -82,7 +121,7 @@ public class _084_柱状图中最大的矩形 {
     /**
      * 单调栈：T = O(n), S = O(n)
      */
-    public int largestRectangleArea3(int[] heights) {
+    public int largestRectangleArea4(int[] heights) {
         int len = heights.length;
         if (0 == len) return 0;
 
@@ -118,5 +157,6 @@ public class _084_柱状图中最大的矩形 {
         Asserts.test(obj.largestRectangleArea1(heights) == 10);
         Asserts.test(obj.largestRectangleArea2(heights) == 10);
         Asserts.test(obj.largestRectangleArea3(heights) == 10);
+        Asserts.test(obj.largestRectangleArea4(heights) == 10);
     }
 }
