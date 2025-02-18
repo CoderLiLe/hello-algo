@@ -39,12 +39,12 @@ public class _011_盛最多水的容器 {
                 int minH = height[l];
                 water = Math.max(water, (r - l) * minH);
                 l++;
-                while (l < r && height[l] < minH) l++;
+                while (l < r && height[l] <= minH) l++;
             } else {
                 int minH = height[r];
                 water = Math.max(water, (r - l) * minH);
                 r--;
-                while (l < r && height[r] < minH) r--;
+                while (l < r && height[r] <= minH) r--;
             }
         }
 
