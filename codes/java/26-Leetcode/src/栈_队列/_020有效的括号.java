@@ -1,5 +1,7 @@
 package 栈_队列;
 
+import tools.Asserts;
+
 import java.util.*;
 
 public class _020有效的括号 {
@@ -48,5 +50,23 @@ public class _020有效的括号 {
         }
         // 最后判断栈中元素是否匹配
         return deque.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        _020有效的括号 obj = new _020有效的括号();
+
+        Asserts.test(obj.isValid("()") == true);
+        Asserts.test(obj.isValid("()[]{}") == true);
+        Asserts.test(obj.isValid("(]") == false);
+        Asserts.test(obj.isValid("([)]") == false);
+        Asserts.test(obj.isValid("({})]") == false);
+        Asserts.test(obj.isValid("({})[(]") == false);
+
+        Asserts.test(obj.isValid2("()") == true);
+        Asserts.test(obj.isValid2("()[]{}") == true);
+        Asserts.test(obj.isValid2("(]") == false);
+        Asserts.test(obj.isValid2("([)]") == false);
+        Asserts.test(obj.isValid2("({})]") == false);
+        Asserts.test(obj.isValid2("({})[(]") == false);
     }
 }
