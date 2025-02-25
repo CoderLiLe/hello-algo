@@ -1,7 +1,5 @@
 package 高频题;
 
-import tools.Asserts;
-
 import java.util.*;
 
 public class _015_三数之和 {
@@ -81,10 +79,44 @@ public class _015_三数之和 {
         return new ArrayList(set);
     }
 
+    public List<List<Integer>> threeSum3(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++) {
+            // 如果第一个元素大于零，不可能凑成三元组
+            if (nums[i] > 0) {
+                return result;
+            }
+            // 三元组元素a去重
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            HashSet<Integer> set = new HashSet<>();
+            for (int j = i + 1; j < nums.length; j++) {
+                // 三元组元素b去重
+                if (j > i + 2 && nums[j] == nums[j - 1] && nums[j - 1] == nums[j - 2]) {
+                    continue;
+                }
+
+                int c = -nums[i] - nums[j];
+                if (set.contains(c)) {
+                    result.add(Arrays.asList(nums[i], nums[j], c));
+                    set.remove(c); // 三元组元素c去重
+                } else {
+                    set.add(nums[j]);
+                }
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         _015_三数之和 obj = new _015_三数之和();
         int[] nums = {-1, 0, 1, 2, -1, -4};
         System.out.println(obj.threeSum(nums));
         System.out.println(obj.threeSum2(nums));
+        System.out.println(obj.threeSum3(nums));
     }
 }
