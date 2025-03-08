@@ -6,9 +6,13 @@ import java.util.List;
 public class _046_全排列 {
     private List<List<Integer>> list;
     private int[] nums;
-    /** 用来保存每一层选择的数字 */
+    /**
+     * 用来保存每一层选择的数字
+     */
     private int[] result;
-    /** 用来标记nums中的 数字是否被使用过了  */
+    /**
+     * 用来标记nums中的 数字是否被使用过了
+     */
     private boolean[] used;
 
     public List<List<Integer>> permute(int[] nums) {
@@ -28,7 +32,7 @@ public class _046_全排列 {
     private void backtrack(int idx) {
         // 不能再往下搜索
         if (idx == nums.length) {
-             List<Integer> resultList = new ArrayList<>();
+            List<Integer> resultList = new ArrayList<>();
             for (int value : result) {
                 resultList.add(value);
             }

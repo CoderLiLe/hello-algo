@@ -15,7 +15,7 @@ public class _046_全排列3 {
     private void backtrack(int idx, int[] nums, List<List<Integer>> list) {
         // 不能再往下搜索
         if (idx == nums.length) {
-             List<Integer> resultList = new ArrayList<>();
+            List<Integer> resultList = new ArrayList<>();
             for (int value : nums) {
                 resultList.add(value);
             }
@@ -27,7 +27,7 @@ public class _046_全排列3 {
         for (int i = idx; i < nums.length; i++) {
             swap(nums, idx, i);
             backtrack(idx + 1, nums, list);
-            swap(nums, idx,  i);
+            swap(nums, idx, i);
         }
     }
 

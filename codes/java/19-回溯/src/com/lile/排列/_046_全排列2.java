@@ -6,7 +6,9 @@ import java.util.List;
 public class _046_全排列2 {
     private List<List<Integer>> list;
     private int[] nums;
-    /** 用来保存每一层选择的数字 */
+    /**
+     * 用来保存每一层选择的数字
+     */
     private List<Integer> result;
 
     public List<List<Integer>> permute(int[] nums) {
