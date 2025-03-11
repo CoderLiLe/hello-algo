@@ -5,6 +5,8 @@ import tools.Asserts;
 public class _160_相交链表 {
 
 	public static void main(String[] args) {
+		_160_相交链表 obj = new _160_相交链表();
+
 		ListNode node5 = new ListNode(5, null);
 		ListNode node4 = new ListNode(4, node5);
 		ListNode node8 = new ListNode(8, node4);
@@ -15,11 +17,51 @@ public class _160_相交链表 {
 		ListNode node11 = new ListNode(1, node8);
 		ListNode node6 = new ListNode(6, node11);
 		ListNode l2 = new ListNode(5, node6);
-		ListNode node = getIntersectionNode(l1, l2);
+		ListNode node = obj.getIntersectionNode(l1, l2);
 		Asserts.test((node != null ? node.val : 0) == 8);
 	}
-	
-	private static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+		ListNode curA = headA;
+		ListNode curB = headB;
+		int lenA = 0, lenB = 0;
+		while (curA != null) {
+			lenA++;
+			curA = curA.next;
+		}
+		while (curB != null) {
+			lenB++;
+			curB = curB.next;
+		}
+
+		curA = headA;
+		curB = headB;
+		// 让curA为最长链表的头，lenA为其长度
+		if (lenB > lenA) {
+			//1. swap (lenA, lenB);
+			int tmpLen = lenA;
+			lenA = lenB;
+			lenB = tmpLen;
+			//2. swap (curA, curB);
+			ListNode tmpNode = curA;
+			curA = curB;
+			curB = tmpNode;
+		}
+		int diff = lenA - lenB;
+		for (int i = 0; i < diff; i++) {
+			curA = curA.next;
+		}
+		while (curA != null) {
+			if (curA == curB) {
+				return curA;
+			}
+			curA = curA.next;
+			curB = curB.next;
+		}
+		return null;
+	}
+
+	public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
 		
 		ListNode curA = headA, curB = headB;
