@@ -48,48 +48,48 @@ public class _142_环形链表II {
     }
 
     /**
- * 快慢指针法2
- * 当快慢指针相遇时，让其中任一个指针指向头节点，然后让它俩以相同速度前进，再次相遇时所在的节点位置就是环开始的位置
- * 时间复杂度：O(n)
- * 空间复杂度：O(1)
- *
- * @param head
- * @return
- */
-public ListNode detectCycle2(ListNode head) {
-    if (head == null || head.next == null) {
+     * 快慢指针法2
+     * 当快慢指针相遇时，让其中任一个指针指向头节点，然后让它俩以相同速度前进，再次相遇时所在的节点位置就是环开始的位置
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     *
+     * @param head
+     * @return
+     */
+    public ListNode detectCycle2(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // 跳出循环时则，快慢指针相遇
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                // 慢指针重新指向头节点
+                slow = head;
+                // 快慢指针同步前进，相交点就是环起点
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+
+        // 如果没有环，返回 null
         return null;
     }
-
-    ListNode slow = head;
-    ListNode fast = head;
-
-    // 跳出循环时则，快慢指针相遇
-    while (fast != null && fast.next != null) {
-        slow = slow.next;
-        fast = fast.next.next;
-
-        if (slow == fast) {
-            // 慢指针重新指向头节点
-            slow = head;
-            // 快慢指针同步前进，相交点就是环起点
-            while (slow != fast) {
-                slow = slow.next;
-                fast = fast.next;
-            }
-            return slow;
-        }
-    }
-
-    // 如果没有环，返回 null
-    return null;
-}
 
 
     /**
      * 哈希表判断
      * 时间复杂度：O(N)，其中 N 是链表中的节点数。最坏情况下我们需要遍历每个节点一次。
-     *
+     * <p>
      * 空间复杂度：O(N)，其中 N 是链表中的节点数。主要为哈希表的开销，最坏情况下我们需要将每个节点插入到哈希表中一次。
      */
     public ListNode detectCycle3(ListNode head) {

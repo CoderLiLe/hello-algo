@@ -108,7 +108,7 @@ public class _019_删除链表的倒数第N个结点 {
         return dummy.next;
     }
 
-    private static int getLength(ListNode head) {
+    private int getLength(ListNode head) {
         int length = 0;
         while (head != null) {
             length++;
