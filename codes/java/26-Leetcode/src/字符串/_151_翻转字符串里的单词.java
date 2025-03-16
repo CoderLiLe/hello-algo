@@ -1,5 +1,7 @@
 package 字符串;
 
+import tools.Asserts;
+
 public class _151_翻转字符串里的单词 {
 	/**
 	 * 分割 + 倒序
@@ -102,5 +104,20 @@ public class _151_翻转字符串里的单词 {
 			j = i;                                       // j 指向下个单词的尾字符
 		}
 		return res.toString().trim();                    // 转化为字符串并返回
+	}
+
+	public static void main(String[] args) {
+		_151_翻转字符串里的单词 obj = new _151_翻转字符串里的单词();
+		String s1 = "the sky is blue";
+		String reverse1 = "blue is sky the";
+		Asserts.test(obj.reverseWords1(s1).equals(reverse1));
+		Asserts.test(obj.reverseWords2(s1).equals(reverse1));
+		Asserts.test(obj.reverseWords3(s1).equals(reverse1));
+
+		String s2 = "a good   example";
+		String reverse2 = "example good a";
+		Asserts.test(obj.reverseWords1(s2).equals(reverse2));
+		Asserts.test(obj.reverseWords2(s2).equals(reverse2));
+		Asserts.test(obj.reverseWords3(s2).equals(reverse2));
 	}
 }
