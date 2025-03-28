@@ -1,10 +1,10 @@
 package 二叉树.遍历;
 
-import com.sun.source.tree.Tree;
 import common.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class _404左叶子之和 {
     public int sumOfLeftLeaves(TreeNode root) {
@@ -23,6 +23,32 @@ public class _404左叶子之和 {
     }
 
     public int sumOfLeftLeaves2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
+        int result = 0;
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+
+            if (node.left != null) {
+                if (node.left.left == null && node.left.right == null) {
+                    result += node.left.val;
+                } else {
+                    stack.add(node.left);
+                }
+
+            }
+
+            if (node.right != null) {
+                stack.add(node.right);
+            }
+        }
+        return result;
+    }
+
+    public int sumOfLeftLeaves3(TreeNode root) {
         int sum = 0;
         if (root == null) {
             return sum;
