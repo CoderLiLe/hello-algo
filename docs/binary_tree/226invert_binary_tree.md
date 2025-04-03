@@ -38,3 +38,46 @@
 **这道题目使用前序遍历和后序遍历都可以，唯独中序遍历不方便，因为中序遍历会把某些节点的左右孩子翻转了两次！**
 
 **层序遍历也是可以的！只要把每一个节点的左右孩子翻转一下的遍历方式都是可以的！**
+
+## 递归法
+### 前序遍历
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root:
+        return None
+    root.left, root.right = root.right, root.left
+    self.invertTree(root.left)
+    self.invertTree(root.right)
+    return root
+```
+### 后序遍历
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root:
+        return root
+        
+    left = self.invertTree(root.left)
+    right = self.invertTree(root.right)
+    root.left, root.right = right, left
+    return root
+```
+
+## 迭代法
+### 深度优先遍历
+
+### 广度优先遍历
+```python
+def invertTree(self, root):
+	if not root:
+	    return None
+
+	queue = [root]
+	while queue:
+		node = queue.pop(0)
+		node.left, node.right = node.right,node.left
+		if node.left:
+			queue.append(node.left)
+		if node.right:
+			queue.append(node.right)
+	return root
+```
