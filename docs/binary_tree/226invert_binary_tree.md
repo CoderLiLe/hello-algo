@@ -35,8 +35,6 @@
 
 遍历的过程中去翻转每一个节点的左右孩子就可以达到整体翻转的效果。
 
-**这道题目使用前序遍历和后序遍历都可以，唯独中序遍历不方便，因为中序遍历会把某些节点的左右孩子翻转了两次！**
-
 **层序遍历也是可以的！只要把每一个节点的左右孩子翻转一下的遍历方式都是可以的！**
 
 ## 递归法
@@ -48,6 +46,16 @@ def invertTree(self, root: TreeNode) -> TreeNode:
     root.left, root.right = root.right, root.left
     self.invertTree(root.left)
     self.invertTree(root.right)
+    return root
+```
+### 中序遍历
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root:
+        return None
+    self.invertTree(root.left)
+    root.left, root.right = root.right, root.left
+    self.invertTree(root.left)
     return root
 ```
 ### 后序遍历
@@ -64,20 +72,69 @@ def invertTree(self, root: TreeNode) -> TreeNode:
 
 ## 迭代法
 ### 深度优先遍历
-
-### 广度优先遍历
+#### 前序遍历
 ```python
-def invertTree(self, root):
-	if not root:
-	    return None
+def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    if not root: return
+        
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if node.left: stack.append(node.left)
+        if node.right: stack.append(node.right)
+        node.left, node.right = node.right, node.left
+    return root
+```
 
-	queue = [root]
-	while queue:
-		node = queue.pop(0)
-		node.left, node.right = node.right,node.left
-		if node.left:
-			queue.append(node.left)
-		if node.right:
-			queue.append(node.right)
-	return root
+#### 伪中序遍历
+
+伪中序遍历（结果是对的，看起来像是中序遍历，实际上它是前序遍历，只不过把中间节点处理逻辑放到了中间
+
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root:
+        return None      
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if node.right:
+            stack.append(node.right)
+        node.left, node.right = node.right, node.left
+        if node.right:
+            stack.append(node.right)
+    return root
+```
+
+#### 伪后序遍历
+伪后序遍历（结果是对的，看起来像是后序遍历，实际上它是前序遍历，只不过把中间节点处理逻辑放到了最后
+
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root:
+        return None
+    stack = [root]    
+    while stack:
+        node = stack.pop()
+        if node.right:
+            stack.append(node.right)
+        if node.left:
+            stack.append(node.left)
+        node.left, node.right = node.right, node.left               
+     
+    return root
+```
+
+### 广度优先遍历（层序遍历）
+```python
+def invertTree(self, root: TreeNode) -> TreeNode:
+    if not root: 
+        return None
+
+    queue = collections.deque([root])    
+    while queue:
+        node = queue.popleft()
+        node.left, node.right = node.right, node.left
+        if node.left: queue.append(node.left)
+        if node.right: queue.append(node.right)
+    return root   
 ```
