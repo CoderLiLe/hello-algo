@@ -92,11 +92,11 @@ def compare(self, left, right):
 
 ```python
 def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-    def recur(L, R):
-        if not L and not R: return True
-        if not L or not R or L.val != R.val: return False
-        return recur(L.left, R.right) and recur(L.right, R.left)
-    return not root or recur(root.left, root.right)
+    def dfs(left, right):
+        if not left and not right: return True
+        if not left or not right or left.val != right.val: return False
+        return dfs(left.left, right.right) and recur(left.right, right.left)
+    return not root or dfs(root.left, root.right)
 ```
 
 
