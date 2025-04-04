@@ -106,8 +106,6 @@ def isSymmetric(self, root: Optional[TreeNode]) -> bool:
 通过队列来判断根节点的左子树和右子树的内侧和外侧是否相等
 
 ```python
-import collections
-
 def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
