@@ -61,3 +61,25 @@
 |     | [332. 重新安排行程](https://leetcode.cn/problems/reconstruct-itinerary/)                    |
 
 
+# 贪心算法
+
+| 分类 | 题目 |
+|-----|-----|
+|**简单问题**| [455. 分发饼干](https://leetcode.cn/problems/assign-cookies/)                            |
+|       | [1005. K次取反后最大化的数组和](https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/) |
+|       | [860. 柠檬水找零](https://leetcode.cn/problems/lemonade-change/)                         |
+|**中等问题**| [376. 摆动序列](https://leetcode.cn/problems/wiggle-subsequence/)                        |
+|**序列问题**| [738. 单调递增的数字](https://leetcode.cn/problems/monotone-increasing-digits/)          |
+|**股票问题**| [122. 买卖股票的最佳时机II](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/) |
+|       | [714. 买卖股票的最佳时机含手续费](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) |
+|**分配问题**| [135. 分发糖果](https://leetcode.cn/problems/candy/)                                     |
+|**双维度问题**| [406. 根据身高重建队列](https://leetcode.cn/problems/queue-reconstruction-by-height/)    |
+|**跳跃游戏**| [55. 跳跃游戏](https://leetcode.cn/problems/jump-game/)                                  |
+|          | [45. 跳跃游戏II](https://leetcode.cn/problems/jump-game-ii/)                             |
+|**区间问题**| [452. 用最少数量的箭引爆气球](https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/) |
+|     | [435. 无重叠区间](https://leetcode.cn/problems/non-overlapping-intervals/)               |
+|     | [763. 划分字母区间](https://leetcode.cn/problems/partition-labels/)                      |
+|     | [56. 合并区间](https://leetcode.cn/problems/merge-intervals/)                            |
+|**其他经典问题**| [53. 最大子序和](https://leetcode.cn/problems/maximum-subarray/)                         |
+|     | [134. 加油站](https://leetcode.cn/problems/gas-station/)                                |
+|     | [968. 监控二叉树](https://leetcode.cn/problems/binary-tree-cameras/)                    |
