@@ -1,0 +1,74 @@
+name: Optimize README
+
+on:
+  schedule:
+    # 每月1号凌晨1点运行
+    - cron: '0 1 1 * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '强制优化'
+        required: false
+        default: 'false'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run README optimization
+        run: |
+          python3 optimize-readme.py
+      
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet README.md || echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "changes=$(git diff --stat README.md)" >> $GITHUB_OUTPUT
+      
+      - name: Configure Git
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+      
+      - name: Commit and push changes
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git add README.md
+          git commit -m "📈 自动优化 README：$(date +'%Y-%m-%d')"
+          git push
+      
+      - name: Create optimization report
+        run: |
+          echo "## 📊 README 优化报告" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**运行时间:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.git-check.outputs.has_changes }}" = "true" ]; then
+            echo "✅ **状态:** README.md 已成功优化并提交" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**变更统计:**" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.git-check.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ **状态:** README.md 已是最新状态，无需优化" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "**下次优化时间:** 下个月1号凌晨1点" >> $GITHUB_STEP_SUMMARY
